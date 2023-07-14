@@ -131,4 +131,28 @@ int main()
     // expressions such as array bounds, case labels, template value arguments,
     // and constants declared using constexpr.
     // 1.6 Constants
+
+    // 1.7 Pointers, Arrays and References
+    // Fundamental collection of data contiguously allocated sequence 
+    // of elements of the same type is an array. This is offered by 
+    // hardware.
+    char v[6] {}; // array of 6 characters
+    char* p; // pointer to character
+    // [] means "array of" and * means "pointer to"
+    // All arrays have 0 as their lower bound so v[0] to v[5]
+    // A pointer variable holds the address of an object of the appropriate
+    // type.
+    p = &v[3];
+    char x {*p};
+    // In an expression, prefix * means "contents of" and & means "address of"
+    // In a declaration, the unary & means "reference to". A reference is
+    // similar to a pointer, except that you don't need to use prefix * to
+    // access the value referred to. Also a reference cannot be made to
+    // refer to a different object after initialization.
+    // References are particularly useful for specifying large function args.
+    char& ref {v[3]};
+    ref = 4; // changes v[3], serves more like an alias
+    // When used in declarations, operators (&, *, []) are called declarator
+    // operators.
+    // 1.7 Pointers, Arrays and References
 }
