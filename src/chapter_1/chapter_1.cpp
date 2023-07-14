@@ -21,6 +21,27 @@
 //      The compiler will choose the appropriate function to invoke the call.
 // 1.3 Functions
 
+// 1.7.1 The Null Pointer
+// char* assumes a C-style string which is a zero-terminated
+// array of char.
+// immutable characters so declare const char*
+// nullptr eliminates potential confusion between integer and pointers
+//      (old code used 0 and NULL instead nullptr)
+int count_x(const char* p, char x)
+{
+    if (p == nullptr)
+        return 0;
+    int count {};
+    while (*p != 0)
+    {
+        if (*p == x)
+            ++count;
+        ++p; // advance pointer to point to the next element
+    }
+    return count;
+}
+// 1.7.1 The Null Pointer
+
 // Comments: these are ignored by the compiler, primarily for humans
 // {} express grouping of statements
 // main() global function every C++ program has
@@ -155,4 +176,14 @@ int main()
     // When used in declarations, operators (&, *, []) are called declarator
     // operators.
     // 1.7 Pointers, Arrays and References
+
+    // 1.7.1 The Null Pointer
+    // We try to ensure that a pointer always points to an object so that
+    // dereferencing it is valid.
+    // Pointers that don't have an object to point to or that need to
+    // represent the notion of "no object available" use nullptr.
+    double* pd {nullptr};
+    // For this reason it's always wise to check that pointer arg
+    // actually points to something.
+    // 1.7.1 The Null Pointer
 }
