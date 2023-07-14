@@ -117,4 +117,18 @@ int main()
     // In addition, we can have objects without names, such as temporaries and
     // objects created using new.
     // 1.5 Scope and Lifetime
+
+    // 1.6 Constants
+    // There are two notions of immutability in C++:
+    //      const meaning roughly I promise not to change this value. The
+    //      compiler enforces this promise.
+    //      constexpr which is evaluated at compile time.
+    constexpr int dmv = 17;
+    int var = 17;
+    const double sqv = sqrt(sqv);
+    // You can also create constexpr function which may evaluate at compile
+    // time depending on the parameters. Some places require constant
+    // expressions such as array bounds, case labels, template value arguments,
+    // and constants declared using constexpr.
+    // 1.6 Constants
 }
