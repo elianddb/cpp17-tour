@@ -36,4 +36,34 @@ int main()
     // \ in a string denotes a special character
     // \n newline character
     // std:: specifies that cout is from the std library namespace
+
+    // 1.4 Types, Variables, and Arithmetic
+    // Every name and every expression has a type that determines the operation
+    // that may be performed on it.
+    // 
+    // Declaration: a statement that introduces an entity to the program.
+    // Type: defines a set of possible value and operations for an object.
+    // Object: some memory that holds a value of some type.
+    // Value: a set of bits interpreted according to a type.
+    // Variable: a named object.'
+    // 
+    // The list of fundamental types can be found:
+    // https://en.cppreference.com/w/cpp/language/types
+    // Each fundamental type corresponds directly to hardware and have
+    // a fixed size that determines a range of values.
+    // The size can vary among different machines, use the sizeof() operator
+    // to obtain the size in bytes. (byte = 8 bits)
+    int inch;
+    // 
+    // Floating-point literals can be expressed as: 3.14 or 3e-2
+    // Integer literals can change base using the following:
+    //      default decimal -> 42
+    //      0b prefix -> base 2 (e.g., 0b10101010)
+    //      0x prefix -> base 16 (e.g., 0xBAD1234)
+    //      0 prefix  -> base 8 (e.g., 0334)
+    // Single quotes can be used to make long literals more readable:
+    //      1'000'000
+    //      0x3.243F'6A88'85A3'08D3
+    // 1.4 Types, Variables, and Arithmetic
+
 }
