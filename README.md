@@ -7,7 +7,7 @@ This repository covers the contents of Bjarne Stroustrup's
 book, A Tour of C++. Due to the rockiness
 of `C++20` support, the repository will follow the second
 edition of the book. There might be some examples
-involving `C++20` features, but the for most part `C++17`
+involving `C++20` features, but for the most part `C++17`
 will be the main focus.
 
 ## Purpose
