@@ -12,3 +12,7 @@ C++ abstraction mechanisms allow programmers to design
 and implement their own types, with suitable operations
 and representations. User-defined types are types built
 from other types using C++'s abstraction mechanisms.
+The standard library is constructed user-defined types.
+User-defined types are preferred over built-in types
+because they are easier to use, less error-prone, and
+typically as efficient for what they do or even faster.
