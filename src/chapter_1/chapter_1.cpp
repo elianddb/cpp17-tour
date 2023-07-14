@@ -209,5 +209,10 @@ int main()
     //      while-loops
     //      for-loops
     accept();
+    // You can declare a name in the condition of an if-statement and
+    // for-statement to keep the score of the variable limited to
+    // improve readability and minimize errors.
+    //      if (auto n = v.size(); n != 0)
+    //          // do something ...
     // 1.8 Tests
 }
