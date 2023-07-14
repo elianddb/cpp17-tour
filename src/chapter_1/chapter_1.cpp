@@ -85,6 +85,7 @@ int main()
     // 
     // The list of fundamental types can be found:
     // https://en.cppreference.com/w/cpp/language/types
+    // NOTE: use unsigned for bitwise logical operations only
     // Each fundamental type corresponds directly to hardware and have
     // a fixed size that determines a range of values.
     // The size can vary among different machines, use the sizeof() operator
