@@ -1,7 +1,7 @@
 ﻿# CMakeList.txt : CMake project for cpp17-tour, include source and define
 # project specific logic here.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.26)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -11,11 +11,7 @@ endif()
 
 project ("cpp17-tour")
 
-# Add source to this project's executable.
-add_executable (cpp17-tour "cpp17-tour.cpp" "cpp17-tour.h")
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET cpp17-tour PROPERTY CXX_STANDARD 20)
-endif()
-
-# TODO: Add tests and install targets if needed.
+add_subdirectory("src")

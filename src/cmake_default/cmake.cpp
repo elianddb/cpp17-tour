@@ -1,7 +1,7 @@
 ﻿// cpp17-tour.cpp : Defines the entry point for the application.
 //
 
-#include "cpp17-tour.h"
+#include "cmake.h"
 
 using namespace std;
 
