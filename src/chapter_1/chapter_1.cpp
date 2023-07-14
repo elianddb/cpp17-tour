@@ -238,4 +238,33 @@ int main()
     // of reading from or writing to an uninitialized variable is undefined.
     // 1.9.2 Initialization
 
+    // 1.10 Advice
+    // NOTE: This will only contain some of the advice in the book.
+    // [2] Don’t use the built-in features exclusively or on their own. On the
+    // contrary, the fundamental(built - in) features are usually best used
+    // indirectly through libraries, such as the ISO C++ standard library
+    // [3] You don’t have to know every detail of C++ to write good programs.
+    // [6] “Package” meaningful operations as carefully named functions; §1.3;
+    // [CG:F.1].
+    // [10] If a function may have to be evaluated at compile time, declare it
+    // constexpr; §1.6; [CG:F.4].
+    // [12] Use digit separators to make large literals readable; §1.4; 
+    // [CG: NL.11].
+    // [15] Minimize the scope of a variable; §1.5.
+    // [16] Avoid “magic constants”; use symbolic constants; §1.6; [CG: ES.45].
+    // [17] Prefer immutable data; §1.6; [CG: P.10].
+    // [18] Declare one name (only) per declaration; [CG: ES.10].
+    // [19] Keep common and local names short, and keep uncommon and
+    // nonlocal names longer; [CG:ES.7].
+    // [21] Avoid ALL_CAPS names; [CG: ES.9].
+    // [22] Prefer the {}-initializer syntax for declarations with a named type;
+    // §1.4; [CG:ES.23].
+    // [23] Use auto to avoid repeating type names; §1.4.2; [CG: ES.11].
+    // [24] Avoid uninitialized variables; §1.4; [CG: ES.20].
+    // [27] Use unsigned for bit manipulation only; §1.4; [CG: ES.101] [CG:
+    // ES.106].
+    // [29] Use nullptr rather than 0 or NULL; §1.7; [CG: ES.47].
+    // [30] Don’t declare a variable until you have a value to initialize it with;
+    // §1.7, §1.8; [CG:ES.21].
+    // 1.10 Advice
 }
