@@ -3,6 +3,16 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# User-defined files and folders
+# VS-Studio
+/out
+bin/
+build/
+/.vs
+CMakeSettings.json
+# JetBrains CLion
+.idea/
+
 # User-specific files
 *.rsuser
 *.suo
