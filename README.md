@@ -1,7 +1,6 @@
 # cpp17-tour
 
-![A Tour of C++ Second Edition book image]
-(images/a-tour-of-cpp-second-edition.jpg)
+![A Tour of C++ Second Edition book image](images/a-tour-of-cpp-second-edition.jpg)
 
 ## An Overview
 This repository covers the contents of Bjarne Stroustrup's
