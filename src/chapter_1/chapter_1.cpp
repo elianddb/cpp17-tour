@@ -232,4 +232,10 @@ int main()
     int* pi2 {&z};
     // 1.9.1 Assignment
 
+    // 1.9.2 Initialization
+    // Differs from assignment in that its task is to make an uninitialized
+    // piece of memory into a valid object. For most types, the effect
+    // of reading from or writing to an uninitialized variable is undefined.
+    // 1.9.2 Initialization
+
 }
