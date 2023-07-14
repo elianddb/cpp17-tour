@@ -74,9 +74,30 @@ int main()
     // Logical Operators: &, |, ^, &&, ||, (unary ~ [invert bits], !)
     // 
     // Basic types can be mixed freely:
-    double d{ 2.2 };
-    int i{ 7 };
+    double d {2.2};
+    int i {7};
     d = d + i;
     i = d * i; // Beware of truncation.
     // 1.4.1 Arithmetic
+
+    // 1.4.2 Initialization
+    // Before an object can be used, it needs to be given a value. There's a
+    // variety of notations to do this:
+    double d1 = 2.3;
+    double d2 {2.3};
+    double d3 = {2.3}; // = is optional with {...}
+    // = form is traditional dates back to C, but if in doubt use general {}
+    // list form. Saves from loss of information from conversions.
+    //      int i1 = 7.8; // i1 would only hold 7
+    // 
+    // When defining a variable you don't need to state its type explicitly
+    // when it can be deduced from the initializer:
+    auto b = true;
+    auto ch = 'x';
+    // We use = because there is no potential for troublesome type conversion.
+    // Use auto when there is no reason to mention the type explicitly.
+    //      auto allows us to avoid redundancy and writing long type names.
+    //      Usually helpful in generic programming where the exact type is hard
+    //      to know.
+    // 1.4.2 Initialization
 }
