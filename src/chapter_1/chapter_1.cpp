@@ -42,6 +42,21 @@ int count_x(const char* p, char x)
 }
 // 1.7.1 The Null Pointer
 
+// 1.8 Tests
+bool accept()
+{
+    std::cout << "Do you want to proceed (y or n)?\n";
+    char answer {};
+    // >> operator "get from" used for input
+    // cin is the standard input stream
+    std::cin >> answer;
+
+    if (answer == 'y')
+        return true;
+    return false;
+}
+// 1.8 Tests
+
 // Comments: these are ignored by the compiler, primarily for humans
 // {} express grouping of statements
 // main() global function every C++ program has
@@ -146,7 +161,7 @@ int main()
     //      constexpr which is evaluated at compile time.
     constexpr int dmv = 17;
     int var = 17;
-    const double sqv = sqrt(sqv);
+    const double sqv = sqrt(var);
     // You can also create constexpr function which may evaluate at compile
     // time depending on the parameters. Some places require constant
     // expressions such as array bounds, case labels, template value arguments,
@@ -186,4 +201,13 @@ int main()
     // For this reason it's always wise to check that pointer arg
     // actually points to something.
     // 1.7.1 The Null Pointer
+
+    // 1.8 Tests
+    // Set of statements for expressing selection and looping:
+    //      if-statements
+    //      switch-statements
+    //      while-loops
+    //      for-loops
+    accept();
+    // 1.8 Tests
 }
