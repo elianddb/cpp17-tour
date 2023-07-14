@@ -222,4 +222,14 @@ int main()
     // The raw low-level performance which C and C++ relies on is due to that
     // mapping.
     // 1.9 Mapping to Hardware
+
+    // 1.9.1 Assignment
+    // An assignment of a built-in type is a simple machine copy operation.
+    // If we want different object to refer to the same (shared) value, it
+    // needs to be explicitly stated.
+    int z {};
+    int* pi1 {&z};
+    int* pi2 {&z};
+    // 1.9.1 Assignment
+
 }
