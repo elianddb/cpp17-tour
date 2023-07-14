@@ -100,4 +100,21 @@ int main()
     //      Usually helpful in generic programming where the exact type is hard
     //      to know.
     // 1.4.2 Initialization
+
+    // 1.5 Scope and Lifetime
+    // A declaration introduces its name into a scope:
+    //      Local scope: function or lambda declaration, the scope extends
+    //      from the point of declaration to the end of the block in which
+    //      it occurs. block = {}
+    //      Class scope: member name if defined in a class, outside any func,
+    //      lambda, or enum class.
+    //      Namespace scope: namespace member name if it is defined in a
+    //      namespace outside any func, lambda, class, or enum class.
+    // 
+    // A name not declared inside any other construct is called a global name
+    // and said to be in a global namespace.
+    // 
+    // In addition, we can have objects without names, such as temporaries and
+    // objects created using new.
+    // 1.5 Scope and Lifetime
 }
