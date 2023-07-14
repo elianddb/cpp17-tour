@@ -66,4 +66,17 @@ int main()
     //      0x3.243F'6A88'85A3'08D3
     // 1.4 Types, Variables, and Arithmetic
 
+    // 1.4.1 Arithmetic
+    // Arithmetic operators can be used for appropriate combination of 
+    // fundamental types: +, -, *, /, % (unary: -, +)
+    // Same goes for other operators:
+    // Comparison Operators: ==, !=, <, >, <=, >=
+    // Logical Operators: &, |, ^, &&, ||, (unary ~ [invert bits], !)
+    // 
+    // Basic types can be mixed freely:
+    double d{ 2.2 };
+    int i{ 7 };
+    d = d + i;
+    i = d * i; // Beware of truncation.
+    // 1.4.1 Arithmetic
 }
