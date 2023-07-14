@@ -4,6 +4,11 @@ add_executable(
 )
 
 add_executable(
+	chapter-2
+	"chapter_2/chapter_2.cpp"
+)
+
+add_executable(
 	cmake-default 
 	"cmake_default/cmake.cpp" 
 	"cmake_default/cmake.hpp"
