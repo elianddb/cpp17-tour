@@ -8,7 +8,7 @@ book, A Tour of C++. Due to the rockiness
 of `C++20` support, the repository will follow the second
 edition of the book. There might be some examples
 involving `C++20` features, but the for most part `C++17`
-will be main focus.
+will be the main focus.
 
 ## Purpose
 To review C++ fundamentals and explore C++17 features.
