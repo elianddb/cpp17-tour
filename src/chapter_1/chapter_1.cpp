@@ -215,4 +215,11 @@ int main()
     //      if (auto n = v.size(); n != 0)
     //          // do something ...
     // 1.8 Tests
+
+    // 1.9 Mapping to Hardware
+    // C++ offers direct mapping to hardware when using fundamental operations.
+    // The implementation is often a single machine operations by hardware.
+    // The raw low-level performance which C and C++ relies on is due to that
+    // mapping.
+    // 1.9 Mapping to Hardware
 }
