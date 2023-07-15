@@ -1,3 +1,5 @@
+#ifndef VECTOR_HPP_INCLUDED
+#define VECTOR_HPP_INCLUDED
 namespace DDB
 {
     class Vector
@@ -11,3 +13,4 @@ namespace DDB
         int sz;
     };
 }
+#endif
