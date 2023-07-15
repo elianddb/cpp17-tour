@@ -108,4 +108,8 @@ int main()
     // These higher-level constructs simplify programming and limit opportunity
     // for mistakes, and increase compiler's chances of catching errors.
     // 3.5 Error Handling
+
+    // 3.5.1 Exceptions
+    // 
+    // 3.5.1 Exceptions
 }
