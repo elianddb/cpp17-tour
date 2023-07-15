@@ -30,8 +30,8 @@ double sqrtSum(Modules::Vector& vec)
 // 3.6.3 Structured Binding
 struct Entry
 {
-    std::string name;
-    int value;
+    std::string name {};
+    int value {};
 };
 
 Entry readEntry(std::istream& is)
@@ -228,8 +228,8 @@ int main()
     // compile time, it is usually preferable to do so.
     // However we can also perform simple check on most properties at compile
     // time and report failures to meet expectations as compiler err messages.
-    constexpr double C = 299792.458;
-    constexpr double D = 123445.12;
+    constexpr auto C = 299792.458;
+    constexpr auto D = 123445.12;
     static_assert(D < C, "D is too big!");
     // You can also leave out S and have the default message printed.
     // static_assert is important in generic programming asserting the types
@@ -280,4 +280,8 @@ int main()
     // We've only shown structures with public data members. But it's also
     // possible to gain access through member functions.
     // 3.6.3 Structured Binding
+
+    // 3.7 Advice
+    // 
+    // 3.7 Advice
 }
