@@ -26,6 +26,10 @@ int main()
     for (int i {}; i != vec.size(); ++i)
         vec[i] = 4;
     std::cout << sqrtSum(vec) << '\n';
-    // vector.cpp
+    // vector.cpp and chapter_3.cpp are sharing the vector interface (header)
+    // but are otherwise independent.
+    // A .cpp file that is compiled by itself (including the header files it
+    // includes) is called a translation unit. A program can consist of
+    // thousands of translation units.
     // 3.2 Separate Compilation
 }
