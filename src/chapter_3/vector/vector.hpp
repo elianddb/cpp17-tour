@@ -7,7 +7,7 @@ namespace DDB
     public:
         Vector(int size);
         double& operator[](int index) const;
-        int size() const;
+        [[nodiscard]] int size() const;
     private:
         double* elem;
         int sz;
