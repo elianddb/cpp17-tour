@@ -2,6 +2,7 @@ import Vector;
 #include "vector.hpp"
 #include <cmath>
 #include <iostream>
+#include <stdexcept>
 
 // 3.2 Separate Compilation
 double sqrtSum(DDB::Vector& vec)
@@ -116,6 +117,23 @@ int main()
     //
     // Let's assume we want to recover from this error. The solution is to
     // have the Vector implementation detect the out-of-range access.
-    //      vec1[123] = 0; // will cause std::out_of_range exception
+    try
+    {
+        vec1[123] = 0; // will cause std::out_of_range exception
+    }
+    catch (std::out_of_range& err)
+    {
+        std::cerr << "EXCEPTION: " << err.what() << '\n';
+    }
+    // try-block will encompass the potential exception and the catch-block
+    // will provide a handler for exceptions of type out_of_range. Standard
+    // library containers also use <stdexcept> classes.
+    //
+    // Do not overuse try-statements.
+    //
+    // A function that should never throw an exception can be declared noexcept
+    //      void user(int sz) noexcept {}
+    // If all planning fails, std::terminate() is called to immediately
+    // to terminate the program.
     // 3.5.1 Exceptions
 }
