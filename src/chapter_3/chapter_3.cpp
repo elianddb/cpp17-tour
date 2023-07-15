@@ -110,6 +110,11 @@ int main()
     // 3.5 Error Handling
 
     // 3.5.1 Exceptions
-    // 
+    // What if the user tries to read a vector out-of-bounds?
+    //      The writer of Vector doesn't know what the user wants.
+    //      The user cannot consistently detect this problem.
+    //
+    // Let's assume we want to recover from this error. The solution is to
+    // have the Vector implementation detect the out-of-range access.
     // 3.5.1 Exceptions
 }
