@@ -116,5 +116,6 @@ int main()
     //
     // Let's assume we want to recover from this error. The solution is to
     // have the Vector implementation detect the out-of-range access.
+    //      vec1[123] = 0; // will cause std::out_of_range exception
     // 3.5.1 Exceptions
 }
