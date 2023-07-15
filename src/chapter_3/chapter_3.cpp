@@ -155,6 +155,37 @@ int main()
     // 3.5.2 Invariants
 
     // 3.5.3 Error-Handling Alternatives
+    // There are a variety of approaches to error handling. Throwing an
+    // exception is C++'s most general mechanism for that.
     //
+    // In C++ exceptions are designed to be used to report failure to complete
+    // a given task.
+    //
+    // There are other ways of reporting an error that cannot be handled
+    // locally.
+    //      Somehow return a value indicating failure.
+    //      Terminate the program (by invoking a function like terminate(),
+    //      exit(), or abort()).
+    // Error codes can be used when a failure is normal and expected or an the
+    // caller can be expected to handle the error.
+    // We throw an exception when the error is rare,
+    //      not handled by the caller,
+    //      errors can be added in lower-modules of an app,
+    //      no suitable path for error code is available,
+    //      return path is complicated,
+    //      transmits up through a call chain to the original caller,
+    //      recovery depends on multiple function calls,
+    //      function argument found the error,
+    //      or implies an undo action is needed.
+    // Terminate when:
+    //      System cannot recover,
+    //      or error-handling is based on restarting a thread, process, or
+    //      computer.
+    //
+    // Ensure termination by adding noexcept to a function so any throw
+    // turns into terminate();
+    //
+    // Often prefer exceptions because their use scales better, and don't
+    // require external tools to check that all errors are handled.
     // 3.5.3 Error-Handling Alternatives
 }
