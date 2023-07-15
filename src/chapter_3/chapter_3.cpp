@@ -123,7 +123,7 @@ int main()
     }
     catch (std::out_of_range& err)
     {
-        std::cerr << "EXCEPTION: " << err.what() << '\n';
+        std::cerr << err.what() << '\n';
     }
     // try-block will encompass the potential exception and the catch-block
     // will provide a handler for exceptions of type out_of_range. Standard
@@ -142,8 +142,15 @@ int main()
     // are and consider whether to test them. A set of conditions that need to
     // remain true through the life-cycle of a class is called an invariant.
     // The constructor is typically responsible for establishing the invariant
-    // for its class (so member functions can rely on it).
-    //
-    // 
+    // for its class (so member functions can rely on it). Functions should
+    // also consider whether to test them.
+    try
+    {
+        DDB::Vector vec3{-27};
+    }
+    catch (std::length_error& err)
+    {
+        std::cout << err.what() << '\n';
+    }
     // 3.5.2 Invariants
 }
