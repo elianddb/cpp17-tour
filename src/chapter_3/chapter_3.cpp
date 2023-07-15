@@ -70,4 +70,8 @@ int main()
     //      If you import something into a module, users of the module
     //      do not implicitly gain access to what is imported.
     // 3.3 Modules (C++20)
+
+    // 3.4 Namespaces
+    // 
+    // 3.4 Namespaces
 }
