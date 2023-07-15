@@ -72,6 +72,31 @@ int main()
     // 3.3 Modules (C++20)
 
     // 3.4 Namespaces
-    // 
+    // C++ offers namespaces as a mechanism for expressing that declarations
+    // belong together and their names shouldn't clash with other names.
+    //
+    // For example:
+    // You might want to create experiments emulating types in the std library.
+    // The problem is using the names from the std library will create
+    // collisions. A namespace dodges this problem by requiring a name to be
+    // qualified with the namespace name.
+    //      MyCode::main();
+    //
+    // If this ever becomes tedious, a name can be brought to scope with a
+    // using-declaration.
+    //      using std::swap;
+    // It makes the name appear as if it was declared in the scope in which the
+    // using-declaration appears.
+    //
+    // To gain access to a whole namespace append namespace to the 
+    // using-directive.
+    //      using namespace std;
+    // This should be used carefully as it removes the ability to selectively
+    // use names.
+    //
+    // Namespace definition:
+    //      namespace MyCode
+    //      {
+    //      }
     // 3.4 Namespaces
 }
