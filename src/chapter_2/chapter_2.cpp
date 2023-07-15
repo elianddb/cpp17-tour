@@ -65,4 +65,12 @@ int main()
     Structures::Vector* pv {&v};
     int i1 {pv->sz};
     // 2.2 Structures
+
+    // 2.3 Classes
+    // To distinguish between the interface to a type and its implementation
+    // we use a class. A class has a set of members, which can be data,
+    // function, or type members. 
+    // public: members define the interface of a class
+    // private: members are accessible through the interface
+    // 2.3 Classes
 }
