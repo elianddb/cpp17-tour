@@ -101,6 +101,11 @@ int main()
     // 3.4 Namespaces
 
     // 3.5 Error Handling
-    // 
+    // Large and complex topic, but C++ provides a few features to help.
+    // Instead of painstakingly building up applications from built-in types,
+    // build types and algorithms that are appropriate (e.g., sort(), regex).
+    //
+    // These higher-level constructs simplify programming and limit opportunity
+    // for mistakes, and increase compiler's chances of catching errors.
     // 3.5 Error Handling
 }
