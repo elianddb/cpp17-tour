@@ -1,4 +1,6 @@
 #include <iostream>
+#include <variant>
+
 // 2.2 Structures
 namespace Structures
 {
@@ -69,6 +71,91 @@ namespace Classes
 }
 // 2.3 Classes
 
+// 2.4 Unions
+// Imagine a symbol table entry that holds a name and a value.
+// The value can be either a Node* or an int.
+//
+// Nodes are basic units of a data structure.
+// They contain data and also may link to other Nodes.
+struct Node
+{
+    int val {};
+    Node* link {};
+};
+
+// can hold values ptr and num
+enum Type { ptr, num };
+
+namespace V1
+{
+    struct Entry
+    {
+        std::string name;
+        Type t;
+        Node* p;
+        int i;
+    };
+
+    // Since p and i are never used at the same time space is wasted.
+    // Recover that space by specifying both should be members of a union.
+    // (check V2 below)
+    void f(Entry* pe)
+    {
+        if (pe->t == num)
+            std::cout << pe->i;
+        // ...
+    }
+}
+
+namespace V2
+{
+    union Value
+    {
+        Node* p;
+        int i;
+    };
+
+    struct Entry
+    {
+        std::string name;
+        Type t;
+        Value v;
+    };
+
+    // The problem left is maintaining correspondence between a type field
+    // and the type held in the union. It's error-prone, and instead we
+    // can enforce the correspondence by encapsulating the union and the type
+    // field in a class and offer access through member functions that
+    // guarantee correct access.
+    // So, the use of "naked" unions is best minimized. (check V3)
+    void f(Entry* pe)
+    {
+        if (pe->t == num)
+            std::cout << pe->v.i;
+    }
+}
+
+inline namespace V3
+{
+    // std::variant can be used to eliminate most direct uses of unions.
+    // It stores a value of one of a set of alternative types.
+    // (e.g., variant<Node*, int> can hold either but only one)
+    struct Entry
+    {
+        std::string name;
+        std::variant<Node*, int> v;
+    };
+
+    void f(Entry* pe)
+    {
+        if (std::holds_alternative<int>(pe->v))
+            std::cout << std::get<int>(pe->v) << '\n';
+        else
+            std::cout << "{Node}\n";
+    }
+}
+// 2.4 Unions
+
 int main()
 {
     // 2.2 Structures
@@ -106,4 +193,16 @@ int main()
     // The fundamental different between a struct and class is that
     // structs are public by default and classes are private by default.
     // 2.3 Classes
+
+    // 2.4 Unions
+    // A struct in which all members are allocated at the same address.
+    // A union occupies only as much space as its largest member.
+    // Naturally it can only hold a value for one member at a time.
+    Entry myEntry {"num0", 0};
+    f(&myEntry);
+
+    Node test {0, nullptr};
+    myEntry.v = &test;
+    f(&myEntry);
+    // 2.4 Unions
 }
