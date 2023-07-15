@@ -50,7 +50,8 @@ int main()
 {
     // 2.2 Structures
     // Generally we don't reinvent std library components, but for the sake
-    // of example we'll use vector to illustrate design and features.
+    // of this example we'll use vector to illustrate design and features.
+    // struct -> a data structure
     Structures::Vector v;
     Structures::Vector::vector_init(v, 4);
     v.elem[0] = 10;
@@ -59,5 +60,9 @@ int main()
     v.elem[3] = 10;
     std::cout << read_and_sum(v) << '\n';
     std::cout << read_and_sum(4) << '\n';
+    // . (dot) is used to access struct members through their name (and ref)
+    // -> (arrow) to access struct members through a pointer
+    Structures::Vector* pv {&v};
+    int i1 {pv->sz};
     // 2.2 Structures
 }
