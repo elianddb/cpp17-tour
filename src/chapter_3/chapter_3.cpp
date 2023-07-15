@@ -188,4 +188,17 @@ int main()
     // Often prefer exceptions because their use scales better, and don't
     // require external tools to check that all errors are handled.
     // 3.5.3 Error-Handling Alternatives
+
+    // 3.5.4 Contracts
+    // There is no general and standard way of writing optional run-time tests
+    // of invariants, preconditions, etc.
+    // For now, ad hoc mechanisms will have to do. We use a command-line macro
+    // to control a run-time check:
+    //      if (RANGE_CHECK && (i < 0 || size() <= i))
+    //
+    // The standard library offers the debug macro, assert(), to assert that
+    // a condition must hold at run time. If this condition fails in debug mode
+    // the program terminates.
+    //      assert(p != nullptr);
+    // 3.5.4 Contracts
 }
