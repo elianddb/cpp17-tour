@@ -282,6 +282,23 @@ int main()
     // 3.6.3 Structured Binding
 
     // 3.7 Advice
-    // 
+    // [4] Avoid non-inline function definitions in headers; §3.2; [CG: SF.2].
+    // [5] Prefer modules over headers (where modules are supported); §3.3.
+    // [6] Use namespaces to express logical structure; §3.4; [CG: SF.20].
+    // [8] Don’t put a using-directive in a header file; §3.4; [CG: SF.7].
+    // [9] Throw an exception to indicate that you cannot perform an assigned
+    // task; §3.5; [CG:E.2].
+    // [13] If in doubt whether to use an exception or an error code, prefer
+    // exceptions; §3.5.3.
+    // [18] If your function may not throw, declare it noexcept; §3.5;
+    // [CG: E.12].
+    // [19] Let a constructor establish an invariant, and throw if it cannot;
+    // §3.5.2; [CG:E.5].
+    // [21] What can be checked at compile time is usually best checked at
+    // compile time; §3.5.5[CG:P.4][CG:P.5].
+    // [24] Return values as function-return values (rather than by out-
+    // parameters); §3.6.2; [CG:F.20] [CG:F.21] .
+    // [26] Don’t overuse structured binding; using a named return type is often
+    // clearer documentation; §3.6.3.
     // 3.7 Advice
 }
