@@ -1,4 +1,4 @@
-#include "vector/vector.hpp"
+#include "vector.hpp"
 #include <cmath>
 #include <iostream>
 
@@ -26,5 +26,6 @@ int main()
     for (int i {}; i != vec.size(); ++i)
         vec[i] = 4;
     std::cout << sqrtSum(vec) << '\n';
+    // vector.cpp
     // 3.2 Separate Compilation
 }
