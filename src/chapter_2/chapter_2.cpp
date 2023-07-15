@@ -62,8 +62,8 @@ namespace Classes
         // Provides access to elements (subscript function). Returns an
         // appropriate non-const reference to an element 
         // allowing reading and writing.
-        double& operator[](int i) { return elem[i]; };
-        int size() { return sz; };
+        double& operator[](int i) { return elem[i]; }
+        int size() { return sz; }
     private:
         double* elem;
         int sz;
