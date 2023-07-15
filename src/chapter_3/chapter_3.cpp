@@ -203,4 +203,17 @@ int main()
     // the program terminates.
     //      assert(p != nullptr);
     // 3.5.4 Contracts
+
+    // 3.5.5 Static Assertions
+    // Exceptions report errors found at run time. If an error can be found at
+    // compile time, it is usually preferable to do so.
+    // However we can also perform simple check on most properties at compile
+    // time and report failures to meet expectations as compiler err messages.
+    constexpr double C = 299792.458;
+    constexpr double D = 123445.12;
+    static_assert(D < C, "D is too big!");
+    // You can also leave out S and have the default message printed.
+    // static_assert is important in generic programming asserting the types
+    // used as parameters.
+    // 3.5.5 Static Assertions
 }
