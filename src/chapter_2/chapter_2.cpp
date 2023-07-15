@@ -247,4 +247,19 @@ int main()
     // its enumerators into the same scope of its declaration. It will also
     // allow implicit conversion from enumerator to int.
     // 2.5 Enumerations
+
+    // 2.6 Advice
+    // [1] Prefer well-defined user-defined types over built-in types when the
+    // built - in types are too low - level; §2.1.
+    // [2] Organize related data into structures (structs or classes); §2.2; [CG:
+    // C.1].
+    // [3] Represent the distinction between an interface and an implementation
+    // using a class; §2.3; [CG:C.3].
+    // [6] Avoid “naked” unions; wrap them in a class together with a type field;
+    // §2.4; [CG:C.181]. (std::variant)
+    // [8] Prefer class enums over “plain” enums to minimize surprises; §2.5;
+    // [CG:Enum.3]
+    // [9] Define operations on enumerations for safe and simple use; §2.5; [CG:
+    // Enum.4].
+    // 2.6 Advice
 }
