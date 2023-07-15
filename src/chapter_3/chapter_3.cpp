@@ -153,4 +153,8 @@ int main()
         std::cout << err.what() << '\n';
     }
     // 3.5.2 Invariants
+
+    // 3.5.3 Error-Handling Alternatives
+    //
+    // 3.5.3 Error-Handling Alternatives
 }
