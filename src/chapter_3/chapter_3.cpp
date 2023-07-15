@@ -218,6 +218,16 @@ int main()
     // 3.5.5 Static Assertions
 
     // 3.6.1 Function Arguments and Return Values
-    //
+    // By default we copy "pass-by-value" into a function.
+    // If we refer to an object we use a reference "pass-by-reference".
+    // In regard to performance, pass small values by-value, larger
+    // ones by reference.
+    //      Small here means something cheap to copy. This depends on
+    //      the machine architecture, but "the size of or three pointers or
+    //      less" is good rule.
+    //          void test(int i, vector<int>& rv);
+    // Also, it's not uncommon for a function argument to have a default value.
+    //      void print(int value, int base = 10);
+    // It's a simpler alternative to overloading a function.
     // 3.6.1 Function Arguments and Return Values 
 }
