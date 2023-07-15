@@ -156,6 +156,23 @@ inline namespace V3
 }
 // 2.4 Unions
 
+// 2.5 Enumerations
+enum class TrafficLight { green, yellow, red };
+// By default an enum class has only assignment, initialization, and
+// comparisons defined. We can extend this:
+TrafficLight& operator++(TrafficLight& t)   // prefix
+{
+    switch (t)
+    {
+    case TrafficLight::green:   return t = TrafficLight::yellow;
+    case TrafficLight::yellow:  return t = TrafficLight::red;
+    case TrafficLight::red:     return t = TrafficLight::green;
+    }
+    return t;
+}
+
+// 2.5 Enumerations
+
 int main()
 {
     // 2.2 Structures
@@ -205,4 +222,29 @@ int main()
     myEntry.v = &test;
     f(&myEntry);
     // 2.4 Unions
+
+    // 2.5 Enumerations
+    // C++ supports a simple form of user defined type for which we can
+    // enumerate values:
+    enum class Color { red, blue, green };
+    Color col {Color::red};
+    TrafficLight light {TrafficLight::green};
+    std::cout << static_cast<int>(++light) << '\n';
+    std::cout << static_cast<int>(++light) << '\n';
+    std::cout << static_cast<int>(++light) << '\n';
+    // Note: enumerators are scoped to their class, so TrafficLight::red is
+    // different from Color::red.
+    // 
+    // Enumerations are typically used to represent small sets of integers
+    // values. They make code more readable and less error-prone. Particularly
+    // the ability to catch implicit conversions from enums to integer values
+    // is a good defense against errors. (e.g., int i = Color::red; // error)
+    // However we are allowed to go the opposite way:
+    //      Color y {6};
+    //
+    // Removing class from enum class altogether will remove explicit
+    // enumerator name qualifications. This "plain" enum will be enter
+    // its enumerators into the same scope of its declaration. It will also
+    // allow implicit conversion from enumerator to int.
+    // 2.5 Enumerations
 }
