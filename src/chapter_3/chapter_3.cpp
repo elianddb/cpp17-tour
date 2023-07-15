@@ -192,6 +192,8 @@ int main()
     // 3.5.4 Contracts
     // There is no general and standard way of writing optional run-time tests
     // of invariants, preconditions, etc.
+    // C++20 proposes a contract mechanism to support users who want to rely on
+    // testing to get programs right. (didn't happen :p)
     // For now, ad hoc mechanisms will have to do. We use a command-line macro
     // to control a run-time check:
     //      if (RANGE_CHECK && (i < 0 || size() <= i))
