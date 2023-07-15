@@ -12,6 +12,7 @@ export namespace Modules
         int sz;
     };
 
+    // Members implicitly export with class
     Vector::Vector(int s) : elem {new double[s]}, sz {s} {}
 
     double& Vector::operator[](int i) const { return elem[i]; }
