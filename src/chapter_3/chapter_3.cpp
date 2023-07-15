@@ -229,5 +229,20 @@ int main()
     // Also, it's not uncommon for a function argument to have a default value.
     //      void print(int value, int base = 10);
     // It's a simpler alternative to overloading a function.
-    // 3.6.1 Function Arguments and Return Values 
+    // 3.6.1 Function Arguments and Return Values
+
+    // 3.6.2 Value Return
+    // The default when returning a value is to copy. We return "by reference"
+    // to grant the caller access to something not local to the function.
+    // Local variables disappear when the function returns, so we should not
+    // return a pointer or reference to it.
+    //
+    // What if we want to transfer large amount of information from a function
+    // though?
+    //      Use a move constructor. (5.2.2)
+    //
+    // The return type a function can be deduced, especially convenient for
+    // generic functions:
+    //      auto mul(int i, double d) { return i*d; }
+    // 3.6.2 Value Return
 }
