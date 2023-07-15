@@ -8,6 +8,17 @@ add_executable(
 	"chapter_2/chapter_2.cpp"
 )
 
+add_subdirectory("chapter_3")
+add_executable(
+	chapter-3
+	"chapter_3/chapter_3.cpp"
+)
+target_link_libraries(
+	chapter-3
+	vector
+	vector_module
+)
+
 add_executable(
 	cmake-default 
 	"cmake_default/cmake.cpp" 
