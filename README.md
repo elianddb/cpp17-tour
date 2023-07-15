@@ -11,7 +11,7 @@ involving `C++20` features, but for the most part `C++17`
 will be the main focus.
 
 ## Purpose
-To review C++ fundamentals and explore C++17 features.
+To review C++ fundamentals and explore `C++17` features.
 > Like other modern languages, C++ is large and there 
 are a large number of libraries needed for effective use.
 This thin book aims to give an experienced programmer an
