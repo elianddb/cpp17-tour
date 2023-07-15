@@ -16,6 +16,7 @@ add_executable(
 target_link_libraries(
 	chapter-3
 	vector
+	vector_module
 )
 
 add_executable(
