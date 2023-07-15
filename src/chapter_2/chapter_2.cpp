@@ -46,6 +46,29 @@ double read_and_sum(Structures::Vector& vec)
 }
 // 2.2 Structures
 
+// 2.3 Classes
+namespace Classes
+{
+    class Vector
+    {
+    public:
+        // Constructor: constructs object of a class. States an integer
+        // is necessary to construct a Vector.
+        // The constructor initializes the Vector members using a member
+        // initializer list: : elem {new double[s]}, sz {s}
+        Vector(int s) : elem {new double[s]}, sz {s} {}
+        // Provides access to elements (subscript function). Returns an
+        // appropriate non-const reference to an element 
+        // allowing reading and writing.
+        double& operator[](int i) { return elem[i]; };
+        int size() { return sz; };
+    private:
+        double* elem;
+        int sz;
+    };
+}
+// 2.3 Classes
+
 int main()
 {
     // 2.2 Structures
@@ -72,5 +95,15 @@ int main()
     // function, or type members. 
     // public: members define the interface of a class
     // private: members are accessible through the interface
+    Classes::Vector cv{6}; // a vector variable of 6 elements
+    // The Vector object is a "handle" containing a pointer to the elements
+    // and number of elements. 
+    // This shows the basic technique for handling varying amounts of
+    // information in C++:
+    //      a fixed-size handle referring to a variable amount of data
+    //      "elsewhere"
+    // handle: abstract reference to a resource
+    // The fundamental different between a struct and class is that
+    // structs are public by default and classes are private by default.
     // 2.3 Classes
 }
