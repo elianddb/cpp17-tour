@@ -1,8 +1,11 @@
 import Vector;
 #include "vector.hpp"
 #include <cmath>
+#include <complex>
 #include <iostream>
+#include <map>
 #include <stdexcept>
+#include <string>
 
 // 3.2 Separate Compilation
 double sqrtSum(DDB::Vector& vec)
@@ -23,6 +26,22 @@ double sqrtSum(Modules::Vector& vec)
     return sum;
 }
 // 3.3 Modules (C++20)
+
+// 3.6.3 Structured Binding
+struct Entry
+{
+    std::string name;
+    int value;
+};
+
+Entry readEntry(std::istream& is)
+{
+    std::string s;
+    int i;
+    is >> s >> i;
+    return {s, i};
+}
+// 3.6.3 Structured Binding
 
 int main()
 {
@@ -245,4 +264,20 @@ int main()
     // generic functions:
     //      auto mul(int i, double d) { return i*d; }
     // 3.6.2 Value Return
+
+    // 3.6.3 Structured Binding
+    // A function return a class object with many members. This allows us
+    // to return multiple values.
+    // We can use structured bindings to give local names to members of a
+    // class.
+    auto [n,v] = readEntry(std::cin);
+    std::cout << '{' << n << ", " << v << "}\n";
+
+    std::map<std::string, int> m;
+    m.insert({"num0", 0});
+    for (const auto [key, value] : m)
+        std::cout << '{' << key << ", " << value << "}\n";
+    // We've only shown structures with public data members. But it's also
+    // possible to gain access through member functions.
+    // 3.6.3 Structured Binding
 }
