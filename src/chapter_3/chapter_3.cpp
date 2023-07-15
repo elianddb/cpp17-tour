@@ -136,4 +136,14 @@ int main()
     // If all planning fails, std::terminate() is called to immediately
     // to terminate the program.
     // 3.5.1 Exceptions
+
+    // 3.5.2 Invariants
+    // Whenever we define a function, we should consider what its preconditions
+    // are and consider whether to test them. A set of conditions that need to
+    // remain true through the life-cycle of a class is called an invariant.
+    // The constructor is typically responsible for establishing the invariant
+    // for its class (so member functions can rely on it).
+    //
+    // 
+    // 3.5.2 Invariants
 }
