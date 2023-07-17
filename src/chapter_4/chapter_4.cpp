@@ -14,4 +14,7 @@ int main()
     // through the part stored in the class object itself.
     // 4.2 Concrete Types
 
+    // 4.2.1 An Arithmetic Type
+    // 
+    // 4.2.1 An Arithmetic Type
 }
