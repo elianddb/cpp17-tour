@@ -20,6 +20,11 @@ target_link_libraries(
 )
 
 add_executable(
+	chapter-4
+	"chapter_4/chapter_4.cpp"
+)
+
+add_executable(
 	cmake-default 
 	"cmake_default/cmake.cpp" 
 	"cmake_default/cmake.hpp"
