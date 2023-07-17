@@ -12,6 +12,7 @@ int main()
     // To increase flexibility, a concrete type can keep major parts of its
     // representation on free store (dynamic memory, heap) and access them
     // through the part stored in the class object itself.
+    // Unlike abstract types concrete types can be instantiated.
     // 4.2 Concrete Types
 
     // 4.2.1 An Arithmetic Type
