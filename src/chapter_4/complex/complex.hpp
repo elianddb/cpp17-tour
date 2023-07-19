@@ -13,6 +13,11 @@ namespace DDB
         Complex(double r)
             : re {r}, im {} {}
         Complex() : re {} : im {} {}
+
+        double real() const { return re; }
+        void real(double d) { re = d; }
+        double imag() const { return im; }
+        void imag(double d) { im = d; }
     };
 }
 #endif
