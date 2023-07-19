@@ -24,7 +24,9 @@ int main()
     // Simple operations in the complex class remain efficient so they can be
     // inline. That means the generated machine code will be implemented
     // without function calls.
+    const DDB::Complex cz {1, 2};
     DDB::Complex complex {};
+    double x = cz.real();
     // Functions defined in a class are inline by default. It is possible to
     // explicitly request an inline by preceding a function declaration
     // with the `inline` keyword. Here DDB::Complex is carefully implemented
