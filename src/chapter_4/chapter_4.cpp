@@ -25,5 +25,13 @@ int main()
     // inline. That means the generated machine code will be implemented
     // without function calls.
     DDB::Complex complex {};
+    // Functions defined in a class are inline by default. It is possible to
+    // explicitly request an inline by preceding a function declaration
+    // with the `inline` keyword. Here DDB::Complex is carefully implemented
+    // to do appropriate inlining.
+    // 
+    // A constructor invoked without an argument is called a *default 
+    // constructor*. It eliminates the possibility of uninitialized variables
+    // of the user-defined type.
     // 4.2.1 An Arithmetic Type
 }
