@@ -33,6 +33,7 @@ namespace DDB
             return *this;
         }
 
+        // 4.2.1 defined out-of-class
         Complex& operator*=(Complex);
         Complex& operator/=(Complex);
     };
