@@ -1,5 +1,8 @@
+#include "complex.hpp"
+
 int main()
 {
+    DDB::Complex complex {};
     // When we refer to the representation, we're talking about the data
     // members of a class.
 
