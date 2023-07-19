@@ -34,7 +34,7 @@ namespace DDB
         }
 
         Complex& operator*=(Complex);
-        Complex& operator-=(Complex);
+        Complex& operator/=(Complex);
     };
 }
 #endif
