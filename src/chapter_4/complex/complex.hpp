@@ -3,6 +3,8 @@
 namespace DDB
 {
     // 4.2.1 "classical user-defined arithmetic type"
+    //      The class definition itself only contains operations requiring
+    //      access to the representation.
     class Complex
     {
         double re;

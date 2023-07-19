@@ -2,7 +2,6 @@
 
 int main()
 {
-    DDB::Complex complex {};
     // When we refer to the representation, we're talking about the data
     // members of a class.
 
@@ -22,7 +21,9 @@ int main()
     // 4.2 Concrete Types
 
     // 4.2.1 An Arithmetic Type
-    // The class definition itself only contains the operations requiring
-    // access to the representation.
+    // Simple operations in the complex class remain efficient so they can be
+    // inline. That means the generated machine code will be implemented
+    // without function calls.
+    DDB::Complex complex {};
     // 4.2.1 An Arithmetic Type
 }
