@@ -18,6 +18,23 @@ namespace DDB
         void real(double d) { re = d; }
         double imag() const { return im; }
         void imag(double d) { im = d; }
+
+        Complex& operator+=(Complex z)
+        {
+            re += z.re;
+            im += z.im;
+            return *this;
+        }
+
+        Complex& operator-=(Complex z)
+        {
+            re -= z.re;
+            im -= z.im;
+            return *this;
+        }
+
+        Complex& operator*=(Complex);
+        Complex& operator-=(Complex);
     };
 }
 #endif
