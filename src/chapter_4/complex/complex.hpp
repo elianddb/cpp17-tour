@@ -12,7 +12,7 @@ namespace DDB
             : re{r}, im{i} {}
         Complex(double r)
             : re {r}, im {} {}
-        Complex() : re {} : im {} {}
+        Complex() : re {}, im {} {}
 
         double real() const { return re; }
         void real(double d) { re = d; }
