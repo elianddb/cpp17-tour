@@ -16,6 +16,9 @@ namespace DDB
             : re {r}, im {} {}
         Complex() : re {}, im {} {}
 
+        // const specifiers guarantee representation wont be modified
+        //      This allows const objects to also invoke these functions
+        //      generally only non-const objects would be able to.
         double real() const { return re; }
         void real(double d) { re = d; }
         double imag() const { return im; }
