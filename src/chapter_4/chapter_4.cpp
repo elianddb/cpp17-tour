@@ -1,7 +1,7 @@
 int main()
 {
     // When we refer to the representation, we're talking about the data
-    // members of the class.
+    // members of a class.
 
     // 4.2 Concrete Types
     // Concrete types behave just like built-in types but have their own
