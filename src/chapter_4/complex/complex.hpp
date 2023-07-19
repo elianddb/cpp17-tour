@@ -42,5 +42,13 @@ namespace DDB
         Complex& operator*=(Complex);
         Complex& operator/=(Complex);
     };
+
+    // Useful operations that don't require direct access to representation can
+    // be defined as follows:
+    inline Complex operator+(Complex a, Complex b) { return a += b; }
+    inline Complex operator-(Complex a, Complex b) { return a -= b; }
+    inline Complex operator-(Complex a) { return {-a.real(), -a.imag()}; } // unary minus
+    inline Complex operator*(Complex a, Complex b) { return a *= b; }
+    inline Complex operator/(Complex a, Complex b) { return a /= b; }
 }
 #endif
