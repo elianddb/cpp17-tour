@@ -78,6 +78,7 @@ int main()
     // create an appropriate number of elements and then assign to them, but
     // there are typically other more elegant ways.
     //
-    // 
+    // *initializer-list constructor*: Initialize with a list of elements.
+    // push_back(): Add a new element at the end of the sequence.
     // 4.2.3 Initializing Containers
 }
