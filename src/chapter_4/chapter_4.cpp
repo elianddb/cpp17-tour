@@ -33,6 +33,9 @@ int main()
     // 4.2 Concrete Types
 
     // 4.2.1 An Arithmetic Type
+    // An arithmetic-type defines a conventional set of operators and remains
+    // efficient for inline use for those particular operator overloaded functions.
+    //
     // Simple operations in the complex class remain efficient so they can be
     // inline. That means the generated machine code will be implemented
     // without function calls.
@@ -48,5 +51,9 @@ int main()
     // A constructor invoked without an argument is called a *default 
     // constructor*. It eliminates the possibility of uninitialized variables
     // of the user-defined type.
+    //
+    // Syntax for overloaded operators is fixed by the language, so you can't
+    // define a unary / operator. Also, you can redefine the meaning of existing
+    // operators for built-in types.
     // 4.2.1 An Arithmetic Type
 }
