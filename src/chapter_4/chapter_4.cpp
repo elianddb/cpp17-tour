@@ -58,18 +58,26 @@ int main()
     // existing operators for built-in types.
     // 4.2.1 An Arithmetic Type
 
-    // 4.2.3 Initializing Containers
-    // Containers exist to hold elements, so there needs to be convenient ways
-    // of getting elements into a container. (e.g. a Vector object is a 
-    // container.)
-    // 
+    // 4.2.2 A Container
     // Our Vector type comes with set of useful features, but it has a fatal
     // flaw. It allocates elements using new but never deallocates them.
     // Although C++ defines an interface for a garbage collection, it doesn't
     // guarantee that it will make unused memory available for new objects.
     // Therefore we need a mechanism to ensure that the memory allocated by
     // the constructor is deallocated; the mechanism is a destructor.
-    // 
+    //
+    // The technique of acquiring resources in a constructor and releasing
+    // them in a destructor is known as *Resource Acquisition Is
+    // Initialization* or *RAII*. It buries allocation in general code in
+    // the implementation of well-behaved abstractions.
+    // 4.2.2 A Container
+
+    // 4.2.3 Initializing Containers
+    // Containers exist to hold elements, so there's need to be a convenient
+    // way of getting elements into them. Vector provides the ability to
+    // create an appropriate number of elements and then assign to them, but
+    // there are typically other more elegant ways.
+    //
     // 
     // 4.2.3 Initializing Containers
 }
