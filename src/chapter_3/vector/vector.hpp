@@ -23,13 +23,13 @@ namespace DDB
         {
         public:
             Vector(int s)
-                : elem {new double[s]}, sz {s}
+            : elem {new double[s]}, sz {s}
             {
                 for (int i {}; i != s; ++i)
                 {
                     elem[i] = 0;
                 }
-            };
+            }
             ~Vector() { delete[] elem; } // release resources
             double operator[] (int i);
             int size() const;

@@ -11,10 +11,11 @@ namespace DDB
         double im;
     public:
         Complex(double r, double i)
-            : re{r}, im{i} {}
+        : re {r}, im {i} {}
         Complex(double r)
-            : re {r}, im {} {}
-        Complex() : re {}, im {} {}
+        : re {r}, im {} {}
+        Complex()
+        : re {}, im {} {}
 
         // const specifiers guarantee representation wont be modified
         //      This allows const objects to also invoke these functions
