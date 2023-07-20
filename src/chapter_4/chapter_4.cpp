@@ -60,6 +60,16 @@ int main()
 
     // 4.2.3 Initializing Containers
     // Containers exist to hold elements, so there needs to be convenient ways
-    // of getting elements into a container.
+    // of getting elements into a container. (e.g. a Vector object is a 
+    // container.)
+    // 
+    // Our Vector type comes with set of useful features, but it has a fatal
+    // flaw. It allocates elements using new but never deallocates them.
+    // Although C++ defines an interface for a garbage collection, it doesn't
+    // guarantee that it will make unused memory available for new objects.
+    // Therefore we need a mechanism to ensure that the memory allocated by
+    // the constructor is deallocated; the mechanism is a destructor.
+    // 
+    // 
     // 4.2.3 Initializing Containers
 }
