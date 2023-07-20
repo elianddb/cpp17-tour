@@ -57,4 +57,9 @@ int main()
     // define a unary / operator. Also, you can redefine the meaning of
     // existing operators for built-in types.
     // 4.2.1 An Arithmetic Type
+
+    // 4.2.3 Initializing Containers
+    // Containers exist to hold elements, so there needs to be convenient ways
+    // of getting elements into a container.
+    // 4.2.3 Initializing Containers
 }
