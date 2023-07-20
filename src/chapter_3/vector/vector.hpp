@@ -31,6 +31,8 @@ namespace DDB
                 }
             }
 
+            // plain *delete* removes an individual object from memory
+            // *delete[]* removes an entire array
             ~Vector() { delete[] elem; } // release resources
 
             double operator[] (int i);
