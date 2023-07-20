@@ -12,8 +12,8 @@ namespace DDB
             [[nodiscard]] int size() const;
             static int validateSize(int);
         private:
-            double* elem{};
-            int sz;
+            double* elem {};
+            int sz {};
         };
     }
 
@@ -30,7 +30,9 @@ namespace DDB
                     elem[i] = 0;
                 }
             }
+
             ~Vector() { delete[] elem; } // release resources
+
             double operator[] (int i);
             int size() const;
         private:
