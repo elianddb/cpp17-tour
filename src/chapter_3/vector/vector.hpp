@@ -23,7 +23,7 @@ namespace DDB
         {
         public:
             Vector(int s)
-                : elem {new double[Ch3::Vector::validateSize(s)]}, sz {s}
+                : elem {new double[s]}, sz {s}
             {
                 for (int i {}; i != s; ++i)
                 {
