@@ -1,5 +1,17 @@
 #include "complex.hpp"
 
+// 4.2.1 An Arithmetic Type
+void test(DDB::Complex z)
+{
+    DDB::Complex a {2.3};
+    DDB::Complex b {1 / a};
+    DDB::Complex c {a + z * DDB::Complex{1, 2.3}};
+
+    if (c != b)
+        c = -(b / a) + 2 * b;
+}
+// 4.2.1 An Arithmetic Type
+
 int main()
 {
     // When we refer to the representation, we're talking about the data
@@ -27,6 +39,7 @@ int main()
     const DDB::Complex cz {1, 2};
     DDB::Complex complex {};
     double x = cz.real();
+    test(cz);
     // Functions defined in a class are inline by default. It is possible to
     // explicitly request an inline by preceding a function declaration
     // with the `inline` keyword. Here DDB::Complex is carefully implemented
