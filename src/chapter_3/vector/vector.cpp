@@ -20,3 +20,10 @@ double& Vector::operator[] (const int i) const
 }
 
 int Vector::size() const { return sz; }
+
+constexpr int Vector::validateSize(const int sz)
+{
+    if (sz < 0)
+        throw std::length_error("Vector::validateSize() negative size");
+    return sz;
+}

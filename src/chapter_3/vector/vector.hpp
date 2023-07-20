@@ -1,26 +1,42 @@
 #ifndef VECTOR_HPP_INCLUDED
 #define VECTOR_HPP_INCLUDED
-#include <stdexcept>
-
 namespace DDB
 {
-    class Vector
+    inline namespace Ch3
     {
-    public:
-        Vector(int sz);
-        double& operator[](int i) const;
-        [[nodiscard]] int size() const;
-    private:
-        double* elem{};
-        int sz;
-        static constexpr int validateSize(int);
-    };
+        class Vector
+        {
+        public:
+            Vector(int sz);
+            double& operator[](int i) const;
+            [[nodiscard]] int size() const;
+            static int validateSize(int);
+        private:
+            double* elem{};
+            int sz;
+        };
+    }
 
-    constexpr int Vector::validateSize(const int sz)
+    namespace Ch4
     {
-        if (sz < 0)
-            throw std::length_error("Vector::validateSize() negative size");
-        return sz;
+        class Vector
+        {
+        public:
+            Vector(int s)
+                : elem {new double[Ch3::Vector::validateSize(s)]}, sz {s}
+            {
+                for (int i {}; i != s; ++i)
+                {
+                    elem[i] = 0;
+                }
+            };
+            ~Vector() { delete[] elem; } // release resources
+            double operator[] (int i);
+            int size() const;
+        private:
+            double* elem;
+            int sz;
+        };
     }
 }
 #endif
