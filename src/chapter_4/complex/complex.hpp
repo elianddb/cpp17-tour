@@ -50,5 +50,15 @@ namespace DDB
     inline Complex operator-(Complex a) { return {-a.real(), -a.imag()}; } // unary minus
     inline Complex operator*(Complex a, Complex b) { return a *= b; }
     inline Complex operator/(Complex a, Complex b) { return a /= b; }
+
+    inline bool operator==(Complex a, Complex b)
+    {
+        return a.real() == b.real() && a.imag() == b.imag();
+    }
+    inline bool operator!=(Complex a, Complex b)
+    {
+        return !(a == b);
+    }
+    Complex sqrt(Complex);
 }
 #endif
