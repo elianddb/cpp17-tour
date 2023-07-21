@@ -108,6 +108,13 @@ int main()
     // 5.2 Copy and Move
 
     // 5.2.1 Copying Containers
-    // 
+    // When a class is a *resource handle* - responsible for an object accessed
+    // through a pointer - the default memberwise copy function falls apart.
+    // Default copy would leave a copy of a Vector referring to the same
+    // elements as the original.
+    //      Vector v2 {v1};
+    //      v1[0] = 2; // v2[0] also equals 2 now!
+    // Fortunately Vector's implementation of a destructor should provide a
+    // hint to the compiler something is wrong. (Create V3 Implementation).
     // 5.2.1 Copying Containers
 }
