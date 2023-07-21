@@ -32,6 +32,9 @@ int Vector::validateSize(const int sz)
 }
 
 // V2::Vector
+// Use of static_cast to explicitly convert unsigned integer to int.
+// Other casts include reinterpret_cast (treats an object as a sequence of
+// bytes) and const_cast (casts away const).
 V2::Vector::Vector(std::initializer_list<double> list)
     : elem {new double[list.size()]}, sz {static_cast<int>(list.size())}
 {
