@@ -84,7 +84,8 @@ int main()
     // 5.1.2 Conversions
 
     // 5.1.3 Member Initializers
-    // We can supply a default initializer called a *default member initializer*.
+    // We can supply a default initializer called a *default member
+    // initializer*.
     //      double m_re {};
     //      double m_im {}; // representation two doubles with default val 0
     // The default value is now used whenever a constructor does not provide a
@@ -94,6 +95,15 @@ int main()
     // 5.1.3 Member Initializers
 
     // 5.2 Copy and Move
-    // 
+    // By default user-defined/built-in objects can be copied. The default
+    // meaning of copy is *memberwise copy*; copy each member.
+    //      Complex z2 {z1};
+    //      Complex z3;
+    //      z2 = z3;
+    // Now each variable holds the same value because both assignment and
+    // initialization copied both members. For simple concrete types,
+    // memberwise copy is often exactly the right semantics for copy.
+    // For more sophisticated types however, memberwise copy is not
+    // the right semantics for copy; for abstracts it almost never is.
     // 5.2 Copy and Move
 }
