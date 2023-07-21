@@ -44,5 +44,13 @@ namespace DDB
             int sz;
         };
     }
+
+    namespace V3
+    {
+        class Vector
+        {
+            
+        };
+    }
 }
 #endif
