@@ -84,6 +84,12 @@ int main()
     // 5.1.2 Conversions
 
     // 5.1.3 Member Initializers
-    //
+    // We can supply a default initializer called a *default member initializer*.
+    //      double m_re {};
+    //      double m_im {}; // representation two doubles with default val 0
+    // The default value is now used whenever a constructor does not provide a
+    // value.
+    //      Complex(double r) : re {r} {} // construct from one scalar
+    // It helps us avoid leaving a member uninitialized.
     // 5.1.3 Member Initializers
 }
