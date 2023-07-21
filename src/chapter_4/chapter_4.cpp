@@ -3,6 +3,18 @@
 #include "complex.hpp"
 #include "vector.hpp"
 
+// 4.2.1 An Arithmetic Type
+void test(DDB::Complex z)
+{
+    DDB::Complex a {2.3};
+    DDB::Complex b {1 / a};
+    DDB::Complex c {a + z * DDB::Complex{1, 2.3}};
+
+    if (c != b)
+        c = -(b / a) + 2 * b;
+}
+// 4.2.1 An Arithmetic Type
+
 // 4.3 Abstract Types
 // This class represents a pure interface to containers defined later.
 class Container
@@ -34,18 +46,15 @@ private:
 };
 // 4.3 Abstract Types
 
-// 4.2.1 An Arithmetic Type
-void test(DDB::Complex z)
+// 4.4 Virtual Functions
+void use(Container& c)
 {
-    DDB::Complex a {2.3};
-    DDB::Complex b {1 / a};
-    DDB::Complex c {a + z * DDB::Complex{1, 2.3}};
+    const int sz {c.size()};
 
-    if (c != b)
-        c = -(b / a) + 2 * b;
+    for (int i {}; i != sz; ++i)
+        std::cout << c[i] << '\n';
 }
-// 4.2.1 An Arithmetic Type
-
+// 4.4 Virtual Functions
 int main()
 {
     // When we refer to the representation, we're talking about the data
@@ -131,7 +140,7 @@ int main()
     //
     // Container c; // No objects from the abstract class.
     // // Container is an interface for VectorContainer object.
-    Container* p = new VectorContainer {10};
+    Container* p {new VectorContainer {10}};
     // Since the abstract class can take in any kind of object, a function arg
     // using the abstract type can be blind to the implementation of the 
     // subclass container and still use it the Container functions.
@@ -140,4 +149,22 @@ int main()
     // A class that provides the interface to a variety of other classes is
     // often a *polymorphic type*.
     // 4.3 Abstract Types
+
+    // 4.4 Virtual Functions
+    use(*p);
+    // How is the following function above resolved? It uses a Container type
+    // but it knows to call a subclass's function. A Container object must
+    // contain information to allow it to select the right function to call at
+    // runtime.
+    // 
+    // A typical compiler implementation involves the use of a vbtl table 
+    // (*virtual function table*). The name of a virtual function is turned
+    // into an index into a table of pointers to functions. Each subclass has
+    // a separate table.
+    // 
+    // The functions in the vbtl allow the caller to use the object correctly
+    // even if the layout and data information is missing. The virtual call
+    // mechanism can be made almost as efficient as a normal function call
+    // (within 25%).
+    // 4.4 Virtual Functions
 }
