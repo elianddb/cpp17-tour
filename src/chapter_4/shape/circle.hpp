@@ -7,8 +7,8 @@ namespace DDB
     {
     public:
         Circle(Point p, int rad);
-        Point center() const override { return x }
-        void move(Point to) override { x = to }
+        Point center() const override { return p; }
+        void move(Point to) override { p = to; }
         void draw() const override;
         void rotate(int) override {}
     private:
