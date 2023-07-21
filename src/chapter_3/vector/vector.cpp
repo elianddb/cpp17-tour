@@ -73,3 +73,19 @@ V3::Vector& V3::Vector::operator=(const Vector& a)
     sz = a.sz;
     return *this;
 }
+
+V3::Vector::Vector(Vector&& a) noexcept
+    : elem {a.elem}, sz {a.sz}
+{
+    a.elem = nullptr;
+    a.sz = 0;
+}
+
+V3::Vector& V3::Vector::operator=(Vector&& a) noexcept
+{
+    elem = a.elem;
+    sz = a.sz;
+    elem = nullptr;
+    sz = 0;
+    return *this;
+}
