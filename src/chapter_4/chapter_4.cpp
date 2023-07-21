@@ -167,4 +167,13 @@ int main()
     // mechanism can be made almost as efficient as a normal function call
     // (within 25%).
     // 4.4 Virtual Functions
+
+    // 4.5 Class Hierarchies
+    // Container is a simple example of class hierarchy.
+    // 
+    // Class Hierarchy is a set of classes ordered in a lattice created by
+    // derivation (e.g., : public).
+    // 
+    // Let's create a semi-realistic classic example.
+    // 4.5 Class Hierarchies
 }
