@@ -69,4 +69,8 @@ int main()
     //      Shape& operator=(const Shape&) = delete;
     // Now any assignment operation would have an error since copy is deleted.
     // 5.1.1 Essential Operations
+
+    // 5.1.2 Conversions
+    // 
+    // 5.1.2 Conversions
 }
