@@ -92,4 +92,8 @@ int main()
     //      Complex(double r) : re {r} {} // construct from one scalar
     // It helps us avoid leaving a member uninitialized.
     // 5.1.3 Member Initializers
+
+    // 5.2 Copy and Move
+    // 
+    // 5.2 Copy and Move
 }
