@@ -228,4 +228,21 @@ int main()
     // that takes in an interface type and then passes that same interface
     // type back.
     // 4.5.2 Hierarchy Navigation
+
+    // 4.5.3 Avoiding Resource Leaks
+    // At the end of the day, pointers to objects allocated on the free store
+    // is dangerous. They shouldn't be used to represent ownership.
+    // (They have the possibility to leak memory).
+    //
+    // A simple solution to this is the standard-library unique_ptr rather than
+    // "naked pointer" when deletion is required.
+    std::vector<std::unique_ptr<DDB::Shape>> eyes;
+    // When used within a class it has the side effect of no longer requiring
+    // us to define a destructor for smiley. Plus, the code using the unique
+    // pointer will be just as efficient as using the raw pointers correctly.
+    //
+    // Objects owned by a unique_ptr will be deleted when unique_ptr goes out
+    // of scope. In order to use functions that originally took naked pointers
+    // we must rewrite them to use unique_ptr.
+    // 4.5.3 Avoiding Resource Leaks
 }
