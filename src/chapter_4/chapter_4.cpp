@@ -245,4 +245,39 @@ int main()
     // of scope. In order to use functions that originally took naked pointers
     // we must rewrite them to use unique_ptr.
     // 4.5.3 Avoiding Resource Leaks
+
+    // 4.6 Advice
+    // [2] A concrete type is the simplest kind of class. Where applicable,
+    // prefer a concrete type over more complicated classes and over plain
+    // data structures; §4.2; [CG:C.10]
+    // [4] Prefer concrete classes over class hierarchies for performance
+    // -critical components; §4.2.
+    // [6] Make a function a member only if it needs direct access to the
+    // representation of a class; §4.2.1; [CG:C.4] .
+    // [7] Define operators primarily to mimic conventional usage; §4.2.1;
+    // [CG:C.160].
+    // [8] Use nonmember functions for symmetric operators; §4.2.1; [CG:
+    // C.161].
+    // [9] Declare a member function that does not modify the state of its
+    // object const; §4.2.1.
+    // [10] If a constructor acquires a resource, its class needs a destructor
+    // to release the resource; §4.2.2; [CG:C.20].
+    // [11] Avoid “naked” new and delete operations; §4.2.2; [CG: R.11].
+    // (use in general code)
+    // [12] Use resource handles and RAII to manage resources; §4.2.2;
+    // [CG: R.1].
+    // [13] If a class is a container, give it an initializer-list
+    // constructor; §4.2.3; [CG:C.103].
+    // [14] Use abstract classes as interfaces when complete separation of
+    // interface and implementation is needed; §4.3; [CG:C.122]
+    // [15] Access polymorphic objects through pointers and references; §4.3.
+    // [18] A class with a virtual function should have a virtual destructor;
+    // §4.5; [CG:C.127].
+    // [19] Use override to make overriding explicit in large class hierarchies;
+    // §4.5.1; [CG:C.128].
+    // [21] Use dynamic_cast where class hierarchy navigation is unavoidable;
+    // §4.5.2; [CG:C.146].
+    // [24] Use unique_ptr or shared_ptr to avoid forgetting to delete objects
+    // created using new; §4.5.3; [CG:C.149] .
+    // 4.6 Advice
 }
