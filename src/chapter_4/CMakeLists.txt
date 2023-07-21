@@ -7,3 +7,14 @@ target_include_directories(
 	complex PUBLIC
 	"complex"
 )
+
+add_library(
+	shape STATIC
+	"shape/shape.hpp"
+	"shape/circle.cpp"
+	"shape/circle.hpp"
+)
+target_include_directories(
+	shape PUBLIC
+	"shape"
+)
