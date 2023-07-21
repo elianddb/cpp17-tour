@@ -1,7 +1,9 @@
-#include <iostream>
-
+#include "circle.hpp"
 #include "complex.hpp"
 #include "vector.hpp"
+
+#include <iostream>
+#include <vector>
 
 // 4.2.1 An Arithmetic Type
 void test(DDB::Complex z)
@@ -55,6 +57,14 @@ void use(Container& c)
         std::cout << c[i] << '\n';
 }
 // 4.4 Virtual Functions
+
+// 4.5 Class Hierarchies
+void rotateAll(std::vector<DDB::Shape*>& v, int angle)
+{
+    for (auto ps : v)
+        ps->rotate(angle);
+}
+// 4.5 Class Hierarchies
 int main()
 {
     // When we refer to the representation, we're talking about the data
