@@ -7,6 +7,7 @@
 
 using namespace DDB;
 
+// V1::Vector
 Vector::Vector(const int sz)
     : elem {new double[validateSize(sz)]}, sz {sz} {}
 
@@ -30,8 +31,19 @@ int Vector::validateSize(const int sz)
     return sz;
 }
 
+// V2::Vector
 V2::Vector::Vector(std::initializer_list<double> list)
     : elem {new double[list.size()]}, sz {static_cast<int>(list.size())}
 {
     std::copy(list.begin(), list.end(), elem);
+}
+
+double V2::Vector::operator[](int i) const
+{
+    return elem[i];
+}
+
+int V2::Vector::size() const
+{
+    return sz;
 }

@@ -37,7 +37,7 @@ namespace DDB
             // *delete[]* removes an entire array
             ~Vector() { delete[] elem; } // release resources
 
-            double operator[] (int i);
+            double operator[] (int i) const;
             int size() const;
         private:
             double* elem;
