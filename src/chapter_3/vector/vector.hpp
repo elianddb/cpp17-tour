@@ -54,6 +54,8 @@ namespace DDB
             ~Vector() { delete[] elem; }
             Vector(const Vector& a);
             Vector& operator=(const Vector& a);
+            Vector(Vector&& a) noexcept;
+            Vector& operator=(Vector&& a) noexcept;
             double& operator[](const int i) { return elem[i]; }
             const double& operator[](const int i) const { return elem[i]; }
             [[nodiscard]] int size() const { return sz; }
