@@ -41,7 +41,7 @@ V2::Vector::Vector(std::initializer_list<double> list)
     std::copy(list.begin(), list.end(), elem);
 }
 
-double V2::Vector::operator[](int i) const
+double& V2::Vector::operator[](int i) const
 {
     return elem[i];
 }
