@@ -46,5 +46,27 @@ int main()
     //      Y(Y&&) = default; // default move
     // If you are explicit about some defaults, other default implementations
     // will not be generated
+    //
+    // When a class has a pointer member, it's a good idea to be explicit about
+    // copy and move operations.
+    //
+    // A good rule of thumb (sometimes called the "rule of zero") is to either
+    // define all essential operations or none (using default for all).
+    //      struct Z
+    //      {
+    //          Vector v;
+    //          std::string s;
+    //      };
+    //
+    //      Z z1 {}; // default initialize z1.v and z1.s
+    //      Z z2 {z1}; // default copy z1.v and z1.s
+    // The compiler synthesizes the correct memberwise construction,
+    // destructor, and copy and move as needed.
+    //
+    // To complement =default we have =delete which indicates an operation
+    // should not be generated.
+    //      Shape(const Shape&) = delete;
+    //      Shape& operator=(const Shape&) = delete;
+    // Now any assignment operation would have an error since copy is deleted.
     // 5.1.1 Essential Operations
 }
