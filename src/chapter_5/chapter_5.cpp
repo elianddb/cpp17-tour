@@ -136,5 +136,28 @@ int main()
     //      Vector& operator=(Vector&& a); // move assignment
     // The compiler will now choose the move constructor to implement faster
     // transfer of the return val of a function. (modify V3::Vector)
+    //
+    // The double ampersands represent *r-value reference*, which can bind to
+    // an r-value. r-values are - to a first approximation - values you can't
+    // assign to, like an integer returned from a function call.
+    // Thus an r-value reference is is a reference to something that nobody
+    // else can assign to. So, we can "safely" steal it's value.
+    //
+    // A move operation is used when an r-value reference is used as an
+    // initializer or as the right-hand side of an assignment. After a move,
+    // a moved-from object should be a in a state that allows a destructor
+    // to be run.
+    //
+    // Where the programmer knows a value won't be used again, but the compiler
+    // can't figure that out, std::move can be used.
+    //      y = std::move(z);
+    // std::move doesn't actually move anything. It returns a reference to its
+    // arg from which we may move an r-value reference; kind of a cast.
+    //
+    // *Copy elision* - a zero-copy pass-by-value semantic, omits copy and move
+    // constructors. So, move constructors are not invoked as much as one
+    // would expect. On the other hand, in assignment it's not possible to
+    // eliminate implicit copy or move operations from assignments. The use
+    // of explicit move assignment can be critical for performance.
     // 5.2.2 Moving Containers
 }
