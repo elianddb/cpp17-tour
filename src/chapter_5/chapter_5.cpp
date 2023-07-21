@@ -123,6 +123,18 @@ int main()
     // 5.2.1 Copying Containers
 
     // 5.2.2 Moving Containers
-    // 
+    // Copying can be costly for larger containers. We can avoid the cost
+    // of copying using references, but we can't return a reference to
+    // a local object as the result (local object prematurely gets destroyed).
+    // So you can expect the result of a local variable to be copied.
+    // This can get difficult with very large objects, involving the
+    // initialization and copying of a very large object.
+    //
+    // We just want to get the result out of the function not a copy! (move)
+    // You can state that intent in a move constructor/assignment:
+    //      Vector(Vector&& a); // move constructor
+    //      Vector& operator=(Vector&& a); // move assignment
+    // The compiler will now choose the move constructor to implement faster
+    // transfer of the return val of a function. (modify V3::Vector)
     // 5.2.2 Moving Containers
 }
