@@ -116,5 +116,9 @@ int main()
     //      v1[0] = 2; // v2[0] also equals 2 now!
     // Fortunately Vector's implementation of a destructor should provide a
     // hint to the compiler something is wrong. (Create V3 Implementation).
+    //
+    // A suitable definition of a copy constructor for Vector allocates
+    // the space for the required number of elements and then copies the
+    // elements of the param into it (same goes for copy assignment).
     // 5.2.1 Copying Containers
 }
