@@ -1,9 +1,11 @@
 #include "circle.hpp"
 #include "complex.hpp"
+#include "smiley.hpp"
 #include "vector.hpp"
 
 #include <iostream>
 #include <vector>
+
 
 namespace DDB
 {
@@ -201,4 +203,29 @@ int main()
     // Implementation Inheritance: A base class provides functions or data that
     // simplifies the implementation of derived classes.
     // 4.5.1 Benefits from Hierarchies
+
+    // 4.5.2 Hierarchy Navigation
+    // What do we do if we want to use a member function that is only provided
+    // by a particular derived class? We can use *dynamic_cast*
+    DDB::Shape* ps {new DDB::Circle {{0,0},5}};
+    if (const auto* smiley = dynamic_cast<DDB::Smiley*>(ps); smiley != nullptr)
+    {
+        // is smiley
+    }
+    else
+    {
+        // not smiley
+    }
+    // The above basically tests to see if the result is nullptr.
+    //
+    // This test can be placed in to the initialization of a variable.
+    DDB::Shape* ps2 {new DDB::Smiley{{0,0},15}};
+    DDB::Smiley& r {dynamic_cast<DDB::Smiley&>(*ps2)};
+    // This is susceptible to throw std::bad_cast if object is not the expected
+    // type. Operations similar to dynamic_cast are known as "is kind of" and
+    // "is instance of" operations. This can lead to small and efficient code,
+    // but there is the chance of losing type information. Such as a system
+    // that takes in an interface type and then passes that same interface
+    // type back.
+    // 4.5.2 Hierarchy Navigation
 }
