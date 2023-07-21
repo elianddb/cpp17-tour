@@ -71,6 +71,15 @@ int main()
     // 5.1.1 Essential Operations
 
     // 5.1.2 Conversions
-    // 
+    // Sometimes implicit conversions is not ideal.
+    //      Vector v1 = 7; // v1 has 7 elements
+    // The way to avoid this problem is to say that only explicit conversion is
+    // allowed.
+    //      explicit Vector(int s);
+    // Now the former errors out because of the use of implicit conversion.
+    // Instead we'll use:
+    //      Vector v1(7); // v1 has 7 elements
+    // When it comes to conversions more types are like Vector. So use explicit
+    // on single-arg constructors.
     // 5.1.2 Conversions
 }
