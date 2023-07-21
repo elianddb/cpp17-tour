@@ -19,6 +19,18 @@ target_link_libraries(
 	vector_module
 )
 
+add_subdirectory("chapter_4")
+add_executable(
+	chapter-4
+	"chapter_4/chapter_4.cpp"
+)
+target_link_libraries(
+	chapter-4
+	complex
+	vector
+	shape
+)
+
 add_executable(
 	cmake-default 
 	"cmake_default/cmake.cpp" 

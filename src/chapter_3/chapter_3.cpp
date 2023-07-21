@@ -1,5 +1,7 @@
 import Vector;
+
 #include "vector.hpp"
+
 #include <cmath>
 #include <complex>
 #include <iostream>
