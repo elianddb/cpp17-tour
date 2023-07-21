@@ -49,7 +49,17 @@ namespace DDB
     {
         class Vector
         {
-            
+        public:
+            Vector(int s);
+            ~Vector() { delete[] elem; }
+            Vector(const Vector& a);
+            Vector& operator=(const Vector& a);
+            double& operator[](int i);
+            const double& operator[](int i) const;
+            int size() const;
+        private:
+            double* elem {};
+            int sz {};
         };
     }
 }
