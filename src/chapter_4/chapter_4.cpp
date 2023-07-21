@@ -184,6 +184,7 @@ int main()
     // Class Hierarchy is a set of classes ordered in a lattice created by
     // derivation (e.g., : public).
     // 
-    // Let's create a semi-realistic classic example.
+    // Let's create a semi-realistic classic example with the Shape abstract
+    // class.
     // 4.5 Class Hierarchies
 }
