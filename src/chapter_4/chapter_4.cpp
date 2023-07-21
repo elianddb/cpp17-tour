@@ -5,6 +5,11 @@
 #include <iostream>
 #include <vector>
 
+namespace DDB
+{
+    class Smiley;
+}
+
 // 4.2.1 An Arithmetic Type
 void test(DDB::Complex z)
 {
@@ -65,6 +70,7 @@ void rotateAll(std::vector<DDB::Shape*>& v, int angle)
         ps->rotate(angle);
 }
 // 4.5 Class Hierarchies
+
 int main()
 {
     // When we refer to the representation, we're talking about the data
@@ -187,4 +193,12 @@ int main()
     // Let's create a semi-realistic classic example with the Shape abstract
     // class.
     // 4.5 Class Hierarchies
+
+    // 4.5.1 Benefits from Hierarchies
+    // Interface Inheritance: An object of a derived class can be used anywhere
+    // an object of the base class is required.
+    //
+    // Implementation Inheritance: A base class provides functions or data that
+    // simplifies the implementation of derived classes.
+    // 4.5.1 Benefits from Hierarchies
 }
