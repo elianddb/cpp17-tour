@@ -3,6 +3,37 @@
 #include "complex.hpp"
 #include "vector.hpp"
 
+// 4.3 Abstract Types
+// This class represents a pure interface to containers defined later.
+class Container
+{
+public:
+    // *virtual* means "may be defined later", these are virtual functions.
+    // = 0 indicates *pure virtual*; classes derived from Container must
+    // define that specific function.
+    virtual double& operator[](int) const = 0;
+    virtual int size() const = 0;
+    // Container does not have a constructor but it does have a virtual
+    // destructor. Derived classes can provide an implementations for it.
+    virtual ~Container() {}
+};
+
+// ": public Container" indicates VectorContainer is derived from the base
+// class Container. We'd say Container is the *superclass* and VectorContainer
+// is the *subclass*. This is referred to as *inheritance*
+class VectorContainer : public Container
+{
+public:
+    VectorContainer(int s) : v(s) {}
+    // explicit use of *override* allows the compiler to catch mistakes.
+    ~VectorContainer() override {}
+    double& operator[](int i) const override { return v[i]; }
+    int size() const override { return v.size(); }
+private:
+    DDB::V2::Vector v;
+};
+// 4.3 Abstract Types
+
 // 4.2.1 An Arithmetic Type
 void test(DDB::Complex z)
 {
@@ -90,4 +121,23 @@ int main()
     for (int i {}; i < v1.size(); ++i)
         std::cout << v1[i] << '\n';
     // 4.2.3 Initializing Containers
+
+    // 4.3 Abstract Types
+    // An abstract type insulates a user of implementation details. It gives up
+    // genuine local variables and decouples the interface.
+    //
+    // Since the representation of an abstract type is not known, objects are
+    // allocated on free store and accessed through references and pointers.
+    //
+    // Container c; // No objects from the abstract class.
+    // // Container is an interface for VectorContainer object.
+    Container* p = new VectorContainer {10};
+    // Since the abstract class can take in any kind of object, a function arg
+    // using the abstract type can be blind to the implementation of the 
+    // subclass container and still use it the Container functions.
+    //
+    // A class with a pure virtual function is called an *abstract class*.
+    // A class that provides the interface to a variety of other classes is
+    // often a *polymorphic type*.
+    // 4.3 Abstract Types
 }
