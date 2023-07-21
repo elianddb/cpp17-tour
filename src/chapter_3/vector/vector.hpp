@@ -1,8 +1,10 @@
 #ifndef VECTOR_HPP_INCLUDED
 #define VECTOR_HPP_INCLUDED
+#include <initializer_list>
+
 namespace DDB
 {
-    inline namespace Ch3
+    inline namespace V1
     {
         class Vector
         {
@@ -17,19 +19,19 @@ namespace DDB
         };
     }
 
-    namespace Ch4
+    namespace V2
     {
         class Vector
         {
         public:
-            Vector(int s)
-            : elem {new double[s]}, sz {s}
+            Vector(int s) : elem {new double[s]}, sz {s}
             {
                 for (int i {}; i != s; ++i)
                 {
                     elem[i] = 0;
                 }
             }
+            Vector(std::initializer_list<double> list);
 
             // plain *delete* removes an individual object from memory
             // *delete[]* removes an entire array

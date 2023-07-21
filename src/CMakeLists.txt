@@ -27,6 +27,7 @@ add_executable(
 target_link_libraries(
 	chapter-4
 	complex
+	vector
 )
 
 add_executable(

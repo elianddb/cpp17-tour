@@ -1,12 +1,14 @@
 // Ensure consistency with header file
 #include "vector.hpp"
 
+#include <algorithm>
+#include <initializer_list>
 #include <stdexcept>
 
 using namespace DDB;
 
 Vector::Vector(const int sz)
-: elem {new double[validateSize(sz)]}, sz {sz} {}
+    : elem {new double[validateSize(sz)]}, sz {sz} {}
 
 double& Vector::operator[] (const int i) const
 {
@@ -26,4 +28,10 @@ int Vector::validateSize(const int sz)
     if (sz < 0)
         throw std::length_error("Vector::validateSize() negative size");
     return sz;
+}
+
+V2::Vector::Vector(std::initializer_list<double> list)
+    : elem {new double[list.size()]}, sz {static_cast<int>(list.size())}
+{
+    std::copy(list.begin(), list.end(), elem);
 }

@@ -1,4 +1,5 @@
 #include "complex.hpp"
+#include "vector.hpp"
 
 // 4.2.1 An Arithmetic Type
 void test(DDB::Complex z)
@@ -80,5 +81,9 @@ int main()
     //
     // *initializer-list constructor*: Initialize with a list of elements.
     // push_back(): Add a new element at the end of the sequence.
+    //
+    // We'll focus on initializer lists which are defined by {}-list (e.g.,
+    // {1,2,3,4}).
+    DDB::V2::Vector v1 = {1, 2, 3, 4}; // contains 4 elements
     // 4.2.3 Initializing Containers
 }
