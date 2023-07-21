@@ -121,4 +121,8 @@ int main()
     // the space for the required number of elements and then copies the
     // elements of the param into it (same goes for copy assignment).
     // 5.2.1 Copying Containers
+
+    // 5.2.2 Moving Containers
+    // 
+    // 5.2.2 Moving Containers
 }
