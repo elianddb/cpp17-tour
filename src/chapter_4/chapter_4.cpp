@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "complex.hpp"
 #include "vector.hpp"
 
@@ -85,5 +87,7 @@ int main()
     // We'll focus on initializer lists which are defined by {}-list (e.g.,
     // {1,2,3,4}).
     DDB::V2::Vector v1 = {1, 2, 3, 4}; // contains 4 elements
+    for (int i {}; i < v1.size(); ++i)
+        std::cout << v1[i] << '\n';
     // 4.2.3 Initializing Containers
 }
