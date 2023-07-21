@@ -13,6 +13,8 @@ add_library(
 	"shape/shape.hpp"
 	"shape/circle.cpp"
 	"shape/circle.hpp"
+	"shape/smiley.cpp"
+	"shape/smiley.hpp"
 )
 target_include_directories(
 	shape PUBLIC
