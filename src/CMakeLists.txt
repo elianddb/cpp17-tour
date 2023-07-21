@@ -28,6 +28,7 @@ target_link_libraries(
 	chapter-4
 	complex
 	vector
+	shape
 )
 
 add_executable(
