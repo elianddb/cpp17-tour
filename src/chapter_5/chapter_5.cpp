@@ -249,6 +249,27 @@ int main()
     // 5.4.6 hash<>
 
     // 5.5 Advice
-    // 
+    // [1] Control construction, copy, move, and destruction of objects;
+    // §5.1.1; [CG:R.1].
+    // [2] Design constructors, assignments, and the destructor as a matched
+    // set of operations; §5.1.1; [CG:C.22].
+    // [4] If a default constructor, assignment, or destructor is appropriate,
+    // let the compiler generate it(don’t rewrite it yourself); §5.1.1;
+    // [CG:C.20].
+    // [5] If a class has a pointer member, it probably needs a user-defined or
+    // deleted destructor, copy and move; §5.1.1; [CG:C.32] [CG:C.33].
+    // [6] If a class has a destructor, it probably needs user-defined or
+    // deleted copy and move; §5.2.1.
+    // [7] By default, declare single-argument constructors explicit; §5.1.1;
+    // [CG:C.46].
+    // [8] If a class member has a reasonable default value, provide it as a
+    // data member initializer; §5.1.3; [CG:C.48].
+    // [10] Return containers by value (relying on move for efficiency);
+    // §5.2.2; [CG:F.20].
+    // [13] If a class is a resource handle, it needs a user-defined
+    // constructor, a destructor, and non - default copy operations; §5.3;
+    // [CG:R.1].
+    // [14] Overload operations to mimic conventional usage; §5.4; [CG: C.160].
+    // [15] Follow the standard-library container design; §5.4.2; [CG: C.100].
     // 5.5 Advice
 }
