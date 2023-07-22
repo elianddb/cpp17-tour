@@ -244,6 +244,7 @@ int main()
     // 5.4.5 swap()
 
     // 5.4.6 hash<>
-    // 
+    // std::unordered_map<K, V> is a hash table with K as the key type and V as
+    // the value type.
     // 5.4.6 hash<>
 }
