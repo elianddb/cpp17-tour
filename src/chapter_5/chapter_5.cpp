@@ -186,4 +186,10 @@ int main()
     // that is invisible and in common use leads to lower resource retention
     // durations.
     // 5.3 Resource Management
+
+    // 5.4 Conventional Operations
+    // Conventional meaning for operations assumed by programmers and libraries:
+    //      Comparisons: ==, !=, <, <=, >, and >=
+    //      
+    // 5.4 Conventional Operations
 }
