@@ -160,4 +160,8 @@ int main()
     // eliminate implicit copy or move operations from assignments. The use
     // of explicit move assignment can be critical for performance.
     // 5.2.2 Moving Containers
+
+    // 5.3 Resource Management
+    // 
+    // 5.3 Resource Management
 }
