@@ -188,8 +188,12 @@ int main()
     // 5.3 Resource Management
 
     // 5.4 Conventional Operations
+    // Good idea to conform to these.
     // Conventional meaning for operations assumed by programmers and libraries:
     //      Comparisons: ==, !=, <, <=, >, and >=
-    //      
+    //      Container operations: size(), begin(), and end()
+    //      Input and output operations: >> and <<
+    //      swap()
+    //      Hash functions: hash<>
     // 5.4 Conventional Operations
 }
