@@ -50,3 +50,42 @@ int V2::Vector::size() const
 {
     return sz;
 }
+
+// V3::Vector
+
+V3::Vector::Vector(const Vector& a)
+    : elem {new double[a.size()]}, sz {a.size()}
+{
+    for (int i {}; i != sz; ++i)
+        elem[i] = a.elem[i];
+}
+
+V3::Vector& V3::Vector::operator=(const Vector& a)
+{
+    if (this == &a)
+        return *this;
+
+    double* const p {new double[a.size()]};
+    for (int i {}; i != a.sz; ++i)
+        p[i] = a.elem[i];
+    delete[] elem;
+    elem = p;
+    sz = a.sz;
+    return *this;
+}
+
+V3::Vector::Vector(Vector&& a) noexcept
+    : elem {a.elem}, sz {a.sz}
+{
+    a.elem = nullptr;
+    a.sz = 0;
+}
+
+V3::Vector& V3::Vector::operator=(Vector&& a) noexcept
+{
+    elem = a.elem;
+    sz = a.sz;
+    elem = nullptr;
+    sz = 0;
+    return *this;
+}
