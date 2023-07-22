@@ -162,6 +162,28 @@ int main()
     // 5.2.2 Moving Containers
 
     // 5.3 Resource Management
-    // 
+    // Defining a constructor, copy operations, move operations, and a
+    // destructor can provide a programmer full lifetime control of a
+    // contained resource and cheap moves between scopes.
+    //
+    // Resource handles like Vector are superior alternative to direct
+    // use of built-in pointers in many cases. unique_ptr in fact are
+    // resource handles. In very much the same way we make new and
+    // delete disappear from general code. Resource handles make pointers
+    // disappear.
+    //
+    // A good resource management system handles all kinds of resources.
+    // Leaks must be avoided in any long-running system, but excessive
+    // resource retention can be almost as bad as a leak. Use resource
+    // handles: let each resource have an owner in some scope and by
+    // default be released at the end of its owners scope (RAII
+    // [Resource Acquisition is Initialization]). This is integrated
+    // with error handling in the form of exceptions.
+    //
+    // Smart pointer or move semantics can move resources from scope to scope.
+    // Shared ownership can be represented with shared pointers. RAII is
+    // pervasive in the C++ STL and the result is implicit resource management
+    // that is invisible and in common use leads to lower resource retention
+    // durations.
     // 5.3 Resource Management
 }
