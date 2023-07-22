@@ -222,6 +222,18 @@ int main()
     // 5.4.3 Input and Output Operations
 
     // 5.4.4 User-Defined Literals
+    // One of the purposes of classes was to allow the programmer to implement
+    // types that closely mimic built-in types.
     //
+    // However, built-in types have literals:
+    //      123         -> int
+    //      0xFFF00u    -> unsigned int
+    //      123.456     -> double
+    //      "Surprise!" -> const char[10]
+    //
+    // It can be useful to have such literals for user-defined types. Define
+    // literal operators with:
+    //      constexpr Class operator""a(Type t)
+    // Type indicates where the suffix a will be used, which type.
     // 5.4.4 User-Defined Literals
 }
