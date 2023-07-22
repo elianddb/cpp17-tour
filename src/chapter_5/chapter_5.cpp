@@ -238,6 +238,8 @@ int main()
     // 5.4.4 User-Defined Literals
 
     // 5.4.5 swap()
-    // 
+    // Many algorithms in the standard-library make use swap(). So if you have
+    // a type that is expensive to copy and could possibly rely on these
+    // algorithms define swap operations.
     // 5.4.5 swap()
 }
