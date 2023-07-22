@@ -209,6 +209,10 @@ int main()
     // 5.4.1 Comparisons
 
     // 5.4.2 Operations
-    // 
+    // Design containers with RAII in mind and model after standard-library
+    // containers:
+    //      size() -> number of elements.
+    //      notion of sequences delimited by a pair of iterators
+    // The iterator thing adds ability to use range for loops!
     // 5.4.2 Operations
 }
