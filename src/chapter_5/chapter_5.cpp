@@ -242,4 +242,8 @@ int main()
     // a type that is expensive to copy and could possibly rely on these
     // algorithms define swap operations.
     // 5.4.5 swap()
+
+    // 5.4.6 hash<>
+    // 
+    // 5.4.6 hash<>
 }
