@@ -189,7 +189,8 @@ int main()
 
     // 5.4 Conventional Operations
     // Good idea to conform to these.
-    // Conventional meaning for operations assumed by programmers and libraries:
+    // Conventional meaning for operations assumed by programmers and
+    // libraries:
     //      Comparisons: ==, !=, <, <=, >, and >=
     //      Container operations: size(), begin(), and end()
     //      Input and output operations: >> and <<
@@ -198,6 +199,12 @@ int main()
     // 5.4 Conventional Operations
 
     // 5.4.1 Comparisons
-    //
+    // The meaning of == and != is closely related to copying. After a copy,
+    // copies should remain equal:
+    //      X a = something;
+    //      X b = a;
+    //      assert(a == b);
+    // When defining == also define != and make equal to !(a == b).
+    // Same goes for > and >=, and < and <=.
     // 5.4.1 Comparisons
 }
