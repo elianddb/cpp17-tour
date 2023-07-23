@@ -44,6 +44,10 @@ add_executable(
 	chapter-6
 	"chapter_6/chapter_6.cpp"
 )
+target_link_libraries(
+	chapter-6
+	vector
+)
 
 add_executable(
 	cmake-default 
