@@ -54,7 +54,7 @@ int V2::Vector::size() const
 // V3::Vector
 
 V3::Vector::Vector(const Vector& a)
-    : elem {new double[a.size()]}, sz {a.size()}
+    : elem {new double[a.sz]}, sz {a.sz}
 {
     for (int i {}; i != sz; ++i)
         elem[i] = a.elem[i];
@@ -117,7 +117,8 @@ V4::Vector<T>::Vector(Vector&& v) noexcept
 }
 
 template <typename T>
-V4::Vector<T>& V4::Vector<T>::operator=(const Vector& rhs)  // NOLINT(bugprone-unhandled-self-assignment)
+// NOLINTNEXTLINE(bugprone-unhandled-self-assignment)
+V4::Vector<T>& V4::Vector<T>::operator=(const Vector& rhs)
 {
     if (this == &rhs)
         return *this;
@@ -126,8 +127,8 @@ V4::Vector<T>& V4::Vector<T>::operator=(const Vector& rhs)  // NOLINT(bugprone-u
     elem = new T[rhs.sz];
     sz = rhs.sz;
     for (int i {}; i != rhs.sz; ++i)
-        elem[i] = rhs[i];
-    return *this;
+        elem[i] = rhs.elem[i];
+    return this;
 }
 
 template <typename T>
