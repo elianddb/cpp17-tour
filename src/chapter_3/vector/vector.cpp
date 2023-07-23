@@ -89,3 +89,5 @@ V3::Vector& V3::Vector::operator=(Vector&& a) noexcept
     sz = 0;
     return *this;
 }
+
+// V4::Vector

@@ -67,12 +67,16 @@ namespace DDB
 
     namespace V4
     {
-        template<typename T>
+        template <typename T> // type parameterized class
         class Vector
         {
         public:
             explicit Vector(int s);
+            Vector(Vector& v);
+            Vector(Vector&& v) noexcept;
             ~Vector() { delete[] elem; }
+            T& operator=(Vector& v);
+            T& operator=(Vector&& v) noexcept;
             T& operator[](int i) const;
             int size();
         private:
