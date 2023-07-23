@@ -27,7 +27,7 @@ int Vector::size() const { return sz; }
 int Vector::validateSize(const int sz)
 {
     if (sz < 0)
-        throw std::length_error("Vector::validateSize() negative size");
+        throw std::length_error{"Vector::validateSize() negative size"};
     return sz;
 }
 
@@ -91,3 +91,27 @@ V3::Vector& V3::Vector::operator=(Vector&& a) noexcept
 }
 
 // V4::Vector
+template <typename T>
+V4::Vector<T>::Vector(const int s)
+{
+    if (s < 0)
+        throw std::length_error{"V4::Vector negative length"};
+    elem = new T[s];
+    sz = s;
+}
+
+template <typename T>
+V4::Vector<T>::Vector(Vector& v)
+    : elem {new T[v.sz]}, sz {v.sz}
+{
+    for (int i {}; i != v.sz; ++i)
+        elem[i] = v[i];
+}
+
+template <typename T>
+V4::Vector<T>::Vector(Vector&& v)
+    : elem {v.elem}, sz {v.sz}
+{
+    v.sz = 0;
+    v.elem = nullptr;
+}
