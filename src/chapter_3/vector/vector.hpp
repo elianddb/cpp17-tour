@@ -72,11 +72,11 @@ namespace DDB
         {
         public:
             explicit Vector(int s);
-            Vector(Vector& v);
+            Vector(const Vector& v);
             Vector(Vector&& v) noexcept;
             ~Vector() { delete[] elem; }
-            Vector& operator=(const Vector& v);
-            Vector& operator=(Vector&& v) noexcept;
+            Vector& operator=(const Vector& rhs);   
+            Vector& operator=(Vector&& rhs) noexcept;
             T& operator[](const int i) const { return elem[i]; }
             [[nodiscard]] int size() const { return sz; }
         private:

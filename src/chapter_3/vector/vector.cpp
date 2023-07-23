@@ -65,7 +65,7 @@ V3::Vector& V3::Vector::operator=(const Vector& a)
     if (this == &a)
         return *this;
 
-    double* const p {new double[a.size()]};
+    double* const p {new double[a.sz]};
     for (int i {}; i != a.sz; ++i)
         p[i] = a.elem[i];
     delete[] elem;
@@ -101,7 +101,7 @@ V4::Vector<T>::Vector(const int s)
 }
 
 template <typename T>
-V4::Vector<T>::Vector(Vector& v)
+V4::Vector<T>::Vector(const Vector& v)
     : elem {new T[v.sz]}, sz {v.sz}
 {
     for (int i {}; i != v.sz; ++i)
@@ -117,25 +117,25 @@ V4::Vector<T>::Vector(Vector&& v) noexcept
 }
 
 template <typename T>
-V4::Vector<T>& V4::Vector<T>::operator=(const Vector& v)
+V4::Vector<T>& V4::Vector<T>::operator=(const Vector& rhs)  // NOLINT(bugprone-unhandled-self-assignment)
 {
-    if (this == &v)
+    if (this == &rhs)
         return *this;
 
     delete[] elem;
-    elem = new T[v.sz];
-    sz = v.sz;
-    for (int i {}; i != v.sz; ++i)
-        elem[i] = v[i];
+    elem = new T[rhs.sz];
+    sz = rhs.sz;
+    for (int i {}; i != rhs.sz; ++i)
+        elem[i] = rhs[i];
     return *this;
 }
 
 template <typename T>
-V4::Vector<T>& V4::Vector<T>::operator=(Vector&& v) noexcept
+V4::Vector<T>& V4::Vector<T>::operator=(Vector&& rhs) noexcept
 {
-    elem = v.elem;
-    sz = v.sz;
-    v.elem = nullptr;
-    v.sz = 0;
+    elem = rhs.elem;
+    sz = rhs.sz;
+    rhs.elem = nullptr;
+    rhs.sz = 0;
     return *this;
 }
