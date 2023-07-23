@@ -77,8 +77,8 @@ namespace DDB
             ~Vector() { delete[] elem; }
             Vector& operator=(const Vector& v);
             Vector& operator=(Vector&& v) noexcept;
-            T& operator[](int i) const;
-            int size();
+            T& operator[](const int i) const { return elem[i]; }
+            [[nodiscard]] int size() const { return sz; }
         private:
             T* elem {};
             int sz {};
