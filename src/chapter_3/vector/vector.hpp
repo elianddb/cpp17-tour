@@ -64,5 +64,21 @@ namespace DDB
             int sz {};
         };
     }
+
+    namespace V4
+    {
+        template<typename T>
+        class Vector
+        {
+        public:
+            explicit Vector(int s);
+            ~Vector() { delete[] elem; }
+            T& operator[](int i) const;
+            int size();
+        private:
+            T* elem {};
+            int sz {};
+        };
+    }
 }
 #endif
