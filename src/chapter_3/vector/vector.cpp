@@ -115,3 +115,27 @@ V4::Vector<T>::Vector(Vector&& v)
     v.sz = 0;
     v.elem = nullptr;
 }
+
+template <typename T>
+V4::Vector<T>& V4::Vector<T>::operator=(const Vector& v)
+{
+    if (this == &v)
+        return *this;
+
+    delete[] elem;
+    elem = new T[v.sz];
+    sz = v.sz;
+    for (int i {}; i != v.sz; ++i)
+        elem[i] = v[i];
+    return *this;
+}
+
+template <typename T>
+V4::Vector<T>& V4::Vector<T>::operator=(Vector&& v) noexcept
+{
+    elem = v.elem;
+    sz = v.sz;
+    v.elem = nullptr;
+    v.sz = 0;
+    return *this;
+}
