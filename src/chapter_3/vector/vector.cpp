@@ -109,7 +109,7 @@ V4::Vector<T>::Vector(Vector& v)
 }
 
 template <typename T>
-V4::Vector<T>::Vector(Vector&& v)
+V4::Vector<T>::Vector(Vector&& v) noexcept
     : elem {v.elem}, sz {v.sz}
 {
     v.sz = 0;
