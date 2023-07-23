@@ -117,7 +117,7 @@ V4::Vector<T>::Vector(Vector&& v) noexcept
 }
 
 template <typename T>
-// NOLINTNEXTLINE(bugprone-unhandled-self-assignment)
+// NOLINTNEXTLINE(bugprone-unhandled-self-assignment): false positive
 V4::Vector<T>& V4::Vector<T>::operator=(const Vector& rhs)
 {
     if (this == &rhs)
