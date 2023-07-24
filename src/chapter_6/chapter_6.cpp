@@ -9,8 +9,11 @@ int main()
    // template <typename T>
    // Vector<T>::Vector(int s) {}
    // We gain the ability to define Vector's as follows:
-   // Vector<char> vc {200};
+   // Vector<double> vc {200};
    // 
+   // Templates are a compile time mechanism, there is no runtime overhead
+   // incurred when using them. In fact, the new Vector implementation
+   // may result in the same machine code as the original double Vector.
    // 
    // 6.2 Parameterized Types     
 }
