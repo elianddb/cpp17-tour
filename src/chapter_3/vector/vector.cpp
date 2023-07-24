@@ -128,7 +128,7 @@ V4::Vector<T>& V4::Vector<T>::operator=(const Vector& rhs)
     sz = rhs.sz;
     for (int i {}; i != rhs.sz; ++i)
         elem[i] = rhs.elem[i];
-    return this;
+    return *this;
 }
 
 template <typename T>
