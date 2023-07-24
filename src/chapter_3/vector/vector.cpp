@@ -140,3 +140,11 @@ V4::Vector<T>& V4::Vector<T>::operator=(Vector&& rhs) noexcept
     rhs.sz = 0;
     return *this;
 }
+
+template <typename T>
+T& V4::Vector<T>::operator[](const int i) const
+{
+    if (i < 0 || sz <= i)
+        throw std::out_of_range{"V4::Vector out of range index"};
+    return elem[i];
+}
