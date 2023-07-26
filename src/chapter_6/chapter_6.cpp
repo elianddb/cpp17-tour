@@ -28,6 +28,11 @@ int main()
     // 6.2 Parameterized Types     
 
     // 6.2.1 Constrained Template Arguments (C++20)
-    // 
+    // Often templates will only make sense for template arguments that 
+    // meet certain criteria. For example, a Vector typically offers
+    // a copy operation, so it must require elements that must be copyable.
+    //      In other words, the template's argument is not just a typename
+    //      but an "Element". Where "Element" specifies a list of requirements
+    //      of a type that can be an element.
     // 6.2.1 Constrained Template Arguments (C++20)
 }
