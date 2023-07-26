@@ -84,8 +84,9 @@ namespace DDB
             T* elem {};
             int sz {};
         };
+
         template <typename T>
-        Vector<T>::Vector(int s)
+        Vector<T>::Vector(const int s)
         {
             if (s < 0)
                 throw std::length_error{"V4::Vector negative length"};
@@ -102,7 +103,7 @@ namespace DDB
         }
 
         template <typename T>
-        V4::Vector<T>::Vector(Vector&& v) noexcept
+        Vector<T>::Vector(Vector&& v) noexcept
             : elem {v.elem}, sz {v.sz}
         {
             v.sz = 0;
@@ -119,7 +120,7 @@ namespace DDB
 
         template <typename T>
         // NOLINTNEXTLINE(bugprone-unhandled-self-assignment): false positive
-        Vector<T>& V4::Vector<T>::operator=(const Vector& rhs)
+        Vector<T>& Vector<T>::operator=(const Vector& rhs)
         {
             if (this == &rhs)
                 return *this;
@@ -133,7 +134,7 @@ namespace DDB
         }
 
         template <typename T>
-        Vector<T>& V4::Vector<T>::operator=(Vector&& rhs) noexcept
+        Vector<T>& Vector<T>::operator=(Vector&& rhs) noexcept
         {
             elem = rhs.elem;
             sz = rhs.sz;
