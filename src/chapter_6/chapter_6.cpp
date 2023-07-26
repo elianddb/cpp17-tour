@@ -34,5 +34,13 @@ int main()
     //      In other words, the template's argument is not just a typename
     //      but an "Element". Where "Element" specifies a list of requirements
     //      of a type that can be an element.
+    // 
+    // Code example:
+    // template <Element T>
+    // class Vector { \*...*\ };
+    // 
+    // This is C++'s version of mathematic's "for all T such that Element(T)";
+    // that is, Element is a predicate that checks whether T has all properties
+    // that a Vector requires.
     // 6.2.1 Constrained Template Arguments (C++20)
 }
