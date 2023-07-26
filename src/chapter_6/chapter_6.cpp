@@ -25,8 +25,6 @@ int main()
     DDB::V4::Vector<char> vec{4};
     DDB::V4::Vector<std::string> vs{17};
     DDB::V4::Vector<std::list<int>> vli{17};
-
-
     // 6.2 Parameterized Types     
 
     // 6.2.1 Constrained Template Arguments (C++20)
