@@ -79,6 +79,8 @@ namespace DDB
             Vector& operator=(const Vector& rhs);   
             Vector& operator=(Vector&& rhs) noexcept;
             T& operator[](int i) const;
+            T* begin(Vector<T>& x) { return sz ? &x[0] : nullptr; }
+            T* end(Vector<T>& x) { return sz ? &x[0] + sz : nullptr; }
             [[nodiscard]] int size() const { return sz; }
         private:
             T* elem {};
