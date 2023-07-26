@@ -122,14 +122,15 @@ namespace DDB
         // NOLINTNEXTLINE(bugprone-unhandled-self-assignment): false positive
         Vector<T>& Vector<T>::operator=(const Vector& rhs)
         {
-            if (this == &rhs)
-                return *this;
+            if (this != &rhs)
+            {
+                delete[] elem;
+                elem = new T[rhs.sz];
+                sz = rhs.sz;
+                for (int i {}; i != rhs.sz; ++i)
+                    elem[i] = rhs.elem[i];
+            }
 
-            delete[] elem;
-            elem = new T[rhs.sz];
-            sz = rhs.sz;
-            for (int i {}; i != rhs.sz; ++i)
-                elem[i] = rhs.elem[i];
             return *this;
         }
 
