@@ -70,6 +70,10 @@ int main()
     // 6.2.2 Value Template Arguments
 
     // 6.2.3 Template Argument Deduction
-    // 
+    // std::pair<int, double> p = {1, 5.2};
+    // People can find the need to specify template args tedious.
+    // The standard library offers a function, make_pair(), that deduces the
+    // template arguments of the pair and it returns from its function args.
+    // auto p = std::make_pair(1, 5.2);
     // 6.2.3 Template Argument Deduction
 }
