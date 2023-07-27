@@ -51,4 +51,8 @@ int main()
     // does not meet it's requirements.
     //      Vector<thread> v2; // for example.
     // 6.2.1 Constrained Template Arguments (C++20)
+
+    // 6.2.2 Value Template Arguments
+    // 
+    // 6.2.2 Value Template Arguments
 }
