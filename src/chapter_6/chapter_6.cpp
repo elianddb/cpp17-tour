@@ -68,4 +68,8 @@ int main()
     // store.
     // Buffer<char, 1024> glob;
     // 6.2.2 Value Template Arguments
+
+    // 6.2.3 Template Argument Deduction
+    // 
+    // 6.2.3 Template Argument Deduction
 }
