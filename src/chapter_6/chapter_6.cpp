@@ -41,6 +41,14 @@ int main()
     // 
     // This is C++'s version of mathematic's "for all T such that Element(T)";
     // that is, Element is a predicate that checks whether T has all properties
-    // that a Vector requires.
+    // that a Vector requires. We call these concepts.
+    // 
+    // Template arguments with concepts are referred to as a *constrained
+    // argument* and templates with constrained args are called a *constrained
+    // template*.
+    // 
+    // It's a compile-time error to instantiate a template with a type that
+    // does not meet it's requirements.
+    //      Vector<thread> v2; // for example.
     // 6.2.1 Constrained Template Arguments (C++20)
 }
