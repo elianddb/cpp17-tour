@@ -53,6 +53,19 @@ int main()
     // 6.2.1 Constrained Template Arguments (C++20)
 
     // 6.2.2 Value Template Arguments
+    // In addition to to type arguments (typename T) a template can take value
+    // args.
+    // template <typename T, int N>
+    // struct Buffer
+    // {
+    //      using value_type = T;
+    //      constexpr int size() { return N; }
+    //      T[N];
+    // };
     // 
+    // These can be useful in different context. For Buffer, it allows the
+    // creation of arbitrarily sized and typed buffers with no use of free
+    // store.
+    // Buffer<char, 1024> glob;
     // 6.2.2 Value Template Arguments
 }
