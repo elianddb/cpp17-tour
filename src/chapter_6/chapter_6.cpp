@@ -39,7 +39,7 @@ int main()
     DDB::V4::Vector<std::string> vs{17};
     DDB::V4::Vector<std::list<int>> vli{71};
     DDB::V4::Vector<int> vi{4};
-    // 6.2 Parameterized Types     
+    // 6.2 Parameterized Types
 
     // 6.2.1 Constrained Template Arguments (C++20)
     // Often templates will only make sense for template arguments that 
