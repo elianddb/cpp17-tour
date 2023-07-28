@@ -66,7 +66,7 @@ int main()
     // These can be useful in different context. For Buffer, it allows the
     // creation of arbitrarily sized and typed buffers with no use of free
     // store.
-    // Buffer<char, 1024> glob;
+    //      Buffer<char, 1024> glob;
     // 6.2.2 Value Template Arguments
 
     // 6.2.3 Template Argument Deduction
