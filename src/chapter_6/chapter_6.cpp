@@ -39,7 +39,7 @@ int main()
     // template <Element T>
     // class Vector { \*...*\ };
     // 
-    // This is C++'s version of mathematic's "for all T such that Element(T)";
+    // This is C++'s version of mathematics' "for all T such that Element(T)";
     // that is, Element is a predicate that checks whether T has all properties
     // that a Vector requires. We call these concepts.
     // 
