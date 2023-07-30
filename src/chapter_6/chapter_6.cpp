@@ -93,5 +93,11 @@ int main()
     // The standard library offers a function, make_pair(), that deduces the
     // template arguments of the pair and it returns from its function args.
     // auto p = std::make_pair(1, 5.2);
+    //
+    // We can also use initializer lists to deduce the type of of elements.
+    // Vector vs{"Hello", "World"};
+    // Vector vs2{"Hello"s, "World"s};
+    // The first statement creates a vector of const char*, however, using
+    // the s suffix we can get std::string.
     // 6.2.3 Template Argument Deduction
 }
