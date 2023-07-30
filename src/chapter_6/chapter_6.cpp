@@ -64,6 +64,10 @@ int main()
     // It's a compile-time error to instantiate a template with a type that
     // does not meet it's requirements.
     //      Vector<thread> v2; // for example.
+    //
+    // Since C++ does not officially support concepts before C++20, older code
+    // uses unconstrained template arguments and leaves requirements to
+    // documentation.
     // 6.2.1 Constrained Template Arguments (C++20)
 
     // 6.2.2 Value Template Arguments
