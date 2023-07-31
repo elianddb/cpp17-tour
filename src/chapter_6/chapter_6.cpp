@@ -171,4 +171,10 @@ int main()
     // member. The compiler would not know all instatiations of such a template
     // in a program, so it could not generate a vtbl.
     // 6.3.1 Function Templates
+
+    // 6.3.2 Function Objects
+    // A particularly useful function template is function objects (often called
+    // functors). These define objects that can be called like functions.
+    // 
+    // 6.3.2 Function Objects
 }
