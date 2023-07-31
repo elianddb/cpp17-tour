@@ -92,7 +92,11 @@ int main()
     // People can find the need to specify template args tedious.
     // The standard library offers a function, make_pair(), that deduces the
     // template arguments of the pair and it returns from its function args.
-    // auto p = std::make_pair(1, 5.2);
+    //      auto p = std::make_pair(1, 5.2);
+    //
+    // C++17 provides the ability to deduce these template parameters from
+    // constructor args.
+    //      std::pair p{1, 5.2};
     //
     // We can also use initializer lists to deduce the type of of elements.
     // Vector vs{"Hello", "World"};
