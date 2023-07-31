@@ -130,6 +130,14 @@ int main()
     // 6.2.3 Template Argument Deduction
 
     // 6.3 Parameterized Operations
+    // Templates have more uses than just parameterizing the element type of a
+    // container. They are also used for the paramaterization of algorithms
+    // and types in the standard library.
     // 
+    // Three ways of expressing an operation parameterized by types of values:
+    // A function template
+    // A function object: an object that can carry data and can be called like
+    // a function.
+    // A lambda expression: a shorthand notation for a function object.
     // 6.3 Parameterized Operations
 }
