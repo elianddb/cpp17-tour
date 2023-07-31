@@ -161,9 +161,14 @@ int main()
     //      double dd = sum(ld, 0.0);
     //      auto z = sum(vc, complex{0.0, 0.0});
     // }
-    // In this case we add ints to a double to handle sums larger than what int can
-    // handle. Sequence and Value are deduced from the function arguments.
+    // In this case we add ints to a double to handle sums larger than what 
+    // int can handle. Sequence and Value are deduced from the function 
+    // arguments.
     // 
     // This sum() is a simplified version of standard library accumulate().
+    // 
+    // A function template can be a member function but not a virtual 
+    // member. The compiler would not know all instatiations of such a template
+    // in a program, so it could not generate a vtbl.
     // 6.3.1 Function Templates
 }
