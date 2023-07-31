@@ -154,6 +154,14 @@ int main()
     // 6.3 Parameterized Operations
 
     // 6.3.1 Function Templates
-    // 
+    // void user(Vector<int>& vi, list<double>& ld, vector<complex<double>>& vc)
+    // {
+    //      int x = sum(vi, 0);
+    //      double d = sum(vi, 0.0);
+    //      double dd = sum(ld, 0.0);
+    //      auto z = sum(vc, complex{0.0, 0.0});
+    // }
+    // In this case we add ints to a double to handle sums larger than what int can
+    // handle. Sequence and Value are deduced from the function arguments.
     // 6.3.1 Function Templates
 }
