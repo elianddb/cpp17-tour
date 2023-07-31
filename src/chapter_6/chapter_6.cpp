@@ -3,6 +3,18 @@
 
 #include "vector.hpp"
 
+// 6.3.1 Function Templates
+// Calculate the sum of the element values of any sequence
+// that a range-for can traverse (a container).
+template <typename Sequence, typename Value>
+Value sum(const Sequence& s, Value v)
+{
+    for (const auto& x : s)
+        v += x;
+    return v;
+}
+// 6.3.1 Function Templates
+
 int main()
 {
     // 6.2 Parameterized Types
