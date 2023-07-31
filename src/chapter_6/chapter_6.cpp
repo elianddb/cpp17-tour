@@ -98,10 +98,23 @@ int main()
     // constructor args.
     //      std::pair p {1, 5.2};
     //
-    // We can also use initializer lists to deduce the type of of elements.
     // Vector vs{"Hello", "World"};
     // Vector vs2{"Hello"s, "World"s};
     // The first statement creates a vector of const char*, however, using
     // the s suffix we can get std::string.
+    //
+    // When a template arg cannot be deduced from the constructor args, we
+    // can help by providing a deduction guide.
+    // Consider the following:
+    //      template <typename T>
+    //      class Vector2
+    //      {
+    //          public:
+    //          template <typename Iter>
+    //          Vector2(Iter b, Iter e); // [b:e) range constructor
+    //      }
+    // If we use the range constructor by using the iterators of another
+    // vector let's say vector<int>. The compiler has no idea how to deduce
+    // this new vector will be int.
     // 6.2.3 Template Argument Deduction
 }
