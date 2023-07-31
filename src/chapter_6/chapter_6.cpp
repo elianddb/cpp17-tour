@@ -23,7 +23,7 @@ int main()
     // Templates plus a set of template args is called an instantiation or
     // specialization. Code is generated for each instantiation used.
     // It's also type checked to be as safe as hand written code.
-    const DDB::V4::Vector<int> vec{4};
+    const DDB::V4::Vector<int> vec {4};
     vec[0] = 'h';
     vec[1] = 'a';
     vec[2] = 'i';
@@ -36,9 +36,9 @@ int main()
     }
     std::cout << '\n';
 
-    DDB::V4::Vector<std::string> vs{17};
-    DDB::V4::Vector<std::list<int>> vli{71};
-    DDB::V4::Vector<int> vi{4};
+    DDB::V4::Vector<std::string> vs {17};
+    DDB::V4::Vector<std::list<int>> vli {71};
+    DDB::V4::Vector<int> vi {4};
     // 6.2 Parameterized Types
 
     // 6.2.1 Constrained Template Arguments (C++20)
@@ -96,7 +96,7 @@ int main()
     //
     // C++17 provides the ability to deduce these template parameters from
     // constructor args.
-    //      std::pair p{1, 5.2};
+    //      std::pair p {1, 5.2};
     //
     // We can also use initializer lists to deduce the type of of elements.
     // Vector vs{"Hello", "World"};
