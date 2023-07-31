@@ -175,6 +175,16 @@ int main()
     // 6.3.2 Function Objects
     // A particularly useful function template is function objects (often called
     // functors). These define objects that can be called like functions.
-    // 
+    // template <typename T>
+    // class LessThan
+    // {
+    // public:
+    //      LessThan(const T& v) : val {v} {}
+    //      bool operator()(const T& x) const { return x < val; }
+    // private:
+    //      const T val;
+    // };
+    // The function called operator() implements the "function call", "call",
+    // or "application" operator ().
     // 6.3.2 Function Objects
 }
