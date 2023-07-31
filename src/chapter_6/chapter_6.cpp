@@ -109,6 +109,7 @@ int main()
     //      template <typename T>
     //      class Vector2
     //      {
+    //          using value_type = T;
     //          public:
     //          template <typename Iter>
     //          Vector2(Iter b, Iter e); // [b:e) range constructor
@@ -116,5 +117,9 @@ int main()
     // If we use the range constructor by using the iterators of another
     // vector let's say vector<int>. The compiler has no idea how to deduce
     // this new vector will be int.
+    //
+    // So we use a "deduction guide" after the declaration of Vector:
+    //      template <typename Iter>
+    //      Vector2(Iter, Iter) -> Vector2<typename Iter::value_type>;
     // 6.2.3 Template Argument Deduction
 }
