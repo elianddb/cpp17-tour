@@ -186,5 +186,7 @@ int main()
     // };
     // The function called operator() implements the "function call", "call",
     // or "application" operator ().
+    // 
+    // We can define named variables of type LessThan for some arg type.
     // 6.3.2 Function Objects
 }
