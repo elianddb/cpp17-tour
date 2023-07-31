@@ -163,5 +163,7 @@ int main()
     // }
     // In this case we add ints to a double to handle sums larger than what int can
     // handle. Sequence and Value are deduced from the function arguments.
+    // 
+    // This sum() is a simplified version of standard library accumulate().
     // 6.3.1 Function Templates
 }
