@@ -121,5 +121,11 @@ int main()
     // So we use a "deduction guide" after the declaration of Vector:
     //      template <typename Iter>
     //      Vector2(Iter, Iter) -> Vector2<typename Iter::value_type>;
+    // This basically translates to: if we initialize Vec2 with a pair of
+    // iterators, deduce Vec2::value_type to be the iterators' value type.
+    //
+    // It's best to design class templates so that deduction guides
+    // are not needed. However, the std library is full of classes that still
+    // don't use concepts and have such ambiguities.
     // 6.2.3 Template Argument Deduction
 }
