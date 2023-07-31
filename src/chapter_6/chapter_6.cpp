@@ -140,4 +140,8 @@ int main()
     // a function.
     // A lambda expression: a shorthand notation for a function object.
     // 6.3 Parameterized Operations
+
+    // 6.3.1 Function Templates
+    // 
+    // 6.3.1 Function Templates
 }
