@@ -253,4 +253,8 @@ int main()
     // constants and variables of type T and other types depending on T.
     // // fluid simulation example above.
     // 6.4.1 Variable Templates
+
+    // 6.4.2 Aliases
+    // 
+    // 6.4.2 Aliases
 }
