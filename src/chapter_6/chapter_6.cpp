@@ -226,7 +226,12 @@ int main()
     // it comes to non-trivial (more complicated actions).
     //
     // We can also use lambdas as initializers.
-    // std::vector<int> v = [&]{};
+    // std::vector<int> v = [&]{ /*switch statement*/ };
     // This can help with conditional initialization.
     // 6.3.3 Lambda Expressions
+
+    // 6.4 Template Mechanisms
+    // 
+    // 6.4 Template Mechanisms
+    
 }
