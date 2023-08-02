@@ -186,6 +186,10 @@ int main()
     // };
     // The function called operator() implements the "function call", "call",
     // or "application" operator ().
+    //      LessThan lti {42};
+    //      bool = lti(n);
+    // We call the lti object as if it were a function. It compares if n < its
+    // representation.
     // 
     // We can define named variables of type LessThan for some arg type.
     // 6.3.2 Function Objects
