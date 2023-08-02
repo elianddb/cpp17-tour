@@ -231,7 +231,14 @@ int main()
     // 6.3.3 Lambda Expressions
 
     // 6.4 Template Mechanisms
-    // 
+    // To define good templates, we need some supporting language facilities:
+    //      Values dependent on a type: *variable templates* (6.4.1)
+    //      Aliases for types and templates: *alias templates* (6.4.2)
+    //      A compile-time selection mechanism: if constexpr (6.4.3)
+    //      A compile-time mechanism to inquire about properties of types and
+    //      expressions: *require-expressions* (7.2.3)
+    // In addition, constexpr functions and static_asserts often take part
+    // in template design and use.
     // 6.4 Template Mechanisms
     
 }
