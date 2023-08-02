@@ -211,5 +211,10 @@ int main()
     // 6.3.2 Function Objects
 
     // 6.3.3 Lambda Expressions
+    // It can inconvenient to define a func obj outside its use. We can use a
+    // notation to implicitly generate them instead:
+    // count(vec, [&](int a){ return a < x; })
+    //
+    // The second arg is called *lambda expression*. 
     // 6.3.3 Lambda Expressions
 }
