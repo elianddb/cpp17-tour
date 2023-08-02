@@ -215,6 +215,11 @@ int main()
     // notation to implicitly generate them instead:
     // count(vec, [&](int a){ return a < x; })
     //
-    // The second arg is called *lambda expression*. 
+    // The second arg is called *lambda expression. It generates a func obj
+    // exactly like LessThan<int>{x}. [&] represents the *capture list*, and
+    // in this case specifying all local names will be accessed through
+    // reference. To specify a specific local var use something similar to
+    // [&x]. To generate a copy replace & with =. To capture nothing leave
+    // it empty.
     // 6.3.3 Lambda Expressions
 }
