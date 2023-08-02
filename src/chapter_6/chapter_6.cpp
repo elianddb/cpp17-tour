@@ -190,7 +190,19 @@ int main()
     //      bool = lti(n);
     // We call the lti object as if it were a function. It compares if n < its
     // representation.
-    // 
+    //
+    // These function objects are widely used as arguments to algorithms. For
+    // example counting the occurrences of a values for which a predicate
+    // returns true. (predicates are invoked and return true or false)
+    // template <typename C, typename P>
+    // int count(const C& c, P pred)
+    // {
+    //      int count = 0;
+    //      for (const auto& x : c)
+    //          if (pred(x))
+    //              ++count;
+    //      return count;
+    // }
     // We can define named variables of type LessThan for some arg type.
     // 6.3.2 Function Objects
 }
