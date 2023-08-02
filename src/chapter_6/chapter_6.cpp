@@ -221,5 +221,9 @@ int main()
     // reference. To specify a specific local var use something similar to
     // [&x]. To generate a copy replace & with =. To capture nothing leave
     // it empty.
+    //
+    // Lambda's can be obscure so its preferred to name the operations when
+    // it comes to non-trivial (more complicated actions).
+    // 
     // 6.3.3 Lambda Expressions
 }
