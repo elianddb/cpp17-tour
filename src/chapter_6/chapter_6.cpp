@@ -15,11 +15,11 @@ Value sum(const Sequence& s, Value v)
 }
 // 6.3.1 Function Templates
 
-// 6.4 Variable Templates
+// 6.4.1 Variable Templates
 template <typename T>
 constexpr T viscosity = 0.4;
-// You can also use a user-defined type instead.
-// 6.4 Variable Templates
+// You can also use a user-defined class templates too.
+// 6.4.1 Variable Templates
 
 int main()
 {
@@ -261,5 +261,7 @@ int main()
     // The actual type is implementation dependent. In another implementation
     // it may be unsigned long. In the end, having an alias allows the
     // the programmer to write portable code.
+    //
+    // 
     // 6.4.2 Aliases
 }
