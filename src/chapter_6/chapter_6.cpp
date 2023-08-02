@@ -203,6 +203,10 @@ int main()
     //              ++count;
     //      return count;
     // }
-    // We can define named variables of type LessThan for some arg type.
+    // We would push a LessThan object as the predicate in the example above.
+    //
+    // Function objects are used to specify the meaning of key operations of a
+    // general algorithm (such as LessThan for count()) are often referred to
+    // as *policy objects*.
     // 6.3.2 Function Objects
 }
