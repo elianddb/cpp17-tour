@@ -242,6 +242,9 @@ int main()
     // 6.4 Template Mechanisms
 
     // 6.4.1 Variable Templates
+    // When we use a type, we often want constants and values of types. This
+    // is the same for class templates: when we define a C<T>, we often want
+    // constants and variables of type T and other types depending on T.
     // 
     // 6.4.1 Variable Templates
 }
