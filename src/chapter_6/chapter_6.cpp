@@ -209,4 +209,7 @@ int main()
     // general algorithm (such as LessThan for count()) are often referred to
     // as *policy objects*.
     // 6.3.2 Function Objects
+
+    // 6.3.3 Lambda Expressions
+    // 6.3.3 Lambda Expressions
 }
