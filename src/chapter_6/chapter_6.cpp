@@ -240,5 +240,8 @@ int main()
     // In addition, constexpr functions and static_asserts often take part
     // in template design and use.
     // 6.4 Template Mechanisms
-    
+
+    // 6.4.1 Variable Templates
+    // 
+    // 6.4.1 Variable Templates
 }
