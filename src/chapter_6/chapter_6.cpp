@@ -255,6 +255,11 @@ int main()
     // 6.4.1 Variable Templates
 
     // 6.4.2 Aliases
-    // 
+    // It's often useful to introduce a synonym for a type. (e.g., <cstddef>
+    // contains a definition of the alias size_t maybe)
+    //      using size_t = unsigned int; // hypothetical
+    // The actual type is implementation dependent. In another implementation
+    // it may be unsigned long. In the end, having an alias allows the
+    // the programmer to write portable code.
     // 6.4.2 Aliases
 }
