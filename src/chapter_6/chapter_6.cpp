@@ -15,6 +15,12 @@ Value sum(const Sequence& s, Value v)
 }
 // 6.3.1 Function Templates
 
+// 6.4 Variable Templates
+template <typename T>
+constexpr T viscosity = 0.4;
+// You can also use a user-defined type instead.
+// 6.4 Variable Templates
+
 int main()
 {
     // 6.2 Parameterized Types
@@ -245,6 +251,6 @@ int main()
     // When we use a type, we often want constants and values of types. This
     // is the same for class templates: when we define a C<T>, we often want
     // constants and variables of type T and other types depending on T.
-    // 
+    // // fluid simulation example above.
     // 6.4.1 Variable Templates
 }
