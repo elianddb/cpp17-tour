@@ -224,6 +224,9 @@ int main()
     //
     // Lambda's can be obscure so its preferred to name the operations when
     // it comes to non-trivial (more complicated actions).
-    // 
+    //
+    // We can also use lambdas as initializers.
+    // std::vector<int> v = [&]{};
+    // This can help with conditional initialization.
     // 6.3.3 Lambda Expressions
 }
