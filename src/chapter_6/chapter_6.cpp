@@ -272,5 +272,15 @@ int main()
     // Every standard library container provides value_type as the name of its
     // value type (11). It allows the ability to write code that will work for
     // every container that follows the convention.
+    // Example
+    //      template <typename C>
+    //      // type of C's elements
+    //      using ValueType = typename C::value_type;
+    //
+    //      template <typename Container>
+    //      void algo(Container& c)
+    //      {
+    //          Vector<ValueType<Container>> vec;
+    //      }
     // 6.4.2 Aliases
 }
