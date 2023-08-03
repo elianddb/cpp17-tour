@@ -298,6 +298,20 @@ int main()
     // 6.4.2 Aliases
 
     // 6.4.3 Compile-time if
-    //  
+    // C++17 provides the ability to optionally use performant code with a
+    // compile-time if. 
+    // template <typename T>
+    // void update(T& target)
+    // {
+    //      // pod = plain old data
+    //      if constexpr(isPod<T>::value)
+    //          simple_and_fast(target);
+    //      else
+    //          slow_and_safe(target);  
+    // }
+    // isPod<T> tells us if a type can be trivially copied. Only the selected
+    // branch is instantiated.
+    // 
+    // if constexpr cannot break general syntax, type and scope rules.
     // 6.4.3 Compile-time if 
 }
