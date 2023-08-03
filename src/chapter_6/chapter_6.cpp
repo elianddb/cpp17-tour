@@ -314,4 +314,7 @@ int main()
     // 
     // if constexpr cannot break general syntax, type and scope rules.
     // 6.4.3 Compile-time if 
+
+    // 6.5 Advice
+    // 6.5 Advice
 }
