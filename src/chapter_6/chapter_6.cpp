@@ -282,5 +282,18 @@ int main()
     //      {
     //          Vector<ValueType<Container>> vec;
     //      }
+    //
+    // The aliasing mechanism can be used to define a new template by binding
+    // some of all template arguments. For example:
+    // template <typename Key, typename Value>
+    // class Map
+    // {
+    //      // ...
+    // };
+    //
+    // template <typename Value>
+    // using StringMap = Map<std::string, Value>;
+    //
+    // StringMap<int> m;
     // 6.4.2 Aliases
 }
