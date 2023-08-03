@@ -1,7 +1,8 @@
+#include "vector.hpp"
+
 #include <iostream>
 #include <list>
 
-#include "vector.hpp"
 
 // 6.3.1 Function Templates
 // Calculate the sum of the element values of any sequence
