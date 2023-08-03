@@ -262,6 +262,15 @@ int main()
     // it may be unsigned long. In the end, having an alias allows the
     // the programmer to write portable code.
     //
-    // 
+    // It's common for parameterized type to provide an alias for types related
+    // to their template args.
+    // template <typename T>
+    // class Vector
+    // {
+    //      using value_type = T;
+    // };
+    // Every standard library container provides value_type as the name of its
+    // value type (11). It allows the ability to write code that will work for
+    // every container that follows the convention.
     // 6.4.2 Aliases
 }
