@@ -316,5 +316,20 @@ int main()
     // 6.4.3 Compile-time if 
 
     // 6.5 Advice
+    // [1] Use templates to express algorithms that apply to many argument
+    // types; §6.1; [CG:T.2].
+    // [2] Use templates to express containers; §6.2; [CG: T.3].
+    // [4] Templates are type safe, but checking happens too late; §6.2.
+    // [5] Let constructors or function templates deduce class template 
+    // argument types; §6.2.3.
+    // [6] Use function objects as arguments to algorithms; §6.3.2; [CG: T.40].
+    // [8] A virtual function member cannot be a template member function;
+    // §6.3.1.
+    // [9] Use template aliases to simplify notation and hide implementation
+    // details; §6.4.2.
+    // [10] To use a template, make sure its definition (not just its 
+    // declaration) is in scope; §7.5.
+    // [12] There is no separate compilation of templates: #include template
+    // definitions in every translation unit that uses them.
     // 6.5 Advice
 }
