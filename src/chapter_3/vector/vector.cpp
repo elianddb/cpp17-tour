@@ -9,7 +9,8 @@ using namespace DDB;
 
 // V1::Vector
 Vector::Vector(const int sz)
-    : elem {new double[validateSize(sz)]}, sz {sz} {}
+    : elem {new double[validateSize(sz)]}, sz {sz}
+{}
 
 double& Vector::operator[] (const int i) const
 {
@@ -18,7 +19,7 @@ double& Vector::operator[] (const int i) const
     // implementation will unwind the function call stack as need to get back
     // to the context of the caller.
     if (i < 0 || size() <= i)
-        throw std::out_of_range{"Vector::operator[] out_of_range"};
+        throw std::out_of_range {"Vector::operator[] out_of_range"};
     return elem[i];
 }
 
@@ -27,7 +28,7 @@ int Vector::size() const { return sz; }
 int Vector::validateSize(const int sz)
 {
     if (sz < 0)
-        throw std::length_error("Vector::validateSize() negative size");
+        throw std::length_error {"Vector::validateSize() negative size"};
     return sz;
 }
 
@@ -54,7 +55,7 @@ int V2::Vector::size() const
 // V3::Vector
 
 V3::Vector::Vector(const Vector& a)
-    : elem {new double[a.size()]}, sz {a.size()}
+    : elem {new double[a.sz]}, sz {a.sz}
 {
     for (int i {}; i != sz; ++i)
         elem[i] = a.elem[i];
@@ -65,7 +66,7 @@ V3::Vector& V3::Vector::operator=(const Vector& a)
     if (this == &a)
         return *this;
 
-    double* const p {new double[a.size()]};
+    double* const p {new double[a.sz]};
     for (int i {}; i != a.sz; ++i)
         p[i] = a.elem[i];
     delete[] elem;

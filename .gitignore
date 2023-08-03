@@ -373,3 +373,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /vc140.idb
 /cmake-build-debug
+/cmake-build-default
+/cmake-build-default-visual-studio
