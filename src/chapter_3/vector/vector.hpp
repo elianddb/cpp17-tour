@@ -99,7 +99,7 @@ namespace DDB
         Vector<T>::Vector(const Vector& v)
             : elem {new T[v.sz]}, sz {v.sz}
         {
-            for (int i{}; i != v.sz; ++i)
+            for (int i {}; i != v.sz; ++i)
                 elem[i] = v[i];
         }
 
@@ -115,7 +115,7 @@ namespace DDB
         T& Vector<T>::operator[](const int i) const
         {
             if (i < 0 || sz <= i)
-                throw std::out_of_range{"V4::Vector out of range index"};
+                throw std::out_of_range {"V4::Vector out of range index"};
             return elem[i];
         }
 
@@ -128,7 +128,7 @@ namespace DDB
                 delete[] elem;
                 elem = new T[rhs.sz];
                 sz = rhs.sz;
-                for (int i{}; i != rhs.sz; ++i)
+                for (int i {}; i != rhs.sz; ++i)
                     elem[i] = rhs.elem[i];
             }
 
