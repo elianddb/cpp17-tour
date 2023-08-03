@@ -99,7 +99,7 @@ namespace DDB
         Vector<T>::Vector(const Vector& v)
             : elem {new T[v.sz]}, sz {v.sz}
         {
-            for (int i{}; i != v.sz; ++i)
+            for (int i {}; i != v.sz; ++i)
                 elem[i] = v[i];
         }
 
@@ -128,7 +128,7 @@ namespace DDB
                 delete[] elem;
                 elem = new T[rhs.sz];
                 sz = rhs.sz;
-                for (int i{}; i != rhs.sz; ++i)
+                for (int i {}; i != rhs.sz; ++i)
                     elem[i] = rhs.elem[i];
             }
 
