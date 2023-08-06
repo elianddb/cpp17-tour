@@ -44,6 +44,26 @@ int main()
     // with numbers of type x and y. (i.e., prevents calculation for
     // vector<string> and vector<int*> but allows vector<int> and
     // vector<complex<double>>)
-    // 
+    //
+    // Above the template arg is not constrained too tightly. Only
+    // using the general concept Arithmetic for better future use.
+    //
+    // The "requires" portion is referred to as the *requirements-
+    // clause*. The template<Sequence Seq> in fact, is a shorthand
+    // for:
+    //      requires Sequence<Seq>
+    //
+    // So, the alternative would look like:
+    //      template<typename Seq, typename Num>
+    //          requires Sequence<Seq>
+    //          && Number<Num>
+    //          && Arithmetic<Value_type<Seq>, Num>
+    //      Num sum(Seq s, Num n);
+    //
+    // On the other hand:
+    //      template<Sequence Seq, Arithmetic<Value_type<Seq>> Num>
+    //      Num sum(Seq s, Num n);
+    //
+    // When we can't use concepts we'll default to comments.
     // 7.2.1 Use of Concepts
 }
