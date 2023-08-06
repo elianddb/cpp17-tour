@@ -9,6 +9,14 @@ Num sum(Seq s, Num v)
         v += x;
     return v;
 }
+// This template function can be invoked for any data structure that supports
+// begin() and end() (makes for-range loop work). Some example data structures
+// are vector, list and map included in the standard library.
+//
+// Furthermore, the data type of the structure is limited by its use: a type we
+// can add to the value arg. (int, double, Matrix, etc.) sum() is generic in two
+// dimensions: the type of the data struct used to store elem ("the sequence")
+// and the type of elem. Such requirements are referred to as *concepts*.
 // 7.2 Concepts (C++20)
 
 
