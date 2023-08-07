@@ -68,5 +68,8 @@ int main()
     // 7.2.1 Use of Concepts
 
     // 7.2.2 Concept-based Overloading
+    // Once specified, we can overload templates based on their properties.
+    // Consider a concise copy of advance() from the standard-library:
+    // 
     // 7.2.2 Concept-based Overloading
 }
