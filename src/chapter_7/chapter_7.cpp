@@ -85,5 +85,8 @@ int main()
     // The compiler will select the template with the strongest requirements
     // met by the arguments. For example a list only supplies forward iterators
     // but a vector has random-access iterators.
+    //
+    // These are compile-time mechanisms. If the compiler cannot find a best
+    // choice, it will throw an ambiguity error.    
     // 7.2.2 Concept-based Overloading
 }
