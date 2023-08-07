@@ -82,6 +82,8 @@ int main()
     //      {
     //          p += n;
     //      }
-    // 
+    // The compiler will select the template with the strongest requirements
+    // met by the arguments. For example a list only supplies forward iterators
+    // but a vector has random-access iterators.
     // 7.2.2 Concept-based Overloading
 }
