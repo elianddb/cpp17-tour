@@ -70,6 +70,17 @@ int main()
     // 7.2.2 Concept-based Overloading
     // Once specified, we can overload templates based on their properties.
     // Consider a concise copy of advance() from the standard-library:
-    // 
+    //      template <ForwardIterator Iter>
+    //      void advance(Iter p, int n)
+    //      {
+    //          for (--n)
+    //              ++p;
+    //      }
+    //
+    //      template <RandomAccessIterator Iter, int n>
+    //      void advance(Iter p, int n)
+    //      {
+    //          p += n;
+    //      }
     // 7.2.2 Concept-based Overloading
 }
