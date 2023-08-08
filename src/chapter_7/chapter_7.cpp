@@ -91,5 +91,9 @@ int main()
     // 7.2.2 Concept-based Overloading
 
     // 7.2.3 Valid Code
+    // Whether template args offer what a template requires boils down to
+    // whether some expressions are valid.
+    // Using a requires-expression, we can check if a set of expressions is
+    // valid.
     // 7.2.3 Valid Code
 }
