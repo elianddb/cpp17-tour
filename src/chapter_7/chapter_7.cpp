@@ -112,5 +112,11 @@ int main()
     //      requires requires(Iter p, int i) { p[i]; p + i; }
     // A require-expression is a predicate that is true if the statement
     // in it are valid code and false if they are not.
+    //
+    // Consider requires-expression the assembly code of generic programming.
+    // Like ordinary assembly, requires-expressions are extremely flexible
+    // and impose no programming discipline. Usually when you see
+    // requires requires in your code, it's too low level.
+    // 
     // 7.2.3 Valid Code
 }
