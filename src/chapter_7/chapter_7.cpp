@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 
 // 7.2 Concepts (C++20)
 // sum() from 6.3.1
@@ -95,5 +95,17 @@ int main()
     // whether some expressions are valid.
     // Using a requires-expression, we can check if a set of expressions is
     // valid.
+    // template<Forward_iterator Iter>
+    // void advance(Iter p, int n) // move p n elements forward
+    // {
+    //    for (−−n)
+    //        ++p; // a forward iterator has ++, but not + or +=
+    // }
+    // template<Forward_iterator Iter, int n>
+    //     requires requires(Iter p, int i) { p[i]; p + i; } //
+    //  void advance(Iter p, int n) // move p n elements
+    // {
+    //     p += n; // a random-access iterator has +=
+    // }
     // 7.2.3 Valid Code
 }
