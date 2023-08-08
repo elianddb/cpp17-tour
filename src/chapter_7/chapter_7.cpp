@@ -117,6 +117,8 @@ int main()
     // Like ordinary assembly, requires-expressions are extremely flexible
     // and impose no programming discipline. Usually when you see
     // requires requires in your code, it's too low level.
-    // 
+    //
+    // Prefer named concepts with well-specified comments semantics as
+    // the implementation above is hackish and inelegant.
     // 7.2.3 Valid Code
 }
