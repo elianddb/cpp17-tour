@@ -102,10 +102,15 @@ int main()
     //        ++p; // a forward iterator has ++, but not + or +=
     // }
     // template<Forward_iterator Iter, int n>
-    //     requires requires(Iter p, int i) { p[i]; p + i; } //
+    //     requires requires(Iter p, int i) { p[i]; p + i; }
     //  void advance(Iter p, int n) // move p n elements
     // {
     //     p += n; // a random-access iterator has +=
     // }
+    // The first requires starts the requirements-clause and the
+    // second starts the requires-expression.
+    //      requires requires(Iter p, int i) { p[i]; p + i; }
+    // A require-expression is a predicate that is true if the statement
+    // in it are valid code and false if they are not.
     // 7.2.3 Valid Code
 }
