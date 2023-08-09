@@ -131,9 +131,27 @@ int main()
     //      requires (T a, T b) {
     //          { a == b } -> bool; // compare Ts with ==
     //          { a != b } -> bool; // compare Ts with !=
-    // }
+    //      };
     // Equality_comparable is concept that checks if a type is comparable using
     // += and !=. They must be comparable using the before, and the result
     // of the operation must be convertible to a bool.
+    //
+    // The following would fail:
+    // struct S { int a; };
+    // static_assert(Equality_comparable<S>);
+    // This won't compile because structs do not automatically gain their ==
+    // and != operations.
+    //
+    // For non-homogeneous operations simply add some additional requirements.
+    // template <typename T, typename T2 = T>
+    // concept Equality_comparable =
+    //      requires (T a, T2 b) {
+    //          { a == b } -> bool;
+    //          { a != b } -> bool;
+    //          { b == a } -> bool;
+    //          { b != a } -> bool;
+    //      };
+    // If the second template arg T2 isn't specified, it will default to T.
+    // 
     // 7.2.4 Definition of Concepts
 }
