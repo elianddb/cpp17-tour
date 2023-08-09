@@ -123,6 +123,8 @@ int main()
     // 7.2.3 Valid Code
 
     // 7.2.4 Definition of Concepts
-    // 
+    // A concept is a compile-time predicate specifying how one or more types
+    // can be used.
+    // Consider: 
     // 7.2.4 Definition of Concepts
 }
