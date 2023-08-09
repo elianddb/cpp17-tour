@@ -152,6 +152,27 @@ int main()
     //          { b != a } -> bool;
     //      };
     // If the second template arg T2 isn't specified, it will default to T.
-    // 
+    //
+    // More complex example:
+    // template <typename S>
+    // concept Sequence = requires(S, a) {
+    //      typename Value_type<S>; // S must have Value_type
+    //      typename Iterator_type<S>; // S must have an Iterator_type
+    //
+    //      { begin(a) } -> Iterator_type<S>; // begin(a) must return an iterator.
+    //      { end(a) } -> Iterator_type<S>;   // end(a) must return an iterator.
+    //
+    //      requires Same_type<Value_type<S>, Value_type<Iterator_type<S>>>;
+    //      requires Input_iterator<Iterator_type<S>>;
+    // }
+    // For S to be a sequence it must provide a Value_type (type of its elem).
+    // An Iterator_type (type of its iterators). It must also ensure begin()
+    // and end() exist and that they return iterators. Finally, the
+    // Iterator_type really must be an input_iterator with elements of the
+    // same type as the elements of S.
+    //
+    // The hardest concepts to define are the ones that represent fundamental
+    // language concepts. Consequently, it's best to use a set from the
+    // standard library.
     // 7.2.4 Definition of Concepts
 }
