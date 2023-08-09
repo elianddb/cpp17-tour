@@ -125,6 +125,15 @@ int main()
     // 7.2.4 Definition of Concepts
     // A concept is a compile-time predicate specifying how one or more types
     // can be used.
-    // Consider: 
+    // Consider:
+    // template <typename T>
+    // concept Equality_comparable =
+    //      requires (T a, T b) {
+    //          { a == b } -> bool; // compare Ts with ==
+    //          { a != b } -> bool; // compare Ts with !=
+    // }
+    // Equality_comparable is concept that checks if a type is comparable using
+    // += and !=. They must be comparable using the before, and the result
+    // of the operation must be convertible to a bool.
     // 7.2.4 Definition of Concepts
 }
