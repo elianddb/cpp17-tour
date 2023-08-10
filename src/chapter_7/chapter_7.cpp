@@ -200,5 +200,9 @@ int main()
     // A string is also another example of a regular type. They are
     // StrictTotallyOrdered. That is, two strings can be compared using
     // <, <=, >, >= with the appropriate semantics.
+    //
+    // Concepts aren't just a syntactic notion, they are fundamentally about
+    // semantics. (e.g., don't define + to divide; doesn't match requirements
+    // for any reasonable number).
     // 7.3.1 Use of Concepts
 }
