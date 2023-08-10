@@ -181,6 +181,8 @@ int main()
     // concrete, efficient algorithms to obtain generic algorithms that
     // can be combined with different data representations to produce
     // a wide variety of useful software.
+    //
+    // Abstractions representing the fundamental operations and data structs
+    // are *concepts*; they appear as requirements for template parameters.
     // 7.3 Generic Programming
-
 }
