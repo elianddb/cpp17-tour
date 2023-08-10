@@ -177,6 +177,10 @@ int main()
     // 7.2.4 Definition of Concepts
 
     // 7.3 Generic Programming
+    // Generic programming in C++ centers on the idea of abstracting from
+    // concrete, efficient algorithms to obtain generic algorithms that
+    // can be combined with different data representations to produce
+    // a wide variety of useful software.
     // 7.3 Generic Programming
 
 }
