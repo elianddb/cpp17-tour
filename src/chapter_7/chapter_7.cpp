@@ -187,6 +187,15 @@ int main()
     // 7.3 Generic Programming
 
     // 7.3.1 Use of Concepts
-    // 
+    // Concepts are fundamental and discovered more than they are designed.
+    // For example, general mathematical concepts such as integers, floating
+    // point types and sequences.
+    // For basic use consider the concept Regular. A type is regular when
+    // it behaves much like an int or vector.
+    //      They can be default constructed.
+    //      Copied using a constructor or an assignment.
+    //      Comparable using == and !=.
+    //      Doesn't suffer technical problems from severe programming tricks.
+    //
     // 7.3.1 Use of Concepts
 }
