@@ -197,5 +197,8 @@ int main()
     //      Comparable using == and !=.
     //      Doesn't suffer technical problems from severe programming tricks.
     //
+    // A string is also another example of a regular type. They are
+    // StrictTotallyOrdered. That is, two strings can be compared using
+    // <, <=, >, >= with the appropriate semantics.
     // 7.3.1 Use of Concepts
 }
