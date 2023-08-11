@@ -207,6 +207,10 @@ int main()
     // 7.3.1 Use of Concepts
 
     // 7.3.2 Abstraction Using Templates
-    // 
+    // Abstractions are grown from concrete examples. It's not a good idea to
+    // prepare to abstract for every conceivable need.
+    //
+    // Start with one concrete example, then try to eliminate inessential
+    // details.
     // 7.3.2 Abstraction Using Templates
 }
