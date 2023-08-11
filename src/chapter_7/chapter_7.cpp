@@ -57,7 +57,15 @@ Val accumulate(Iter first, Iter last, Val res)
 //      write a concrete ver.
 //      debug, test, and measure it.
 //      finally replace concrete with template args.
-// 
+//
+// Repetition of begin() and end() is tedious, replace with:
+// template <Range R, Number Val>
+// Val accumulate(R r, Val res = 0)
+// {
+//    for (auto p = begin(r); p != end(r); ++p)
+//        res += *p;
+//    return res;
+// }
 // 7.3.2 Abstraction Using Templates
 
 int main()
