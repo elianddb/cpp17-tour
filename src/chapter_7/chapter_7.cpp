@@ -35,6 +35,16 @@ double sum(const std::vector<int>& v)
 //      accumulates double
 //      starts at 0
 //      adds
+//
+// If you answer the first four questions you'll basically get a basic version
+// of the standard's library accumulate algorithm.
+template <typename Iter, typename Val>
+Val accumulate(Iter first, Iter last, Val res)
+{
+    for (auto p = first; p != last; ++p)
+        res += *p;
+    return res;
+}
 // 7.3.2 Abstraction Using Templates
 
 
