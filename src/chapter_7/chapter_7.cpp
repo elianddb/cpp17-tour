@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <vector>
 
 // 7.2 Concepts (C++20)
 // sum() from 6.3.1
@@ -18,6 +19,23 @@ Num sum(Seq s, Num v)
 // dimensions: the type of the data struct used to store elem ("the sequence")
 // and the type of elem. Such requirements are referred to as *concepts*.
 // 7.2 Concepts (C++20)
+
+// 7.3.2 Abstraction Using Templates
+double sum(const std::vector<int>& v)
+{
+    double res = 0;
+    for (const auto x : v)
+        res += x;
+    return res;
+}
+// This is one of the many ways to compute a sum of a sequence of numbers.
+//      Consider what makes this code less general.
+//      ints
+//      vectors
+//      accumulates double
+//      starts at 0
+//      adds
+// 7.3.2 Abstraction Using Templates
 
 
 int main()
