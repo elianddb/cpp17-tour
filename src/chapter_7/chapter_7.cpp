@@ -50,6 +50,14 @@ Val accumulate(Iter first, Iter last, Val res)
 // Type of the accumulator has been made into a param.
 // The initial val is now an input. The type of the accumulator is he type of
 // initial val.
+//
+// The process of generalizing from a concrete piece of code while preserving
+// performance is called lifting. Conversely, the best way to develop a
+// template is to:
+//      write a concrete ver.
+//      debug, test, and measure it.
+//      finally replace concrete with template args.
+// 
 // 7.3.2 Abstraction Using Templates
 
 int main()
