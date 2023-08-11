@@ -45,8 +45,12 @@ Val accumulate(Iter first, Iter last, Val res)
         res += *p;
     return res;
 }
+// The data structure traversed has been abstracted to a set of iterators which
+// represent the sequence.
+// Type of the accumulator has been made into a param.
+// The initial val is now an input. The type of the accumulator is he type of
+// initial val.
 // 7.3.2 Abstraction Using Templates
-
 
 int main()
 {
