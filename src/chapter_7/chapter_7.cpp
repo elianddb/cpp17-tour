@@ -68,6 +68,19 @@ Val accumulate(Iter first, Iter last, Val res)
 // }
 // 7.3.2 Abstraction Using Templates
 
+// 7.4 Variadic Templates
+// Traditional implementation involves a separate first arg and recursive
+// calls to the tail of the args.
+void print() {} // no args.
+
+template <typename T, typename ... Tail>
+void print(T head, Tail... tail)
+{
+    std::cout << head << ' ';
+    print(tail...);
+}
+// 7.4 Variadic Templates
+
 int main()
 {
     std::cout << "Chapter 7\n";
@@ -267,6 +280,5 @@ int main()
     // Such a template is called a *variadic template*.
     //      print("first: ", 1, 2.2);
     //      print("\nsecond: ", 0.2, 'c');
-    // 
     // 7.4 Variadic Templates
 }
