@@ -92,6 +92,13 @@ void print(T head, Tail... tail)
 //          print(tail...);
 // compile-time if avoid the potential generation of never called print
 // statement.
+//
+// Variadics can accept any arg you give them. However, weaknesses include:
+//      recursive implementation complexity
+//      recursive implementation surprisingly expensive at compile
+//      interface type checking is possibly an elaborate template program
+// For this reason they are widely used in the std library and occasionally
+// overused.
 // 7.4 Variadic Templates
 
 int main()
