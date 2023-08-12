@@ -263,5 +263,10 @@ int main()
     // 7.3.2 Abstraction Using Templates
 
     // 7.4 Variadic Templates
+    // A template can be defined to take an arbitrary number of args.
+    // Such a template is called a *variadic template*.
+    //      print("first: ", 1, 2.2);
+    //      print("\nsecond: ", 0.2, 'c');
+    // 
     // 7.4 Variadic Templates
 }
