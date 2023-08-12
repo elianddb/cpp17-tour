@@ -73,12 +73,18 @@ Val accumulate(Iter first, Iter last, Val res)
 // calls to the tail of the args.
 void print() {} // no args.
 
-template <typename T, typename ... Tail>
+template <typename T, typename... Tail>
 void print(T head, Tail... tail)
 {
     std::cout << head << ' ';
     print(tail...);
 }
+// "typename..." indicates Tail is a sequence of types.
+// "Tail..." indicates tail is a sequence of values of the types in Tail.
+// Parameters declared with ... is called a *parameter pack*.
+// tail is a (function arg) parameter pack where the elements are of the
+// types found in the (template arg) parameter pack Tail. So print can
+// take any num of args of any type.
 // 7.4 Variadic Templates
 
 int main()
