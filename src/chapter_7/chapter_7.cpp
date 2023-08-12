@@ -261,4 +261,7 @@ int main()
     // Start with one concrete example, then try to eliminate inessential
     // details.
     // 7.3.2 Abstraction Using Templates
+
+    // 7.4 Variadic Templates
+    // 7.4 Variadic Templates
 }
