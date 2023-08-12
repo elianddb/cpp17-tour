@@ -85,6 +85,13 @@ void print(T head, Tail... tail)
 // tail is a (function arg) parameter pack where the elements are of the
 // types found in the (template arg) parameter pack Tail. So print can
 // take any num of args of any type.
+//
+// You can also eliminate the use of a no-arg print using a compile time
+// if
+//      if constexpr(sizeof...(tail) > 0)
+//          print(tail...);
+// compile-time if avoid the potential generation of never called print
+// statement.
 // 7.4 Variadic Templates
 
 int main()
