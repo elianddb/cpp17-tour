@@ -101,6 +101,24 @@ void print(T head, Tail... tail)
 // overused.
 // 7.4 Variadic Templates
 
+// 7.4.1 Fold Expressions
+// template <Number... T>
+// int sum(T... v)
+// {
+//     return (v + ... + 0); // add all elements of v starting with zero.
+// }
+// Here sum can take any number of args of any types.
+//      int x {sum('a', 2.4, x)}; // becomes 114, 'a' = 97
+//
+// The body contains a fold expression:
+//      return (v + ... + 0);
+// This means add all elements of v starting with the initial value of zero.
+// The right-most element (in size of 5, v[4]) is first added.
+// This is called a *right-fold* but alternatively we could also do
+// a left-fold:
+//      return (0 + ... + v);
+// 7.4.1 Fold Expressions
+
 int main()
 {
     std::cout << "Chapter 7\n";
