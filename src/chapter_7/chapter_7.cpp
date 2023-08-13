@@ -303,5 +303,7 @@ int main()
     // 7.4 Variadic Templates
 
     // 7.4.1 Fold Expressions
+    // To simplify the implementation of variadic templates in C++17
+    // there's a limited form of iteration over elements of a parameter pack.
     // 7.4.1 Fold Expressions
 }
