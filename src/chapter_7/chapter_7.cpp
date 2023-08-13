@@ -126,6 +126,16 @@ void print(T&&... args)
 }
 // Many use cases involve a set of values that can be converted to a common
 // type.
+//
+// A fold could simplify the copying of elements into a vector:
+// template <typename Res, typename... Ts>
+// vector<Res> to_vector(Ts&&... ts)
+// {
+//      vector<Res> res;
+//      (res.push_back(ts) ...);
+//      return res;
+// }
+// auto x = to_vector<double>(1, 2, 3, 4, 5, 'a');
 // 7.4.1 Fold Expressions
 
 int main()
