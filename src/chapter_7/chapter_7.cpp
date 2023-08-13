@@ -117,6 +117,15 @@ void print(T head, Tail... tail)
 // This is called a *right-fold* but alternatively we could also do
 // a left-fold:
 //      return (0 + ... + v);
+//
+// A fold does not have to perform a numeric computation:
+template <typename... T>
+void print(T&&... args)
+{
+    (std::cout << ... << args) << '\n'; // print all args.
+}
+// Many use cases involve a set of values that can be converted to a common
+// type.
 // 7.4.1 Fold Expressions
 
 int main()
@@ -323,5 +332,9 @@ int main()
     // 7.4.1 Fold Expressions
     // To simplify the implementation of variadic templates in C++17
     // there's a limited form of iteration over elements of a parameter pack.
+    //
+    // *Fold* is related to the standard-library accumulate(), with a variety of
+    // names in other languages. In C++, fold expressions are currently restricted
+    // to simplify the implementation of variadic templates.
     // 7.4.1 Fold Expressions
 }
