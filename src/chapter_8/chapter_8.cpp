@@ -33,5 +33,17 @@ int main()
 	// Every standard-library facility is provided through some standard header.
 	//		#include <string>
 	//		#include <list>
+	// 
+	// The standard library is defined in the std namespace. Use the std:: to
+	// access facilities.
+	//		std::string sheep {"Four legs Good; two legs Baaad!"};
+	// 
+	// It's generally poor taste to dump every name from a namespace into the 
+	// global namespace.
+	// 
+	// Headers from the C standard library, such as <stdlib.h> are provided.
+	// For each such header there is also a version with its name prefixed by
+	// c and .h removed. These versions place their declarations in the std
+	// namespace.
 	// 8.3 Standard-Library Headers and Namespace
 }
