@@ -385,6 +385,18 @@ int main()
     // 7.4.2 Forwarding Arguments
 
     // 7.5 Template Compilation Model
-    // 
+    // Assuming concepts, template args are checked against a set of rules.
+    // These rules are then followed by the programmer and enforced by the
+    // compiler. However, at some point type-checking can happen at
+    // instantiation time ("template instantiation time"). This can result
+    // in ugly error messages from the compiler since these are found
+    // after combining a larger number of elements.
+    //
+    // The instantiation-time type checking provided for templates checks the
+    // use of arguments in the template definition. This provides a
+    // compile - time variant of what is often called duck typing. (“If it
+    // walks like a duck and it quacks like a duck, it’s a duck”).Or – using
+    // more technical terminology – we operate on values, and the presence and
+    // meaning of an operation depend solely on its operand values.
     // 7.5 Template Compilation Model
 }
