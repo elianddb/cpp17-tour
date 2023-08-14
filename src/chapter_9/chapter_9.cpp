@@ -63,6 +63,17 @@ int main()
 	// 9.2 Strings
 
 	// 9.2.1 string Implementation
+	// These days, string is usually implemented using the short-string
+	// optimization. That is, short string values are kept in the string object
+	// itself and only longer strings are placed on free store. Consider:
+	std::string s1 {"Annemarie"};
+	std::string s2 {"Annemarie Stroustrup"};
+	// When string change from a short to a long string (and vice versa) its
+	// representation adjusts appropriately. How many characters a short string
+	// can have is implementation defined. A combination of memory 
+	// fragmenation, memory allocations costs, and run time environments have
+	// made the short-string optimization a ubiquitous implementation.
+	// 
 	// 
 	// 9.2.1 string Implementation
 }
