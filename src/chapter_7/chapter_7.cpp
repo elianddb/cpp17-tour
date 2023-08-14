@@ -138,6 +138,29 @@ void print(T&&... args)
 // auto x = to_vector<double>(1, 2, 3, 4, 5, 'a');
 // 7.4.1 Fold Expressions
 
+// 7.4.2 Forwarding Arguments
+// Consider the notion of a network input channel for which the actual method
+// of moving values is a parameter. Different transport mechanisms have
+// different set of constructor parameters:
+// namespace concepts
+// {
+//     template <typename T> concept InputTransport = requires {};
+// }
+//
+// template <typename Transport>
+//     requires concepts::InputTransport<Transport>
+// class InputChannel
+// {
+// public:
+//     InputChannel(TransportArgs&&... transportArgs)
+//         : m_transport(std::forward<TransportArgs>(transportArgs)...) {}
+// private:
+//     Transport m_transport;
+// };
+// std::forward is used to move the args unchanged from the InputChannel
+// constructor to the Transport constructor.
+// 7.4.2 Forwarding Arguments
+
 int main()
 {
     std::cout << "Chapter 7\n";
@@ -172,14 +195,14 @@ int main()
     //      requires Sequence<Seq>
     //
     // So, the alternative would look like:
-    //      template<typename Seq, typename Num>
+    //      template <typename Seq, typename Num>
     //          requires Sequence<Seq>
     //          && Number<Num>
     //          && Arithmetic<Value_type<Seq>, Num>
     //      Num sum(Seq s, Num n);
     //
     // On the other hand:
-    //      template<Sequence Seq, Arithmetic<Value_type<Seq>> Num>
+    //      template <Sequence Seq, Arithmetic<Value_type<Seq>> Num>
     //      Num sum(Seq s, Num n);
     //
     // When we can't use concepts we'll default to comments.
@@ -219,7 +242,7 @@ int main()
     //    for (−−n)
     //        ++p; // a forward iterator has ++, but not + or +=
     // }
-    // template<Forward_iterator Iter, int n>
+    // template <Forward_iterator Iter, int n>
     //     requires requires(Iter p, int i) { p[i]; p + i; }
     //  void advance(Iter p, int n) // move p n elements
     // {
@@ -343,11 +366,13 @@ int main()
     // To simplify the implementation of variadic templates in C++17
     // there's a limited form of iteration over elements of a parameter pack.
     //
-    // *Fold* is related to the standard-library accumulate(), with a variety of
-    // names in other languages. In C++, fold expressions are currently restricted
-    // to simplify the implementation of variadic templates.
+    // *Fold* is related to the standard-library accumulate(), with a variety
+    // of names in other languages. In C++, fold expressions are currently
+    // restricted to simplify the implementation of variadic templates.
     // 7.4.1 Fold Expressions
 
     // 7.4.2 Forwarding Arguments
+    // Passing arguments unchanged through an interface is an important use of
+    // variadic templates.
     // 7.4.2 Forwarding Arguments
 }
