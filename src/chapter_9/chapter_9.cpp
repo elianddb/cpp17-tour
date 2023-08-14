@@ -61,4 +61,8 @@ int main()
 	// auto c = "Dog";
 	// The s suffix is contained in the std::literals::string_literals namespace.
 	// 9.2 Strings
+
+	// 9.2.1 string Implementation
+	// 
+	// 9.2.1 string Implementation
 }
