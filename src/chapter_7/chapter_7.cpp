@@ -401,5 +401,21 @@ int main()
     // 7.5 Template Compilation Model
 
     // 7.6 Advice
+    // [1] Templates provide a general mechanism for compile-time
+    // programming; §7.1.
+    // [3] When designing a template, use a concrete version for initial
+    // implementation, debugging, and measurement; §7.3.2.
+    // [5] Specify concepts for all template arguments; §7.2; [CG: T.10].
+    // [6] Whenever possible use standard concepts (e.g., the Ranges concepts);
+    // §7.2.4; [CG:T.11].
+    // [7] Use a lambda if you need a simple function object in one place only;
+    // §6.3.2.
+    // [8] There is no separate compilation of templates: #include template
+    // definitions in every translation unit that uses them.
+    // [9] Use templates to express containers and ranges; §7.3.2; [CG: T.3].
+    // [11] Require a complete set of operations for a concept; §7.2;
+    // [CG: T.21].
+    // [14] To use a template, make sure its definition (not just its
+    // declaration) is in scope; §7.5.
     // 7.6 Advice
 }
