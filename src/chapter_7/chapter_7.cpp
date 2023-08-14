@@ -399,4 +399,7 @@ int main()
     // more technical terminology – we operate on values, and the presence and
     // meaning of an operation depend solely on its operand values.
     // 7.5 Template Compilation Model
+
+    // 7.6 Advice
+    // 7.6 Advice
 }
