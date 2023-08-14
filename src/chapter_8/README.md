@@ -16,3 +16,10 @@ useful standard-library types included:
 - `thread`
 - `regex`
 - `complex`
+
+## Overall Goal
+Don't be discouraged or distracted by an incomplete understanding of details.
+The specification of the standard library is over two-thirds of the ISO C++
+standard. Explore it, and prefer it to homemade alternatives. Systems and
+libraries that deal with features that extend past C++ facilities are not
+covered here.
