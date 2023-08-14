@@ -347,4 +347,7 @@ int main()
     // names in other languages. In C++, fold expressions are currently restricted
     // to simplify the implementation of variadic templates.
     // 7.4.1 Fold Expressions
+
+    // 7.4.2 Forwarding Arguments
+    // 7.4.2 Forwarding Arguments
 }
