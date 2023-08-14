@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <string_view>
+#include <regex>
 
 // 9.2 Strings
 // e.g. Concatenation Example
@@ -143,5 +144,15 @@ int main()
 	// a way to simply and tersely describe patterns in text. (e.g. US postal 
 	// codes).
 	// 
+	// In <regex>, the standard library provides support for regular expressions
+	// in the form of the std::regex class and its supporting functions.
+	// 
+	// Defining a print pattern:
+	// US Postal Code Pattern: XXddddd-dddd and variants
+	std::regex pat {R"(\w{2}\s*\d{5}(-\d{4})?)"}; 
+	// To express the pattern, a raw string literal is used. This allows back
+	// slashes and quotes to be used directly in the string. Suitable for regex
+	// cause of the number of backslashes they contain.
+
 	// 9.4 Regular Expressions
 }
