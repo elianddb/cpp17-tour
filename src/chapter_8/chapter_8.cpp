@@ -28,4 +28,10 @@ int main()
 	// fundamental data structures together with the fundamental algorithms
 	// used on them.
 	// 8.2 Standard-Library Components
+
+	// 8.3 Standard-Library Headers and Namespace
+	// Every standard-library facility is provided through some standard header.
+	//		#include <string>
+	//		#include <list>
+	// 8.3 Standard-Library Headers and Namespace
 }
