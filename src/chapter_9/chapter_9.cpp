@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <string_view>
 
 // 9.2 Strings
 // e.g. Concatenation Example
@@ -25,6 +26,19 @@ using string = basic_string<char>;
 // Now we can do all the usual string operations on Jstring, a string of
 // Japanese characters.
 // 9.2.1 string Implementation
+
+// 9.3 String Views
+// Consider a simple function concatenating two strings:
+std::string cat(std::string_view sv1, std::string_view sv2)
+{
+	std::string res(sv1.length() + sv2.length(), ' ');
+	char* p = &res[0];
+	for (char ch : sv1)
+		*p++ = ch;
+	copy(sv2.begin(), sv2.end(), p);
+	return res;
+};
+// 9.3 String Views
 
 int main()
 {
@@ -91,5 +105,25 @@ int main()
 	// 9.2.1 string Implementation
 
 	// 9.3 String Views
+	// There are extra complexities when passing substrings to a function.
+	// To address this, the standard library offers string_view; basically
+	// a (pointer,length) pair denoting a sequence of characters.
+	// 
+	// A string_view gives access to a contigious sequence of characters.
+	// They are stored in many possible ways, including in a string/c-style str.
+	// It's like a pointer or a reference in that it doesn't own the characters
+	// it points to. In that, it resembles an STL pair of iterators.
+	// 
+	std::string king {"Harold"};
+	auto s3 = cat(king, "William"); // string and const char*
+	// cat() has three advantages over the compose() that takes const.
+	//		Can be used with character sequences managed in different ways.
+	//		No temporary string objects are created for c-style strings.
+	//		We can easily pass substrings.
+	using namespace std::literals::string_view_literals;
+	auto s4 = cat({&king[0], 2}, "Henry"sv);
+	// Thea above avoids counting the characters at from const char*
+	// and instead uses sv to compute the length at compile time.
+	// 
 	// 9.3 String Views
 }
