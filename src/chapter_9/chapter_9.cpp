@@ -137,4 +137,11 @@ int main()
 	// range checking use at(), which throws out_of_range for attempted 
 	// out-of-range access.
 	// 9.3 String Views
+
+	// 9.4 Regular Expressions
+	// Regular expressions are a powerful tool for text processing. They provide
+	// a way to simply and tersely describe patterns in text. (e.g. US postal 
+	// codes).
+	// 
+	// 9.4 Regular Expressions
 }
