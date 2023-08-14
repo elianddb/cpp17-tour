@@ -42,6 +42,18 @@ int main()
 	// to match length).
 	m3();
 	std::cout << name << '\n';
-	
+	// Naturally, strings can be compared against each other, against C-style
+	// strings, and against string literals. 
+	// In addition, strings support lexographical ordering (<, >, <=, >=),
+	// iteration (using iterators as for vector), input, and streaming.
+	// 
+	// If a C-style string is necssary (a zero-terminated array of char), string
+	// offers read-only access to its contained characters.
+	std::string s {"c-string"};
+	auto print = [&s]()
+	{
+		printf("For people who like printf: %s\n", s.c_str());
+	};
+	print();
 	// 9.2 Strings
 }
