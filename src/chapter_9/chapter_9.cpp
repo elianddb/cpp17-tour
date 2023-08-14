@@ -55,5 +55,10 @@ int main()
 		printf("For people who like printf: %s\n", s.c_str());
 	};
 	print();
+	// A string literal is by definition a const char*. To get a literal type
+	// of std::string use s suffix.
+	// auto s = "Cat"s;
+	// auto c = "Dog";
+	// The s suffix is contained in the std::literals::string_literals namespace.
 	// 9.2 Strings
 }
