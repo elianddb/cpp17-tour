@@ -159,6 +159,14 @@ void print(T&&... args)
 // };
 // std::forward is used to move the args unchanged from the InputChannel
 // constructor to the Transport constructor.
+//
+// The point here is that the writer of InputChannel can construct an object
+// type of Transport without having to know what arguments are required to
+// construct a particular Transport. The implementer of channel only needs
+// to know the common user interface for all Transport objects.
+//
+// Forwarding is very common in foundational libraries where generality and
+// low run-time overhead are necessary and very general interfaces are common.
 // 7.4.2 Forwarding Arguments
 
 int main()
