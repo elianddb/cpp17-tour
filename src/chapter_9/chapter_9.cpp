@@ -153,6 +153,14 @@ int main()
 	// To express the pattern, a raw string literal is used. This allows back
 	// slashes and quotes to be used directly in the string. Suitable for regex
 	// cause of the number of backslashes they contain.
-
+	// 
+	// In <regex>, the standard library provides support for regular
+	// expressions:
+	//		regex_match(): match regex against a string.
+	//		regex_search(): search for a string that matches regex in long 
+	//		stream of data.
+	//		regex_replace(): regex_search() and replace string.
+	//		regex_iterator: iterate over matches and submatches.
+	//		regex_token_iterator: iterate over non-matches.
 	// 9.4 Regular Expressions
 }
