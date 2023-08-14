@@ -11,6 +11,21 @@ std::string compose(const std::string& name, const std::string& domain)
 }
 // 9.2 Strings
 
+// 9.2.1 string Implementation
+// To handle multiple character sets, string is really an alias for a 
+// general template basic_string with the character type char:
+template <typename Char>
+class basic_string
+{ /*string of Char*/
+};
+using string = basic_string<char>;
+// A user can define strings of arbitrary character tyoes. e.g., japanese
+// character type Jchar, we can write:
+// using jstring = basic_char<jchar>;
+// Now we can do all the usual string operations on Jstring, a string of
+// Japanese characters.
+// 9.2.1 string Implementation
+
 int main()
 {
 	std::cout << "Chapter 9\n";
@@ -73,7 +88,5 @@ int main()
 	// can have is implementation defined. A combination of memory 
 	// fragmenation, memory allocations costs, and run time environments have
 	// made the short-string optimization a ubiquitous implementation.
-	// 
-	// 
 	// 9.2.1 string Implementation
 }
