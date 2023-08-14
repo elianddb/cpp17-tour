@@ -125,5 +125,16 @@ int main()
 	// Thea above avoids counting the characters at from const char*
 	// and instead uses sv to compute the length at compile time.
 	// 
+	// When returning a string_view remember that very much like a pointer
+	// it has to point to something. If we return a string within a function
+	// as a string_view it will be destroyed and string_view will be left
+	// pointing to nothing.
+	// 
+	// One significant restriction of string_view is that it's read-only.
+	// You cannot use string_view to pass to a function that modifies
+	// its arguments. You might consider gsl::span or gsl::string_span for
+	// that. Out of range access of a string_view is unspecified. For guaranteed
+	// range checking use at(), which throws out_of_range for attempted 
+	// out-of-range access.
 	// 9.3 String Views
 }
