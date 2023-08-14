@@ -46,4 +46,10 @@ int main()
 	// c and .h removed. These versions place their declarations in the std
 	// namespace.
 	// 8.3 Standard-Library Headers and Namespace
+
+	// 8.4 Advice
+	// [1] Don’t reinvent the wheel; use libraries; §8.1; [CG: SL.1.]
+	// [3] Do not think that the standard library is ideal for 
+	// everything; §8.1.
+	// 8.4 Advice
 }
