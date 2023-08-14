@@ -86,7 +86,7 @@ V3::Vector& V3::Vector::operator=(Vector&& a) noexcept
 {
     elem = a.elem;
     sz = a.sz;
-    elem = nullptr;
-    sz = 0;
+    a.elem = nullptr;
+    a.sz = 0;
     return *this;
 }
