@@ -187,4 +187,8 @@ int main()
 	// efficient execution. The regex type performs this compilation at
 	// runtime.
 	// 9.4.1 Searching
+
+	// 9.4.2 Regular Expression Notation
+	// 
+	// 9.4.2 Regular Expression Notation
 }
