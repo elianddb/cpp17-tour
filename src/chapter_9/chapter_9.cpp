@@ -166,14 +166,14 @@ int main()
 
 	// 9.4.1 Searching
 	// The simplest way of using a pattern is to search for it in a stream:
-	int lineno {};
+	/*int lineno {};
 	for (std::string line {}; std::getline(std::cin, line);)
 	{
 		++lineno;
 		std::smatch matches {};
 		if (std::regex_search(line, matches, pat))
 			std::cout << lineno << ": " << matches[0] << '\n';
-	}
+	}*/
 	// regex_search searches the line for anything that matches the regular
 	// expression stored in pat and it finds any matches, it stores them in
 	// matches.If no matches are found, it returns false.
@@ -189,6 +189,11 @@ int main()
 	// 9.4.1 Searching
 
 	// 9.4.2 Regular Expression Notation
-	// 
+	// The regex library can recognize several variants of the notation for
+	// regular expressions. Here we used the default notation, a variant
+	// of the ECMA standard for javascript.
+	//
+	// For full portability, use the character class names rather than
+	// abbreviations. (e.g. [:digit:] instead of \d).
 	// 9.4.2 Regular Expression Notation
 }
