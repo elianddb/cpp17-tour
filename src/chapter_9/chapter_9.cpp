@@ -225,4 +225,7 @@ int main()
 	// iterator over an istream (only offers input iterator). We also can't write
 	// through one. "regex_iterator {}" is the only possible end of the sequence.
 	// 9.4.3 Iterators
+
+	// 9.5 Advice
+	// 9.5 Advice
 }
