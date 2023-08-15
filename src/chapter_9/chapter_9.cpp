@@ -221,5 +221,8 @@ int main()
 			std::cout << (*p)[1] << '\n';
 	};
 	test();
+	// A regex_iterator is a bidirectional iterator, so we cannot directly
+	// iterator over an istream (only offers input iterator). We also can't write
+	// through one. "regex_iterator {}" is the only possible end of the sequence.
 	// 9.4.3 Iterators
 }
