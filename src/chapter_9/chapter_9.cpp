@@ -227,5 +227,22 @@ int main()
 	// 9.4.3 Iterators
 
 	// 9.5 Advice
+	// [1] Use std::string to own character sequences; §9.2; [CG: SL.str.1].
+	// [2] Prefer string operations to C-style string functions; §9.1.
+	// Use string to declare variables and members rather than as a base
+	// class; §9.2.S
+	// [4] Return strings by value (rely on move semantics); §9.2, §9.2.1.
+	// [5] Directly or indirectly, use substr() to read substrings and
+	// replace() to write substrings; §9.2.
+	// [7] Use at() rather than iterators or [ ] when you want range checking;
+	// §9.2.
+	// [12] A basic_string can be used to make strings of characters on any
+	// type; §9.2.1.
+	// [13] Use the s suffix for string literals meant to be standard-library
+	// strings; §9.3[CG:SL.str.12].
+	// [25] Note that \i allows you to express a subpattern in terms of a previous
+	// subpattern; §9.4.2.
+	// [27] Use regex_iterators for iterating over a stream looking for a pattern;
+	// §9.4.3.
 	// 9.5 Advice
 }
