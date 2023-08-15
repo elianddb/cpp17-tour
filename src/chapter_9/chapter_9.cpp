@@ -195,5 +195,16 @@ int main()
 	//
 	// For full portability, use the character class names rather than
 	// abbreviations. (e.g. [:digit:] instead of \d).
+	//
+	// Function that uses the simplest version of regex_match() to test
+	// whether a string is an identifier:
+	auto is_identifier = [](const string& s)
+	{
+		std::regex pat2 {"[_[:alpha:]\\w*"};
+		return std::regex_match(s, pat);
+	};
+	// A group (sub-pattern) potentially to be presented by a sub_match is
+	// delimited by parentheses. Parentheses that should not define a
+	// sub-pattern use "(?:" rather than a plain "(".
 	// 9.4.2 Regular Expression Notation
 }
