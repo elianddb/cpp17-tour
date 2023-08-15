@@ -163,4 +163,28 @@ int main()
 	//		regex_iterator: iterate over matches and submatches.
 	//		regex_token_iterator: iterate over non-matches.
 	// 9.4 Regular Expressions
+
+	// 9.4.1 Searching
+	// The simplest way of using a pattern is to search for it in a stream:
+	int lineno {};
+	for (std::string line {}; std::getline(std::cin, line);)
+	{
+		++lineno;
+		std::smatch matches {};
+		if (std::regex_search(line, matches, pat))
+			std::cout << lineno << ": " << matches[0] << '\n';
+	}
+	// regex_search searches the line for anything that matches the regular
+	// expression stored in pat and it finds any matches, it stores them in
+	// matches.If no matches are found, it returns false.
+	//
+	// The matches variable is smatch. The s stands for sub or string, and
+	// an smatch is a vector of submatches of type string. The first
+	// element matches[0] is the complete match.
+	//
+	// The regular expression syntax and semantics are designed so that
+	// regular expressions can be compiled into state machines for
+	// efficient execution. The regex type performs this compilation at
+	// runtime.
+	// 9.4.1 Searching
 }
