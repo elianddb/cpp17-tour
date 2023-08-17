@@ -55,6 +55,10 @@ int main()
 	//		std::getline(std::cin, a);
 	// The \n character that terminated the line will be discarded.
 	//
-	// 
+	// Instead of manipulating characters one-by-one, using formatted I/O
+	// operations is much faster and efficient. In particular, istreams
+	// take care of memory management and range checking.
+	// std::string have the nice property of expanding for what needs to
+	// be held. No need to allocate memory manually.
 	// 10.3 Input
 }
