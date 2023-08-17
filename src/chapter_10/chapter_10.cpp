@@ -27,6 +27,23 @@ int main()
 	// 10.2 Output
 
 	// 10.3 Input
-	// 
+	// In <istream>, the std library offers istreams for input. istreams deal
+	// with character string representations of built-in types and can easily be
+	// extended to cope with user-defined types.
+	//
+	// The >> ("get from") operator is used as in input operator; `cin` is the
+	// std input stream. The type on the right-hand of the operator >> determines
+	// what input is accepted and what is the target of the input operation.
+	//
+	auto f = []()
+	{
+		int i {};
+		cin >> i;
+
+		double d {};
+		cin >> d;
+	};
+	// Floating-point number reads a floating point value and integer an integer.
+	// Just like output operations these can be chained.
 	// 10.3 Input
 }
