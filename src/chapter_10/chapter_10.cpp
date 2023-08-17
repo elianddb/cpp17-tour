@@ -25,4 +25,8 @@ int main()
 	// Note: char is ouputted as a character rather than a numerical value.
 	//		char c = 'c';
 	// 10.2 Output
+
+	// 10.3 Input
+	// 
+	// 10.3 Input
 }
