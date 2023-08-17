@@ -38,12 +38,23 @@ int main()
 	auto f = []()
 	{
 		int i {};
-		cin >> i;
+		std::cin >> i;
 
 		double d {};
-		cin >> d;
+		std::cin >> d;
 	};
 	// Floating-point number reads a floating point value and integer an integer.
 	// Just like output operations these can be chained.
+	//
+	// To read a sequence of characters read into a string.
+	//		std::string a {};
+	//		std::cin >> a;
+	// By default, a \n character or space terminates the read.
+	//
+	// To read a whole line use std::getline() function:
+	//		std::getline(std::cin, a);
+	// The \n character that terminated the line will be discarded.
+	//
+	// 
 	// 10.3 Input
 }
