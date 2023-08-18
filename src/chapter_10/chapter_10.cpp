@@ -1,4 +1,32 @@
 #include <iostream>
+#include <vector>
+
+// 10.4 I/O State
+std::vector<int> readInts(std::istream& is, const std::string& terminator)
+{
+	std::vector<int> result {};
+	for (int i {}; is >> i;)
+		result.emplace_back(i);
+
+	// Find end of file.
+    if (is.eof())
+		return result;
+
+	// Failed to read int.
+	if (is.fail())
+	{
+		is.clear(); // reset the state to good()
+		is.unget(); // put the non-digit back into the stream
+		std::string s {}; 
+		if (std::cin >> s && s == terminator)
+			return result;
+		std::cin.setstate(std::ios_base::failbit); // add fail() to cin's state
+	}
+
+	return result;
+}
+
+// 10.4 I/O State
 
 int main()
 {
@@ -70,6 +98,9 @@ int main()
 	// not execute. The operation returns a reference to `is` and testing an
 	// iostream yields `true` if the stream is ready for another operation.
 	//
-	// 
+	// The I/O state in general holds the information needed to read or write.
+	// (i.e. formatting info, error state, type of buffering used)
+	// The user can set a state to signal an error has occured and clear the
+	// state if the error is not serious:
 	// 10.4 I/O State
 }
