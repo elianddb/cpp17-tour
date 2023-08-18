@@ -26,6 +26,20 @@ std::vector<int> readInts(std::istream& is, const std::string& terminator)
 	return result;
 }
 
+// 10.5 I/O of User-Defined Types
+struct Entry
+{
+	std::string name;
+	int number;
+};
+
+std::ostream& operator<<(std::ostream& os, const Entry& e)
+{
+	return os << "{\"" << e.name << "\", " << e.number << '}';
+}
+
+// 10.5 I/O of User-Defined Types
+
 // 10.4 I/O State
 
 int main()
@@ -105,5 +119,13 @@ int main()
 	// 10.4 I/O State
 
 	// 10.5 I/O of User-Defined Types
+	// The `iostream` library allows programmers to define I/O for their own
+	// types. For example, consider type Entry.
+	// We can define an output operator to write an Entry using {"name", number}:
+	//		See above.
+	Entry test {"hello", 5};
+	std::cout << test;
+	// The user-defined output operator takes it output stream (by reference) as
+	// its first argument and returns it as the result.
 	// 10.5 I/O of User-Defined Types
 }
