@@ -103,4 +103,7 @@ int main()
 	// The user can set a state to signal an error has occured and clear the
 	// state if the error is not serious:
 	// 10.4 I/O State
+
+	// 10.5 I/O of User-Defined Types
+	// 10.5 I/O of User-Defined Types
 }
