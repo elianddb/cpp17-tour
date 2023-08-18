@@ -63,5 +63,13 @@ int main()
 	// 10.3 Input
 
 	// 10.4 I/O State
+	// An iostream has a state that we can examine to determine if an operation
+	// has succeeded:
+	//		if (int i; is >> i) // do something
+	// If something that is not an integer is encountered, the if statement will
+	// not execute. The operation returns a reference to `is` and testing an
+	// iostream yields `true` if the stream is ready for another operation.
+	//
+	// 
 	// 10.4 I/O State
 }
