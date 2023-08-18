@@ -61,4 +61,7 @@ int main()
 	// std::string have the nice property of expanding for what needs to
 	// be held. No need to allocate memory manually.
 	// 10.3 Input
+
+	// 10.4 I/O State
+	// 10.4 I/O State
 }
