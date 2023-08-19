@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 // 10.4 I/O State
@@ -208,6 +209,16 @@ int main()
 
 	// 10.8 String Streams
 	// <sstream>, the std lib provides streams to and from a string.
-	//
+	//		istringstream for reading from a string
+	//		ostringstream for writing to a string
+	//		stringstream for both.
+	// Example:
+	auto sstreamTest = []()
+	{
+		std::ostringstream oss {};
+		oss << "{temperature, " << std::scientific << 123.4567890 << '}';
+		std::cout << oss.str() << '\n';
+	};
+	sstreamTest();
 	// 10.8 String Streams
 }
