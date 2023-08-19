@@ -162,4 +162,13 @@ int main()
 	// is>>c does (c = char type). This allows us to read weirdly formatted
 	// inputs, but that overall have the correct syntax.
 	// 10.5 I/O of User-Defined Types
+
+	// 10.6 Formatting
+	// The `iostream` library provides a large set of operations for controlling
+	// the format of input and output. Simplest formatting controls are called
+	// *manipulators*. They are found in <ios>, <istream>, <ostream>, and
+	// <iomanip>.
+	//
+	// 
+	// 10.6 Formatting
 }
