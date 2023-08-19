@@ -205,4 +205,9 @@ int main()
 		std::cerr << "Couldn't open 'source' for reading\n";
 	// The ofs and ifs streams can be used just as ordinary istreams and ostreams.
 	// 10.7 File Streams
+
+	// 10.8 String Streams
+	// <sstream>, the std lib provides streams to and from a string.
+	//
+	// 10.8 String Streams
 }
