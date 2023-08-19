@@ -27,6 +27,7 @@ std::vector<int> readInts(std::istream& is, const std::string& terminator)
 
 	return result;
 }
+// 10.4 I/O State
 
 // 10.5 I/O of User-Defined Types
 struct Entry
@@ -70,7 +71,20 @@ std::istream& operator>>(std::istream& is, Entry& e)
 }
 // 10.5 I/O of User-Defined Types
 
-// 10.4 I/O State
+// 10.8 String Streams
+template <typename Target = std::string, typename Source = std::string>
+Target to(Source arg) // convert source to target.
+{
+	std::stringstream interpreter {};
+	Target result {};
+	// write arg into stream
+	if (!(interpreter << arg) // write arg into stream 
+		|| !(interpreter >> result) // read result from stream
+		|| !(interpreter >> std::ws).eof()) // stuff left in stream?
+		throw std::runtime_error {"to<>() failed"};
+	return result;
+}
+// 10.8 String Streams
 
 int main()
 {
@@ -220,5 +234,9 @@ int main()
 		std::cout << oss.str() << '\n';
 	};
 	sstreamTest();
+	// The result from an istringstream can be read using str(). One common
+	// use of an ostringstream is to format before giving the resulting string
+	// to a GUI. Similarly, a string received from a GUI can be read using
+	// formatted input operations (10.3) by putting it into an istringstream.
 	// 10.8 String Streams
 }
