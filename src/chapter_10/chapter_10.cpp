@@ -154,7 +154,7 @@ int main()
 	std::cout << R"(Use the {"",int} format to create an Entry object.)" << '\n';
 	Entry test {};
 	std::cin >> test;
-	std::cout << test;
+	std::cout << test << '\n';
 	// A user-defined output operator takes it output stream (by reference) as
 	// its first argument and returns it as the result.
 	//
@@ -171,7 +171,9 @@ int main()
 	// <iomanip>.
 	//
 	// One example is outputting types in different formats:
-	std::cout << 1234 << std::hex << 1234 << std::oct << 1234 << '\n';
+	std::cout << 1234 << " "
+    << std::hex << 1234 << " "
+    << std::oct << 1234 << '\n';
 	// There's also output formats for floating point types.
 	// std::scientific, std::hexfloat, std::fixed, std::defaultfloat
 	//
