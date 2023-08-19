@@ -37,21 +37,24 @@ std::ostream& operator<<(std::ostream& os, const Entry& e)
 {
 	return os << "{\"" << e.name << "\", " << e.number << '}';
 }
-// Input operator implementation (formatted with {}):
+// Input operator implementation (formatted with {"",int}):
 std::istream& operator>>(std::istream& is, Entry& e)
 {
-	char c1;
-    char c2;
+	char c1 {};
+    char c2 {};
+    // starts with "{"
 	if (is >> c1 && c1 == '{' && is >> c2 && c2 == '"')
 	{
-		std::string name {};
-		while (is.get(c1) && c1 != '"')
+		std::string name {}; // default val is empty but might as well.
+		// anything before the next " is part of the name
+		while (is.get(c1) && c1 != '"') 
 			name += c1;
 
+		// after " there should be a quotation mark and we read the num
 		if (is >> c1 && c1 == ',')
 		{
 			int number {};
-			if (is >> number >> c1 && c1 == '}')
+			if (is >> number >> c1 && c1 == '}') // should end with }
 			{
 				e = {name, number};
 				return is;
@@ -59,6 +62,7 @@ std::istream& operator>>(std::istream& is, Entry& e)
 		}
 	}
 
+	// failed to get input.
     is.setstate(std::ios_base::failbit);
     return is;
 }
@@ -147,7 +151,8 @@ int main()
 	// types. For example, consider type Entry.
 	// We can define an output operator to write an Entry using {"name", number}:
 	//		See above.
-	Entry test {"hello", 5};
+	Entry test {};
+	std::cin >> test;
 	std::cout << test;
 	// A user-defined output operator takes it output stream (by reference) as
 	// its first argument and returns it as the result.
