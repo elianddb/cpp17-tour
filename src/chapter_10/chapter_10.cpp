@@ -156,5 +156,10 @@ int main()
 	std::cout << test;
 	// A user-defined output operator takes it output stream (by reference) as
 	// its first argument and returns it as the result.
+	//
+	// An input operation returns a reference to its istream that can be used to
+	// test if the operation succeeded. is.get() does not space whitespace while
+	// is>>c does (c = char type). This allows us to read weirdly formatted
+	// inputs, but that overall have the correct syntax.
 	// 10.5 I/O of User-Defined Types
 }
