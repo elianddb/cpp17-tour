@@ -37,7 +37,31 @@ std::ostream& operator<<(std::ostream& os, const Entry& e)
 {
 	return os << "{\"" << e.name << "\", " << e.number << '}';
 }
+// Input operator implementation (formatted with {}):
+std::istream& operator>>(std::istream& is, Entry& e)
+{
+	char c1;
+    char c2;
+	if (is >> c1 && c1 == '{' && is >> c2 && c2 == '"')
+	{
+		std::string name {};
+		while (is.get(c1) && c1 != '"')
+			name += c1;
 
+		if (is >> c1 && c1 == ',')
+		{
+			int number {};
+			if (is >> number >> c1 && c1 == '}')
+			{
+				e = {name, number};
+				return is;
+			}
+		}
+	}
+
+    is.setstate(std::ios_base::failbit);
+    return is;
+}
 // 10.5 I/O of User-Defined Types
 
 // 10.4 I/O State
@@ -125,7 +149,7 @@ int main()
 	//		See above.
 	Entry test {"hello", 5};
 	std::cout << test;
-	// The user-defined output operator takes it output stream (by reference) as
+	// A user-defined output operator takes it output stream (by reference) as
 	// its first argument and returns it as the result.
 	// 10.5 I/O of User-Defined Types
 }
