@@ -192,4 +192,6 @@ int main()
 	// manipulators are "sticky"; that is, their effects persist for subsequent
 	// floating-point operations.
 	// 10.6 Formatting
+
+	// 10.7 File Streams
 }
