@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <vector>
 
@@ -193,5 +194,15 @@ int main()
 	// floating-point operations.
 	// 10.6 Formatting
 
+	// 10.7 File Streams
+	// In <fstream> the standard library provides streams to and from a file:
+	//		ifstream for reading from the file
+	//		ofstream for writing to a file
+	//		fstream to do both
+	// One example:
+	std::ofstream ofs {"target"};
+	if (!ofs)
+		std::cerr << "Couldn't open 'source' for reading\n";
+	// The ofs and ifs streams can be used just as ordinary istreams and ostreams.
 	// 10.7 File Streams
 }
