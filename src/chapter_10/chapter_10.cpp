@@ -151,6 +151,7 @@ int main()
 	// types. For example, consider type Entry.
 	// We can define an output operator to write an Entry using {"name", number}:
 	//		See above.
+	std::cout << R"(Use the {"",int} format to create an Entry object.)" << '\n';
 	Entry test {};
 	std::cin >> test;
 	std::cout << test;
@@ -169,6 +170,24 @@ int main()
 	// *manipulators*. They are found in <ios>, <istream>, <ostream>, and
 	// <iomanip>.
 	//
-	// 
+	// One example is outputting types in different formats:
+	std::cout << 1234 << std::hex << 1234 << std::oct << 1234 << '\n';
+	// There's also output formats for floating point types.
+	// std::scientific, std::hexfloat, std::fixed, std::defaultfloat
+	//
+	// Precision is an integer that determines the number of digits used
+	// to display a floating-point number:
+	//		`defaultfloat` lets the implementation choose a format that
+	//		presents a value in the style that best preserves the value in the
+	//		space available. Precisions sets the max num of digits.
+	//		`scientific` presents in the scientific notation. Precision sets
+	//		the max num of digits after the decimal point.
+	//		`fixed` presents the value as an integer part followed by a decimal
+	//		point and a fractional part. Use precision to specify max num of digits
+	//		after the decimal point.
+	//
+	// `precision()` does not affect integer output. These floating-point
+	// manipulators are "sticky"; that is, their effects persist for subsequent
+	// floating-point operations.
 	// 10.6 Formatting
 }
