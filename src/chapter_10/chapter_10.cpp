@@ -80,7 +80,7 @@ Target to(Source arg) // convert source to target.
 	// write arg into stream
 	if (!(interpreter << arg) // write arg into stream 
 		|| !(interpreter >> result) // read result from stream
-		|| !(interpreter >> std::ws).eof()) // stuff left in stream?
+		|| !(interpreter >> std::ws).eof()) // is stuff left in stream?
 		throw std::runtime_error {"to<>() failed"};
 	return result;
 }
@@ -238,5 +238,10 @@ int main()
 	// use of an ostringstream is to format before giving the resulting string
 	// to a GUI. Similarly, a string received from a GUI can be read using
 	// formatted input operations (10.3) by putting it into an istringstream.
+	auto x1 = to<std::string, double>(1.2); // explicit and verbose
+	auto x2 = to<std::string>(1.2); // src is deduced to double
+	auto x3 = to<>(1.2); // target defaults to std::string, src deduced double
+	auto x4 = to(1.2); // <> is redundant
+	std::cout << x4 << '\n';
 	// 10.8 String Streams
 }
