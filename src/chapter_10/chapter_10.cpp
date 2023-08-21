@@ -215,9 +215,10 @@ int main()
 	//		ofstream for writing to a file
 	//		fstream to do both
 	// One example:
-	std::ofstream ofs {"target"};
-	if (!ofs)
+    if (const std::ofstream ofs {"test.txt"}; !ofs)
 		std::cerr << "Couldn't open 'source' for reading\n";
+	else
+		std::cout << "File opened successfully.\n";
 	// The ofs and ifs streams can be used just as ordinary istreams and ostreams.
 	// 10.7 File Streams
 
@@ -246,14 +247,21 @@ int main()
 	// 10.8 String Streams
 
 	// 10.9 C-style I/O
-	// The C++ std lib support C standard library I/O including printf() and scanf().
-	// The use of these are viewed as unsafe from a type and security pov.
-	// They also do not support user defined types. If you don't use C-style I/O and
-	// care about performance use:
+	// The C++ std lib support C standard library I/O including printf() and
+	// scanf(). The use of these are viewed as unsafe from a type and security
+	// pov. They also do not support user defined types. If you don't use
+	// C-style I/O and care about performance use:
 	//		std::ios_base::sync_with_stdio(false);
-	// Otherwise, `iostream` is significantly slowed down to work with C-style I/O.
+	// Otherwise, `iostream` is significantly slowed down to work with
+	// C-style I/O.
 	// 10.9 C-style I/O
 
 	// 10.10 File System
+	// Most systems have a notion of a file system providing permanent info stored
+	// as files. Unfortunately, these can vary between systems. To deal with that
+	// the system library in <filesystem> offers a uniform interface to most
+	// facilities of most file systems. Portably:
+	//		express file system paths and navigate through one.
+	//		examine file types and the permissions associated with them.
 	// 10.10 File System
 }
