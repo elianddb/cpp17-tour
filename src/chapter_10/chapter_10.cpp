@@ -1,7 +1,9 @@
+#include <cassert>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <filesystem>
 
 // 10.4 I/O State
 std::vector<int> readInts(std::istream& is, const std::string& terminator)
@@ -263,5 +265,12 @@ int main()
 	// facilities of most file systems. Portably:
 	//		express file system paths and navigate through one.
 	//		examine file types and the permissions associated with them.
+	// The file system library is capable of handling unicode. (not covered).
+	//
+	// Consider the following example:
+    std::filesystem::path path {"dir/hypothetical.cpp"};
+	assert(exists(path));
+	if (is_regular_file(path))
+		std::cout << path << " is a file; its size is " << file_size(path) << '\n';
 	// 10.10 File System
 }
