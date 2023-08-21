@@ -244,4 +244,7 @@ int main()
 	auto x4 = to(1.2); // <> is redundant
 	std::cout << x4 << '\n';
 	// 10.8 String Streams
+
+	// 10.9 C-style I/O
+	// 10.9 C-style I/O
 }
