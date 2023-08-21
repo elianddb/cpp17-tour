@@ -246,5 +246,11 @@ int main()
 	// 10.8 String Streams
 
 	// 10.9 C-style I/O
+	// The C++ std lib support C standard library I/O including printf() and scanf().
+	// The use of these are viewed as unsafe from a type and security pov.
+	// They also do not support user defined types. If you don't use C-style I/O and
+	// care about performance use:
+	//		std::ios_base::sync_with_stdio(false);
+	// Otherwise, `iostream` is significantly slowed down to work with C-style I/O.
 	// 10.9 C-style I/O
 }
