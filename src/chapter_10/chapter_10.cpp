@@ -301,5 +301,27 @@ int main()
 
 	// 10.11 Advice
 	// [1] iostreams are type-safe, type-sensitive, and extensible; §10.1.
+	// [2] Use character-level input only when you have to; §10.3; [CG: SL.io.1].
+	// [5] Define << and >> for user-defined types with values that have
+    // meaningful textual representations; §10.1, §10.2, §10.3.
+	// [6] Use cout for normal output and cerr for errors; §10.1.
+	// [7] There are iostreams for ordinary characters and wide characters, and
+	// you can define an iostream for any kind of character; §10.1.
+	// [12] Input into strings does not overflow; §10.3.
+	// [13] By default >> skips initial whitespace; §10.3.
+	// [14] Use the stream state fail to handle potentially recoverable I/O
+	// errors; §10.4.
+	// [20] #include <ios> when using standard manipulators; §10.6.
+	// [21] #include <iomanip> when using standard manipulators taking
+	// arguments; §10.6.
+	// [22] Don’t try to copy a file stream.
+	// [23] Remember to check that a file stream is attached to a file
+	// before using it; §10.7.
+	// [24] Use stringstreams for in-memory formatting; §10.8.
+	// [26] C-style I/O is not type-safe; §10.9.
+	// [27] Unless you use printf-family functions call
+	// ios_base::sync_with_stdio(false); §10.9; [CG:SL.io.10] .
+	// [28] Prefer <filesystem> to direct use of a specific operating system
+	// interfaces; §10.10.
 	// 10.11 Advice
 }
