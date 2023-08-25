@@ -272,6 +272,23 @@ int main()
 	assert(exists(path));
 	if (is_regular_file(path))
 		std::cout << path << " is a file; its size is " << file_size(path) << '\n';
-	// 
+	// Note that a program manipulating a file system is usually running on a
+	// computer together with other programs. Thus, contents can change between
+	// commands. (e.g., 'path' may no longer exist in the next line.)
+	//
+	// std::path is a complicated class, capable of handling character sets and
+	// conventions of many operating systems. It can handle, file names from
+	// the command line:
+	// std::path p {argv[1]};
+	// A std::path obj is not typically checked until it's used. Even then, its
+	// it's subject to conventions of the system it's on.
+	//
+	// Naturally, you can use std::path to open a file:
+	// void use(std::path p)
+	// {
+	//		std::ofstream f {p};
+	//		if (!f)	error("bad file name: ", p);
+	//		f << "Hello, world.";
+	// }
 	// 10.10 File System
 }
