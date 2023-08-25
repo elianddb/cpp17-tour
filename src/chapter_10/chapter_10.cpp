@@ -298,4 +298,8 @@ int main()
 	// There's also common and useful operations offered by std::path.
 	//		path operations, file system operations, file types
 	// 10.10 File System
+
+	// 10.11 Advice
+	// [1] iostreams are type-safe, type-sensitive, and extensible; §10.1.
+	// 10.11 Advice
 }
