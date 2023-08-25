@@ -290,5 +290,12 @@ int main()
 	//		if (!f)	error("bad file name: ", p);
 	//		f << "Hello, world.";
 	// }
+	//
+	// <filesystem> offers types for traversing directories and inquiring about
+	// the properties of the files found:
+	//		filesystem_error, directory_entry, directory_iterator, etc.
+	//
+	// There's also common and useful operations offered by std::path.
+	//		path operations, file system operations, file types
 	// 10.10 File System
 }
