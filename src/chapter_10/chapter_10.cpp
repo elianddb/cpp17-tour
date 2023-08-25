@@ -269,7 +269,7 @@ int main()
 	//
 	// Consider the following example:
     std::filesystem::path path {"dir/hypothetical.cpp"};
-	assert(exists(path));
+	static_assert(exists(path));
 	if (is_regular_file(path))
 		std::cout << path << " is a file; its size is " << file_size(path) << '\n';
 	// Note that a program manipulating a file system is usually running on a
