@@ -99,7 +99,12 @@ int main()
     // 11.2 `vector`
 
     // 11.2.1 Elements
-
+    // Just about any type qualifies as an elem type for std::vector. When
+    // you insert a new elem, its value is copied into the container. When
+    // dealing with class hierarchies that rely on `virtual` funcs for
+    // polymorphic behavior make sure to use pointers.
+    //      std::vector<Shape*> vs {};
+    //      std::vector<std::unique_ptr<Shape>> vsu {};
     // 11.2.1 Elements
     return 0;
 }
