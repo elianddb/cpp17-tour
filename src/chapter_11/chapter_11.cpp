@@ -1,3 +1,5 @@
+#include "shape.hpp"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,6 +17,29 @@ std::ostream& operator<<(std::ostream& out, const Entry& e)
     return out;
 }
 
+std::istream& operator>>(std::istream& in, Entry& e)
+{
+    char buf;
+    if (std::cin >> buf && buf == '{' && std::cin >> buf && buf == '"')
+    {
+        std::string name {};
+        while (in.get(buf) && buf != '"')
+            name += buf;
+
+        if (std::cin >> buf && buf == ',')
+        {
+            int num {};
+            if (std::cin >> num >> buf && buf == '}')
+            {
+                e = {name, num};
+                return in;
+            }
+        }
+    }
+
+    in.setstate(std::ios_base::failbit);
+    return in;
+}
 // 11.2 `vector`
 
 int main()
@@ -41,6 +66,22 @@ int main()
             std::cout << entry << '\n';
     };
     printBook(phoneBook);
+    // The usual applies when it comes to these types of containers. Index
+    // starts at 0. Use the member func size() to get the given num of elem.
+    //
+    // Giving an initialization:
+    std::vector<int> v1 = {1, 2, 3, 4};
+    std::vector<std::string> v2;
+    // size of 23, init all elem with default val
+    std::vector<DDB::Shape*> v3(23);
+    std::vector<double> v4(32, 9.9); // size 32, init all elem 9.9
+    // The initial size of std::vector can be changed with using `push_back()`
+    // member func.
+    v1.push_back(4);
+    // To read continuous input into phone_book until eof is reached or error
+    // do:
+    for (Entry e; std::cin >> e;)
+        phoneBook.push_back(e);
     // 11.2 `vector`
     return 0;
 }

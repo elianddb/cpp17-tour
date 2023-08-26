@@ -73,6 +73,10 @@ add_executable(
 	chapter-11
 	"chapter_11/chapter_11.cpp"
 )
+target_link_libraries(
+	chapter-11
+	shape
+)
 
 add_executable(
 	cmake-default 

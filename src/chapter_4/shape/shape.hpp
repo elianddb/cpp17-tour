@@ -10,6 +10,7 @@ namespace DDB
             int x {};
             int y {};
         };
+
         virtual Point center() const = 0;
         virtual void move(Point to) = 0;
         virtual void draw() const = 0;
