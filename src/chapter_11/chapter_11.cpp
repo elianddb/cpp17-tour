@@ -1,3 +1,7 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
 int main()
 {
     // 11.2 `vector`
@@ -8,7 +12,24 @@ int main()
     // allocated space. It also holds an allocator from which std::vector
     // can acquire and release mem.
     //      The default alloc uses new and delete to acquire and release elem.
-    
+    //
+    // We can initialize std::vector with a set of vals of its elem type.
+    struct Entry
+    {
+        std::string name {};
+        int number {};
+    };
+    std::vector<Entry> phoneBook {
+        {"David Hume", 123456},
+        {"Karl Hopper", 234567},
+        {"Bertrand Arthur William Russell", 345678},
+    };
+    // Access the elem through subscripts `phoneBook[]`
+    auto printBook = [](const std::vector<Entry>& book)
+    {
+        for (const auto entry : book)
+            std::cout << entry << '\n';
+    };
     // 11.2 `vector`
     return 0;
 }
