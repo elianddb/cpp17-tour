@@ -82,6 +82,20 @@ int main()
     // do:
     for (Entry e; std::cin >> e;)
         phoneBook.push_back(e);
+    // The std lib has members capacity(), reserve(), and push_back(). reserve()
+    // makes room for more elem. It may have to allocate new mem when it does.
+    // capacity() refers to allocated available spaces for elem.
+    // With these funcs the implementation of push_back() is made trivial:
+    // template <typaname T>
+    // void Vector<T>::push_back(const T& t)
+    // {
+    //      if (capacity() < size() + 1)
+    //          reserve(size()==0?8:2*size());
+    //      new(space) T{t};
+    //      ++space;
+    // }
+    // You can also copy vectors using the assignment operator
+    //      std::vector v1 = v2;
     // 11.2 `vector`
     return 0;
 }
