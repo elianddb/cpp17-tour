@@ -2,6 +2,21 @@
 #include <string>
 #include <vector>
 
+// 11.2 `vector`
+struct Entry
+{
+    std::string name {};
+    int number {};
+};
+
+std::ostream& operator<<(std::ostream& out, const Entry& e)
+{
+    out << '(' << e.name << ", " << e.number << ')';
+    return out;
+}
+
+// 11.2 `vector`
+
 int main()
 {
     // 11.2 `vector`
@@ -14,11 +29,6 @@ int main()
     //      The default alloc uses new and delete to acquire and release elem.
     //
     // We can initialize std::vector with a set of vals of its elem type.
-    struct Entry
-    {
-        std::string name {};
-        int number {};
-    };
     std::vector<Entry> phoneBook {
         {"David Hume", 123456},
         {"Karl Hopper", 234567},
@@ -27,9 +37,10 @@ int main()
     // Access the elem through subscripts `phoneBook[]`
     auto printBook = [](const std::vector<Entry>& book)
     {
-        for (const auto entry : book)
+        for (const auto& entry : book)
             std::cout << entry << '\n';
     };
+    printBook(phoneBook);
     // 11.2 `vector`
     return 0;
 }
